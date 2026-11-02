@@ -1,0 +1,879 @@
+{
+  "file": "UniversityDataset_Corrected.xlsx",
+  "sha256": "e5fc5786323ef43c8bb5c4ea0d5beea1e555a86b1b566da42f070e269526f664",
+  "sheet_count": 14,
+  "formulas": 0,
+  "sheets": {
+    "Faculties": {
+      "row_count": 4,
+      "headers": [
+        "FacultyID",
+        "FacultyName"
+      ],
+      "low_cardinality_values": {
+        "FacultyID": {
+          "ENG": 1,
+          "SCI": 1,
+          "MTH": 1,
+          "HUM": 1
+        },
+        "FacultyName": {
+          "فنی و مهندسی": 1,
+          "علوم پایه و تجربی": 1,
+          "علوم ریاضی و آمار": 1,
+          "ادبیات و علوم انسانی": 1
+        }
+      }
+    },
+    "Majors": {
+      "row_count": 16,
+      "headers": [
+        "MajorID",
+        "FacultyID",
+        "MajorName"
+      ],
+      "low_cardinality_values": {
+        "MajorID": {
+          "CE": 1,
+          "EE": 1,
+          "ME": 1,
+          "CIV": 1,
+          "CHEM": 1,
+          "PHY": 1,
+          "BIO": 1,
+          "GEO": 1,
+          "MATH": 1,
+          "STAT": 1,
+          "CS": 1,
+          "DS": 1,
+          "PER": 1,
+          "ENGL": 1,
+          "HIS": 1,
+          "GEOG": 1
+        },
+        "FacultyID": {
+          "ENG": 4,
+          "SCI": 4,
+          "MTH": 4,
+          "HUM": 4
+        },
+        "MajorName": {
+          "مهندسی کامپیوتر": 1,
+          "مهندسی برق": 1,
+          "مهندسی مکانیک": 1,
+          "مهندسی عمران": 1,
+          "شیمی کاربردی": 1,
+          "فیزیک": 1,
+          "زیست‌شناسی سلولی و مولکولی": 1,
+          "زمین‌شناسی": 1,
+          "ریاضیات و کاربردها": 1,
+          "آمار": 1,
+          "علوم کامپیوتر": 1,
+          "علم داده‌ها": 1,
+          "زبان و ادبیات فارسی": 1,
+          "زبان و ادبیات انگلیسی": 1,
+          "تاریخ": 1,
+          "جغرافیا": 1
+        }
+      }
+    },
+    "Courses": {
+      "row_count": 120,
+      "headers": [
+        "CourseID",
+        "MajorID",
+        "CourseName",
+        "Credits",
+        "SuggestedSemester",
+        "CourseType",
+        "SessionsPerWeek",
+        "SessionDuration",
+        "RequiredRoomType",
+        "MinSectionSize",
+        "MaxSectionSize",
+        "DifficultyLevel"
+      ],
+      "low_cardinality_values": {
+        "MajorID": {
+          "CE": 30,
+          "EE": 30,
+          "ME": 30,
+          "CIV": 30
+        },
+        "Credits": {
+          "3": 83,
+          "1": 29,
+          "2": 8
+        },
+        "SuggestedSemester": {
+          "1": 16,
+          "2": 16,
+          "3": 16,
+          "4": 16,
+          "5": 16,
+          "6": 16,
+          "7": 16,
+          "8": 8
+        },
+        "CourseType": {
+          "Theory": 93,
+          "Workshop": 3,
+          "Lab": 24
+        },
+        "SessionsPerWeek": {
+          "2": 91,
+          "1": 29
+        },
+        "SessionDuration": {
+          "90": 120
+        },
+        "RequiredRoomType": {
+          "Theory": 93,
+          "ComputerLab": 6,
+          "PhysicsLab": 5,
+          "ElectricalLab": 5,
+          "MechanicalWorkshop": 6,
+          "CivilLab": 5
+        },
+        "MinSectionSize": {
+          "8": 120
+        },
+        "MaxSectionSize": {
+          "50": 93,
+          "15": 6,
+          "12": 15,
+          "10": 6
+        },
+        "DifficultyLevel": {
+          "5": 19,
+          "2": 31,
+          "3": 27,
+          "4": 34,
+          "1": 9
+        }
+      }
+    },
+    "Classrooms": {
+      "row_count": 20,
+      "headers": [
+        "RoomID",
+        "FacultyID",
+        "RoomType",
+        "Capacity",
+        "Equipment"
+      ],
+      "low_cardinality_values": {
+        "RoomID": {
+          "ENG-101": 1,
+          "ENG-102": 1,
+          "ENG-103": 1,
+          "ENG-104": 1,
+          "ENG-105": 1,
+          "ENG-106": 1,
+          "ENG-107": 1,
+          "ENG-108": 1,
+          "ENG-109": 1,
+          "ENG-110": 1,
+          "ENG-111": 1,
+          "ENG-112": 1,
+          "ENG-113": 1,
+          "ENG-114": 1,
+          "ENG-115": 1,
+          "ENG-201": 1,
+          "ENG-202": 1,
+          "ENG-203": 1,
+          "ENG-204": 1,
+          "ENG-205": 1
+        },
+        "FacultyID": {
+          "ENG": 20
+        },
+        "RoomType": {
+          "Theory": 15,
+          "ComputerLab": 1,
+          "ElectricalLab": 1,
+          "PhysicsLab": 1,
+          "MechanicalWorkshop": 1,
+          "CivilLab": 1
+        },
+        "Capacity": {
+          "60": 1,
+          "50": 2,
+          "45": 2,
+          "40": 3,
+          "35": 3,
+          "30": 3,
+          "25": 1,
+          "15": 1,
+          "12": 3,
+          "10": 1
+        },
+        "Equipment": {
+          "Whiteboard;Projector": 10,
+          "Whiteboard": 5,
+          "Computer;Network": 1,
+          "CircuitEquipment;Oscilloscope": 1,
+          "PhysicsEquipment": 1,
+          "MechanicalTools;FluidsKit;MaterialsKit;HeatTransferKit": 1,
+          "ConcreteTesting;SoilTesting;SurveyKit;HydraulicsKit": 1
+        }
+      }
+    },
+    "TimeSlots": {
+      "row_count": 25,
+      "headers": [
+        "SlotID",
+        "Day",
+        "TimeSlot",
+        "StartTime",
+        "EndTime",
+        "IsAllowed"
+      ],
+      "low_cardinality_values": {
+        "Day": {
+          "Saturday": 5,
+          "Sunday": 5,
+          "Monday": 5,
+          "Tuesday": 5,
+          "Wednesday": 5
+        },
+        "TimeSlot": {
+          "T1": 5,
+          "T2": 5,
+          "T3": 5,
+          "T4": 5,
+          "T5": 5
+        },
+        "StartTime": {
+          "08:00": 5,
+          "10:00": 5,
+          "13:30": 5,
+          "15:30": 5,
+          "17:30": 5
+        },
+        "EndTime": {
+          "09:30": 5,
+          "11:30": 5,
+          "15:00": 5,
+          "17:00": 5,
+          "19:00": 5
+        },
+        "IsAllowed": {
+          "True": 25
+        }
+      }
+    },
+    "Professors": {
+      "row_count": 32,
+      "headers": [
+        "ProfessorID",
+        "MajorID",
+        "ProfessorName",
+        "MinHours",
+        "MaxHours"
+      ],
+      "low_cardinality_values": {
+        "MajorID": {
+          "CE": 8,
+          "EE": 8,
+          "ME": 8,
+          "CIV": 8
+        },
+        "MinHours": {
+          "7.5": 4,
+          "4.5": 8,
+          "3": 9,
+          "6": 11
+        },
+        "MaxHours": {
+          "18": 8,
+          "21": 6,
+          "24": 6,
+          "19.5": 6,
+          "16.5": 6
+        }
+      }
+    },
+    "ProfessorCourses": {
+      "row_count": 149,
+      "headers": [
+        "ProfessorID",
+        "CourseID",
+        "CanTeach",
+        "Willingness"
+      ],
+      "low_cardinality_values": {
+        "CanTeach": {
+          "True": 149
+        },
+        "Willingness": {
+          "4": 17,
+          "10": 14,
+          "9": 13,
+          "7": 20,
+          "2": 17,
+          "1": 12,
+          "5": 13,
+          "8": 13,
+          "6": 15,
+          "3": 15
+        }
+      }
+    },
+    "ProfessorAvailability": {
+      "row_count": 313,
+      "headers": [
+        "ProfessorID",
+        "Day",
+        "TimeSlot",
+        "Status",
+        "Weight"
+      ],
+      "low_cardinality_values": {
+        "Day": {
+          "Tuesday": 70,
+          "Saturday": 61,
+          "Sunday": 64,
+          "Monday": 75,
+          "Wednesday": 43
+        },
+        "TimeSlot": {
+          "T1": 72,
+          "T2": 68,
+          "T3": 32,
+          "T4": 72,
+          "T5": 69
+        },
+        "Status": {
+          "Unavailable": 160,
+          "Preferred": 153
+        },
+        "Weight": {
+          "None": 160,
+          "10": 24,
+          "4": 17,
+          "5": 26,
+          "6": 24,
+          "7": 18,
+          "8": 14,
+          "9": 30
+        }
+      }
+    },
+    "ProfessorPreferences": {
+      "row_count": 128,
+      "headers": [
+        "ProfessorID",
+        "PreferenceType",
+        "Target",
+        "Weight"
+      ],
+      "low_cardinality_values": {
+        "PreferenceType": {
+          "PreferredTeachingDays": 32,
+          "MinimizeGaps": 32,
+          "PreferredTimeSlots": 32,
+          "PreferredCourses": 32
+        },
+        "Target": {
+          "2": 10,
+          "30": 32,
+          "None": 64,
+          "3": 15,
+          "4": 7
+        },
+        "Weight": {
+          "7": 11,
+          "3": 21,
+          "2": 10,
+          "6": 8,
+          "10": 18,
+          "5": 14,
+          "4": 21,
+          "8": 16,
+          "9": 9
+        }
+      }
+    },
+    "Students": {
+      "row_count": 200,
+      "headers": [
+        "StudentID",
+        "MajorID",
+        "CurrentSemester",
+        "MinCredits",
+        "MaxCredits"
+      ],
+      "low_cardinality_values": {
+        "MajorID": {
+          "CE": 50,
+          "EE": 50,
+          "ME": 50,
+          "CIV": 50
+        },
+        "CurrentSemester": {
+          "4": 47,
+          "7": 23,
+          "5": 47,
+          "6": 50,
+          "3": 33
+        },
+        "MinCredits": {
+          "9": 41,
+          "10": 52,
+          "8": 69,
+          "12": 38
+        },
+        "MaxCredits": {
+          "20": 69,
+          "18": 60,
+          "15": 71
+        }
+      }
+    },
+    "PassedCourses": {
+      "row_count": 2073,
+      "headers": [
+        "StudentID",
+        "CourseID"
+      ],
+      "low_cardinality_values": {}
+    },
+    "StudentRequests": {
+      "row_count": 1695,
+      "headers": [
+        "StudentID",
+        "CourseID",
+        "Priority"
+      ],
+      "low_cardinality_values": {
+        "Priority": {
+          "10": 170,
+          "9": 172,
+          "8": 171,
+          "7": 169,
+          "4": 164,
+          "3": 172,
+          "2": 170,
+          "1": 169,
+          "6": 170,
+          "5": 168
+        }
+      }
+    },
+    "StudentAvailability": {
+      "row_count": 1199,
+      "headers": [
+        "StudentID",
+        "Day",
+        "TimeSlot",
+        "Status",
+        "Weight"
+      ],
+      "low_cardinality_values": {
+        "Day": {
+          "Wednesday": 247,
+          "Sunday": 237,
+          "Tuesday": 243,
+          "Monday": 216,
+          "Saturday": 256
+        },
+        "TimeSlot": {
+          "T3": 260,
+          "T1": 254,
+          "T2": 234,
+          "T5": 228,
+          "T4": 223
+        },
+        "Status": {
+          "Unavailable": 399,
+          "Preferred": 800
+        },
+        "Weight": {
+          "None": 399,
+          "6": 85,
+          "9": 105,
+          "4": 112,
+          "3": 103,
+          "5": 94,
+          "8": 109,
+          "7": 94,
+          "10": 98
+        }
+      }
+    },
+    "StudentPreferences": {
+      "row_count": 800,
+      "headers": [
+        "StudentID",
+        "PreferenceType",
+        "Target",
+        "Weight"
+      ],
+      "low_cardinality_values": {
+        "PreferenceType": {
+          "PreferredTeachingDays": 200,
+          "MinimizeGaps": 200,
+          "PreferredTimeSlots": 200,
+          "SpreadDifficultCourses": 200
+        },
+        "Target": {
+          "2": 113,
+          "30": 200,
+          "None": 200,
+          "3": 122,
+          "4": 45,
+          "1": 120
+        },
+        "Weight": {
+          "10": 88,
+          "7": 89,
+          "2": 89,
+          "3": 85,
+          "8": 82,
+          "6": 88,
+          "9": 82,
+          "4": 80,
+          "5": 82,
+          "1": 13,
+          "0": 22
+        }
+      }
+    }
+  },
+  "checks": [
+    {
+      "check": "expected_sheet_names",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "Faculties: duplicate keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "Faculties: blank keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "Majors: duplicate keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "Majors: blank keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "Courses: duplicate keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "Courses: blank keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "Classrooms: duplicate keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "Classrooms: blank keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "TimeSlots: duplicate keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "TimeSlots: blank keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "Professors: duplicate keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "Professors: blank keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "ProfessorCourses: duplicate keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "ProfessorCourses: blank keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "ProfessorAvailability: duplicate keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "ProfessorAvailability: blank keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "ProfessorPreferences: duplicate keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "ProfessorPreferences: blank keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "Students: duplicate keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "Students: blank keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "PassedCourses: duplicate keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "PassedCourses: blank keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "StudentRequests: duplicate keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "StudentRequests: blank keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "StudentAvailability: duplicate keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "StudentAvailability: blank keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "StudentPreferences: duplicate keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "StudentPreferences: blank keys",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "Majors: FK FacultyID",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "Courses: FK MajorID",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "Classrooms: FK FacultyID",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "Professors: FK MajorID",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "ProfessorCourses: FK CourseID",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "ProfessorCourses: FK ProfessorID",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "ProfessorAvailability: FK ProfessorID",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "ProfessorPreferences: FK ProfessorID",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "Students: FK MajorID",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "PassedCourses: FK CourseID",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "PassedCourses: FK StudentID",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "StudentRequests: FK CourseID",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "StudentRequests: FK StudentID",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "StudentAvailability: FK StudentID",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "StudentPreferences: FK StudentID",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "ProfessorAvailability: unknown slot",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "ProfessorAvailability: invalid status",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "StudentAvailability: unknown slot",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "StudentAvailability: invalid status",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "requested course already passed",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "course has no qualified professor",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "course has no compatible room",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "invalid course credits/sessions/duration/section bounds",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "Students: invalid bounds",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "Professors: invalid bounds",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "invalid slot duration/allowed",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "requested credits below minimum",
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "check": "stored Excel error cells",
+      "violations": 0,
+      "examples": []
+    }
+  ],
+  "checks_with_violations": [],
+  "demand_warnings": {
+    "below_minimum": {
+      "CE002": 2,
+      "CE003": 3,
+      "CE004": 1,
+      "CE005": 3,
+      "CE006": 4,
+      "CE007": 4,
+      "CE008": 3,
+      "CE029": 6,
+      "CE030": 6,
+      "EE001": 1,
+      "EE002": 1,
+      "EE004": 1,
+      "EE005": 1,
+      "EE006": 3,
+      "EE007": 3,
+      "EE008": 6,
+      "EE029": 6,
+      "EE030": 6,
+      "ME001": 2,
+      "ME002": 1,
+      "ME004": 3,
+      "ME005": 2,
+      "ME006": 3,
+      "ME007": 1,
+      "ME008": 4,
+      "ME029": 5,
+      "ME030": 5,
+      "CIV001": 2,
+      "CIV002": 4,
+      "CIV003": 1,
+      "CIV004": 3,
+      "CIV005": 6,
+      "CIV006": 3,
+      "CIV008": 2,
+      "CIV029": 5,
+      "CIV030": 6
+    },
+    "no_requests": [
+      "CE001",
+      "EE003",
+      "ME003",
+      "CIV007"
+    ]
+  },
+  "limits": "Static structural checks only; no Excel recalculation or proof of schedule feasibility."
+}

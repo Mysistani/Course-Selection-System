@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+outputs/
+dataset_inspection.json
+docs/SOURCE_CONVERSATION.md
+MANIFEST.sha256
