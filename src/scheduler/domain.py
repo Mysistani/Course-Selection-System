@@ -132,6 +132,13 @@ class Dataset:
     sha256: str
     warnings: tuple[InputIssue, ...]
 
+    def __post_init__(self):
+        # Freeze caller-owned containers as well as the dataclass attributes.
+        object.__setattr__(self, 'tables', MappingProxyType({
+            name: tuple(rows) for name, rows in self.tables.items()
+        }))
+        object.__setattr__(self, 'warnings', tuple(self.warnings))
+
     def index(self, sheet: str, field: str) -> Mapping:
         return MappingProxyType({getattr(row, field): row for row in self.tables[sheet]})
 

@@ -1,5 +1,7 @@
 # Phase 2 — Hard Constraint Evaluator
 
+به‌روزرسانی Phase 3: API قبلی حفظ شده و ورودی EvaluationContext یا keyword context نیز پذیرفته می‌شود. پیش‌پردازش ثابت و Diagnostics ثابت از Context بازاستفاده می‌شوند. کسری MinHours علاوه بر metrics در Diagnostics پویای بدون جریمه ثبت می‌شود. SoftEvaluation مستقل و مقایسه Hard-first اکنون پیاده شده‌اند؛ شرح جاری در SOFT_FITNESS.md است. موارد «هنوز ساخته نشده» پایین، گزارش تاریخی فاز دوم‌اند.
+
 ## API و مرز مسئولیت
 
 ```python

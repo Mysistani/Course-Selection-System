@@ -1,5 +1,9 @@
 # وضعیت پیاده‌سازی — ۲۰۲۶-۱۱-۰۲
 
+## Phase 3: EvaluationContext و Soft Fitness
+
+Context تغییرناپذیر، بازاستفاده پیش‌پردازش در API قدیمی Hard و مسیر صریح، SoftEvaluation مستقل و FitnessEvaluation با ترتیب (Hard,-Soft) ساخته شدند. Dataset ظرف‌های ورودی را freeze می‌کند. پیش‌فرض version=phase3-soft-v1 مطابق پاسخ جدید کاربر coverage_product است؛ exact روزها، مرز فاصله ۳۰/۳۱، Willingness زمانی، خنثی زمانی ۰٫۵ و استثنای افراد غیرفعال ثبت و تست شده‌اند. تمام ۱۱۱ تست، شامل ۷۴ آزمون قبل، پاس شدند. قراردادها و موارد باز در SOFT_FITNESS.md آمده‌اند. Excel، جمعیت اولیه و عملگرهای ژنتیک تغییر نکرده/ساخته نشده‌اند. PR این مرحله نیازمند بازبینی معماری است و خودکار merge نمی‌شود.
+
 ## Phase 2: Hard Constraint Evaluator
 
 ماژول مستقل constraints.py با API evaluate_hard_constraints، مدل تغییرناپذیر Violation، HardEvaluation و metrics/diagnostics ساخته شد. ساختار نامعتبر با StructuralValidationError و StructureIssueهای اصلی رد می‌شود. H01 تا H10 با مرزبندی ساختاری و شمارش تعیین‌شده در دستور فاز پوشش داده شده‌اند؛ MinHours فقط metrics است. ورودی، cache و Excel تغییر نمی‌کنند. ۲۷ آزمون جدید و همه ۴۷ آزمون قبل، مجموعاً ۷۴ آزمون، پاس شدند. جزئیات و محدودیت منبع آزمون در HARD_CONSTRAINTS.md است. Population، Soft Fitness و عملگرها همچنان پیاده نشده‌اند؛ شرح‌های «ارزیاب آینده» در بخش‌های تاریخی پایین وضعیت گذشته‌اند.
