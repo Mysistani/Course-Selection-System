@@ -4,6 +4,8 @@
 
 ## پیشرفت توسعه پس از انتقال
 
+**فاز 5B:** [Mutation اتمی و Repair محدود](docs/MUTATION_REPAIR.md) پیاده شدند. [گزارش آزمون و آزمایش](docs/PHASE5B_REPORT.md): ۱۹۹ آزمون موفق، دو اجرای ۱۰۰ فرزندی با ساختار سالم و حفظ والدها/cache/داده. ابزار: `python scripts/check_mutation_repair.py`. حلقه تکامل هنوز ساخته نشده؛ PR و Merge این شاخه با کاربر است. شرح فازهای پایین تاریخچه پیشرفت است.
+
 **فاز 5A:** [Tournament Selection و Course-Based Crossover](docs/GENETIC_OPERATORS.md) آماده‌اند. تمام ۱۶۱ تست و بررسی ساخت/ارزیابی ۱۰۰ فرزند روی جمعیت ثابت موفق بود. Mutation، Repair و حلقه تکامل هنوز ساخته نشده‌اند؛ ساخت PR و merge این فاز دستی است.
 
 **فاز چهارم:** [Population Initialization و نتایج آزمایش](docs/POPULATION_INITIALIZATION.md) آماده است. تولید یک کروموزوم یا جمعیت با Context ثابت و Seed محلی، ارزیابی مستقل و گزارش تنوع پشتیبانی می‌شود. ابزار آزمایش: `python scripts/run_initialization_experiment.py --population-size 100 --seed 2026`. همه ۱۳۴ تست پاس شدند؛ حلقه تکامل و عملگرهای ژنتیک همچنان ساخته نشده‌اند. شرح مراحل قدیمی‌تر در ادامه، وضعیت تاریخی آن مرحله است.
