@@ -4,6 +4,8 @@
 
 ## پیشرفت توسعه پس از انتقال
 
+**فاز ۶:** [Evolution Loop، Elitism و خروجی قابل بازیابی](docs/EVOLUTION_LOOP.md) آماده است. [گزارش آزمایش‌ها](docs/PHASE6_REPORT.md): ۲۲۸ آزمون موفق، ماتریس A/B/C با سه Seed و اجرای بزرگ‌تر با جمعیت ۱۰۰/سقف ۴۰۰۰ Fitness؛ بهترین Hard اجرای بزرگ از ۱۳۰۵ به ۹۵۷ رسید، اما جواب معتبر پیدا نشد. ابزار: `python scripts/run_evolution_experiment.py --population-size 30 --max-generations 20 --max-fitness-evaluations 4000`. این فاز PR یا Merge خودکار ندارد. شرح پایین تاریخچه مراحل قبل است.
+
 **فاز 5B:** [Mutation اتمی و Repair محدود](docs/MUTATION_REPAIR.md) پیاده شدند. [گزارش آزمون و آزمایش](docs/PHASE5B_REPORT.md): ۱۹۹ آزمون موفق، دو اجرای ۱۰۰ فرزندی با ساختار سالم و حفظ والدها/cache/داده. ابزار: `python scripts/check_mutation_repair.py`. حلقه تکامل هنوز ساخته نشده؛ PR و Merge این شاخه با کاربر است. شرح فازهای پایین تاریخچه پیشرفت است.
 
 **فاز 5A:** [Tournament Selection و Course-Based Crossover](docs/GENETIC_OPERATORS.md) آماده‌اند. تمام ۱۶۱ تست و بررسی ساخت/ارزیابی ۱۰۰ فرزند روی جمعیت ثابت موفق بود. Mutation، Repair و حلقه تکامل هنوز ساخته نشده‌اند؛ ساخت PR و merge این فاز دستی است.

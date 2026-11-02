@@ -1,0 +1,4164 @@
+{
+  "dataset_sha256": "e5fc5786323ef43c8bb5c4ea0d5beea1e555a86b1b566da42f070e269526f664",
+  "context_id": [
+    "87da61c93e085b3d01ac057dc168e94e219306cc50ffc4a7f42abfbab77a737a",
+    "0f41f83ba9ccc9aa4be4d141eb75a59d3e1b35847cf63d479d2b489a2affc85a"
+  ],
+  "runs": [
+    {
+      "name": "A_seed11",
+      "settings": {
+        "version": "evolution-phase6-v1",
+        "population_size": 30,
+        "tournament_size": 3,
+        "elite_count": 2,
+        "max_generations": 20,
+        "mutation_probability": 0,
+        "crossover_probability": 0.7,
+        "repair_enabled": false,
+        "random_seed": 11,
+        "stop_on_first_feasible": false,
+        "stagnation_generations": null,
+        "max_fitness_evaluations": 4000,
+        "initialization_settings": {
+          "version": "initialization-v1",
+          "strategies": [
+            "compact",
+            "spread",
+            "random"
+          ],
+          "max_attempts_per_individual": 8
+        },
+        "mutation_settings": {
+          "version": "mutation-5b-v1",
+          "mutation_probability": 0,
+          "targeted_probability": 0.7,
+          "max_attempts": 8,
+          "max_proposals_per_operator": 8,
+          "operator_weights": [
+            [
+              "MoveMeeting",
+              1.0
+            ],
+            [
+              "SwapMeetings",
+              1.0
+            ],
+            [
+              "ChangeProfessor",
+              1.0
+            ],
+            [
+              "ChangeRoom",
+              1.0
+            ],
+            [
+              "SplitSection",
+              1.0
+            ],
+            [
+              "MergeSections",
+              1.0
+            ],
+            [
+              "ActivateDeactivate",
+              1.0
+            ],
+            [
+              "MoveStudent",
+              1.0
+            ],
+            [
+              "SwapStudents",
+              1.0
+            ],
+            [
+              "AssignUnassign",
+              1.0
+            ]
+          ]
+        },
+        "repair_settings": {
+          "version": "repair-5b-v1",
+          "max_local_candidates": 5,
+          "max_candidate_evaluations": 50,
+          "max_candidate_attempts": 100,
+          "max_conflicts": 50,
+          "max_structural_steps": 20
+        }
+      },
+      "timings": {
+        "context_seconds": 0.012679300038143992,
+        "initialization_seconds": 0.5588022000156343,
+        "evolution_seconds": 18.79368020000402
+      },
+      "stop_reasons": [
+        "max_generations"
+      ],
+      "best_overall": {
+        "fingerprint": "ceb5a99061007097c3bcdf2190c337431bdb5f34c9ff0d7ccdc80b66b0bde5d7",
+        "hard_penalty": 1125,
+        "soft_score": 0.6660676403330771,
+        "request_coverage": 0.9613490364025696,
+        "feasible": false,
+        "hard_counts_by_type": {
+          "H02_DISALLOWED_SLOT": 0,
+          "H03_UNQUALIFIED_PROFESSOR": 0,
+          "H04_PROFESSOR_OVERLAP": 11,
+          "H04_ROOM_OVERLAP": 15,
+          "H04_STUDENT_OVERLAP": 335,
+          "H05_PROFESSOR_UNAVAILABLE": 27,
+          "H05_STUDENT_UNAVAILABLE": 223,
+          "H06_ROOM_TYPE": 0,
+          "H07_SECTION_UNDERFLOW": 0,
+          "H07_SECTION_OVERFLOW": 0,
+          "H08_CREDIT_UNDERFLOW": 0,
+          "H08_CREDIT_OVERFLOW": 514,
+          "H09_TEACHING_OVERLOAD": 0,
+          "H10_PASSED_COURSE": 0
+        }
+      },
+      "best_feasible": null,
+      "final_population_best": {
+        "fingerprint": "ceb5a99061007097c3bcdf2190c337431bdb5f34c9ff0d7ccdc80b66b0bde5d7",
+        "hard_penalty": 1125,
+        "soft_score": 0.6660676403330771,
+        "request_coverage": 0.9613490364025696,
+        "feasible": false,
+        "hard_counts_by_type": {
+          "H02_DISALLOWED_SLOT": 0,
+          "H03_UNQUALIFIED_PROFESSOR": 0,
+          "H04_PROFESSOR_OVERLAP": 11,
+          "H04_ROOM_OVERLAP": 15,
+          "H04_STUDENT_OVERLAP": 335,
+          "H05_PROFESSOR_UNAVAILABLE": 27,
+          "H05_STUDENT_UNAVAILABLE": 223,
+          "H06_ROOM_TYPE": 0,
+          "H07_SECTION_UNDERFLOW": 0,
+          "H07_SECTION_OVERFLOW": 0,
+          "H08_CREDIT_UNDERFLOW": 0,
+          "H08_CREDIT_OVERFLOW": 514,
+          "H09_TEACHING_OVERLOAD": 0,
+          "H10_PASSED_COURSE": 0
+        }
+      },
+      "evaluation_usage": {
+        "initialization": 30,
+        "child_baseline": 560,
+        "post_mutation": 0,
+        "mutation_baseline": 0,
+        "repair_baseline": 0,
+        "repair_candidates": 0,
+        "total": 590,
+        "hard_calls": 590,
+        "soft_calls": 590
+      },
+      "partial_generation": null,
+      "generations": [
+        {
+          "generation_index": 0,
+          "best_hard_penalty": 1305,
+          "mean_hard_penalty": 1537.2,
+          "best_soft_score": 0.6586846577232136,
+          "mean_soft_score": 0.6502994757090389,
+          "feasible_count": 0,
+          "unique_chromosomes": 30,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 30,
+          "cumulative_elapsed_seconds": 0.5714815000537783
+        },
+        {
+          "generation_index": 1,
+          "best_hard_penalty": 1305,
+          "mean_hard_penalty": 1488.6666666666667,
+          "best_soft_score": 0.6586846577232136,
+          "mean_soft_score": 0.6570880826260518,
+          "feasible_count": 0,
+          "unique_chromosomes": 25,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 58,
+          "cumulative_elapsed_seconds": 1.4433510000817478
+        },
+        {
+          "generation_index": 2,
+          "best_hard_penalty": 1305,
+          "mean_hard_penalty": 1425.0333333333333,
+          "best_soft_score": 0.6586846577232136,
+          "mean_soft_score": 0.6606785026991135,
+          "feasible_count": 0,
+          "unique_chromosomes": 23,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 86,
+          "cumulative_elapsed_seconds": 2.3468057000427507
+        },
+        {
+          "generation_index": 3,
+          "best_hard_penalty": 1292,
+          "mean_hard_penalty": 1392.8666666666666,
+          "best_soft_score": 0.665708531049753,
+          "mean_soft_score": 0.6590994250087271,
+          "feasible_count": 0,
+          "unique_chromosomes": 26,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 114,
+          "cumulative_elapsed_seconds": 3.288978600059636
+        },
+        {
+          "generation_index": 4,
+          "best_hard_penalty": 1251,
+          "mean_hard_penalty": 1334.9333333333334,
+          "best_soft_score": 0.661848471103779,
+          "mean_soft_score": 0.657391070563431,
+          "feasible_count": 0,
+          "unique_chromosomes": 24,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 142,
+          "cumulative_elapsed_seconds": 4.249612100073136
+        },
+        {
+          "generation_index": 5,
+          "best_hard_penalty": 1251,
+          "mean_hard_penalty": 1301.1333333333334,
+          "best_soft_score": 0.661848471103779,
+          "mean_soft_score": 0.6603827066619554,
+          "feasible_count": 0,
+          "unique_chromosomes": 22,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 170,
+          "cumulative_elapsed_seconds": 5.1855406000395305
+        },
+        {
+          "generation_index": 6,
+          "best_hard_penalty": 1211,
+          "mean_hard_penalty": 1288.3,
+          "best_soft_score": 0.6642915271044164,
+          "mean_soft_score": 0.6614568295215606,
+          "feasible_count": 0,
+          "unique_chromosomes": 24,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 198,
+          "cumulative_elapsed_seconds": 6.13628170004813
+        },
+        {
+          "generation_index": 7,
+          "best_hard_penalty": 1188,
+          "mean_hard_penalty": 1260.4,
+          "best_soft_score": 0.6639597643325588,
+          "mean_soft_score": 0.6611311591226977,
+          "feasible_count": 0,
+          "unique_chromosomes": 22,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 226,
+          "cumulative_elapsed_seconds": 7.062328800035175
+        },
+        {
+          "generation_index": 8,
+          "best_hard_penalty": 1188,
+          "mean_hard_penalty": 1226.4333333333334,
+          "best_soft_score": 0.667121703009619,
+          "mean_soft_score": 0.662449316516838,
+          "feasible_count": 0,
+          "unique_chromosomes": 18,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 254,
+          "cumulative_elapsed_seconds": 7.9977356000454165
+        },
+        {
+          "generation_index": 9,
+          "best_hard_penalty": 1172,
+          "mean_hard_penalty": 1207.5,
+          "best_soft_score": 0.6653122321041774,
+          "mean_soft_score": 0.663411812213496,
+          "feasible_count": 0,
+          "unique_chromosomes": 22,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 282,
+          "cumulative_elapsed_seconds": 8.952570400026161
+        },
+        {
+          "generation_index": 10,
+          "best_hard_penalty": 1172,
+          "mean_hard_penalty": 1198.4,
+          "best_soft_score": 0.6653122321041774,
+          "mean_soft_score": 0.6643800437935571,
+          "feasible_count": 0,
+          "unique_chromosomes": 23,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 310,
+          "cumulative_elapsed_seconds": 9.881357400037814
+        },
+        {
+          "generation_index": 11,
+          "best_hard_penalty": 1160,
+          "mean_hard_penalty": 1191.3333333333333,
+          "best_soft_score": 0.6705956997454967,
+          "mean_soft_score": 0.6637405146033633,
+          "feasible_count": 0,
+          "unique_chromosomes": 18,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 338,
+          "cumulative_elapsed_seconds": 10.819796000025235
+        },
+        {
+          "generation_index": 12,
+          "best_hard_penalty": 1160,
+          "mean_hard_penalty": 1185.9666666666667,
+          "best_soft_score": 0.6705956997454967,
+          "mean_soft_score": 0.6651987477621214,
+          "feasible_count": 0,
+          "unique_chromosomes": 22,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 366,
+          "cumulative_elapsed_seconds": 11.756727800064255
+        },
+        {
+          "generation_index": 13,
+          "best_hard_penalty": 1154,
+          "mean_hard_penalty": 1178.9,
+          "best_soft_score": 0.6620221957105933,
+          "mean_soft_score": 0.6662394977207318,
+          "feasible_count": 0,
+          "unique_chromosomes": 21,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 394,
+          "cumulative_elapsed_seconds": 12.704368200036697
+        },
+        {
+          "generation_index": 14,
+          "best_hard_penalty": 1146,
+          "mean_hard_penalty": 1165.9,
+          "best_soft_score": 0.663819252282806,
+          "mean_soft_score": 0.6671007546531738,
+          "feasible_count": 0,
+          "unique_chromosomes": 22,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 422,
+          "cumulative_elapsed_seconds": 13.64697810006328
+        },
+        {
+          "generation_index": 15,
+          "best_hard_penalty": 1138,
+          "mean_hard_penalty": 1156.9,
+          "best_soft_score": 0.6652529741359218,
+          "mean_soft_score": 0.6652274741116763,
+          "feasible_count": 0,
+          "unique_chromosomes": 22,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 450,
+          "cumulative_elapsed_seconds": 14.631963800056837
+        },
+        {
+          "generation_index": 16,
+          "best_hard_penalty": 1136,
+          "mean_hard_penalty": 1148.7,
+          "best_soft_score": 0.6632510302885312,
+          "mean_soft_score": 0.6642494669998195,
+          "feasible_count": 0,
+          "unique_chromosomes": 23,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 478,
+          "cumulative_elapsed_seconds": 15.551666000043042
+        },
+        {
+          "generation_index": 17,
+          "best_hard_penalty": 1129,
+          "mean_hard_penalty": 1142.1666666666667,
+          "best_soft_score": 0.6643862223135762,
+          "mean_soft_score": 0.6647138342197368,
+          "feasible_count": 0,
+          "unique_chromosomes": 24,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 506,
+          "cumulative_elapsed_seconds": 16.50859250006033
+        },
+        {
+          "generation_index": 18,
+          "best_hard_penalty": 1129,
+          "mean_hard_penalty": 1135.7666666666667,
+          "best_soft_score": 0.6643862223135762,
+          "mean_soft_score": 0.6640377070255667,
+          "feasible_count": 0,
+          "unique_chromosomes": 13,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 534,
+          "cumulative_elapsed_seconds": 17.451195600035135
+        },
+        {
+          "generation_index": 19,
+          "best_hard_penalty": 1128,
+          "mean_hard_penalty": 1132.1,
+          "best_soft_score": 0.6650388454112912,
+          "mean_soft_score": 0.6638721908789472,
+          "feasible_count": 0,
+          "unique_chromosomes": 10,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 562,
+          "cumulative_elapsed_seconds": 18.39879190007923
+        },
+        {
+          "generation_index": 20,
+          "best_hard_penalty": 1125,
+          "mean_hard_penalty": 1128.9666666666667,
+          "best_soft_score": 0.6660676403330771,
+          "mean_soft_score": 0.6644419974642483,
+          "feasible_count": 0,
+          "unique_chromosomes": 4,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 590,
+          "cumulative_elapsed_seconds": 19.35910630004946
+        }
+      ]
+    },
+    {
+      "name": "B_seed11",
+      "settings": {
+        "version": "evolution-phase6-v1",
+        "population_size": 30,
+        "tournament_size": 3,
+        "elite_count": 2,
+        "max_generations": 20,
+        "mutation_probability": 0.3,
+        "crossover_probability": 0.7,
+        "repair_enabled": false,
+        "random_seed": 11,
+        "stop_on_first_feasible": false,
+        "stagnation_generations": null,
+        "max_fitness_evaluations": 4000,
+        "initialization_settings": {
+          "version": "initialization-v1",
+          "strategies": [
+            "compact",
+            "spread",
+            "random"
+          ],
+          "max_attempts_per_individual": 8
+        },
+        "mutation_settings": {
+          "version": "mutation-5b-v1",
+          "mutation_probability": 0.3,
+          "targeted_probability": 0.7,
+          "max_attempts": 8,
+          "max_proposals_per_operator": 8,
+          "operator_weights": [
+            [
+              "MoveMeeting",
+              1.0
+            ],
+            [
+              "SwapMeetings",
+              1.0
+            ],
+            [
+              "ChangeProfessor",
+              1.0
+            ],
+            [
+              "ChangeRoom",
+              1.0
+            ],
+            [
+              "SplitSection",
+              1.0
+            ],
+            [
+              "MergeSections",
+              1.0
+            ],
+            [
+              "ActivateDeactivate",
+              1.0
+            ],
+            [
+              "MoveStudent",
+              1.0
+            ],
+            [
+              "SwapStudents",
+              1.0
+            ],
+            [
+              "AssignUnassign",
+              1.0
+            ]
+          ]
+        },
+        "repair_settings": {
+          "version": "repair-5b-v1",
+          "max_local_candidates": 5,
+          "max_candidate_evaluations": 50,
+          "max_candidate_attempts": 100,
+          "max_conflicts": 50,
+          "max_structural_steps": 20
+        }
+      },
+      "timings": {
+        "context_seconds": 0,
+        "initialization_seconds": 0.5613770000054501,
+        "evolution_seconds": 25.241215399990324
+      },
+      "stop_reasons": [
+        "max_generations"
+      ],
+      "best_overall": {
+        "fingerprint": "6377406f41493f4e8a1cafddae6c920844569e0b65cceab08f8dd7283a5eae2b",
+        "hard_penalty": 1220,
+        "soft_score": 0.6553524898391481,
+        "request_coverage": 0.9583511777301927,
+        "feasible": false,
+        "hard_counts_by_type": {
+          "H02_DISALLOWED_SLOT": 0,
+          "H03_UNQUALIFIED_PROFESSOR": 0,
+          "H04_PROFESSOR_OVERLAP": 6,
+          "H04_ROOM_OVERLAP": 19,
+          "H04_STUDENT_OVERLAP": 422,
+          "H05_PROFESSOR_UNAVAILABLE": 28,
+          "H05_STUDENT_UNAVAILABLE": 241,
+          "H06_ROOM_TYPE": 0,
+          "H07_SECTION_UNDERFLOW": 0,
+          "H07_SECTION_OVERFLOW": 0,
+          "H08_CREDIT_UNDERFLOW": 0,
+          "H08_CREDIT_OVERFLOW": 504,
+          "H09_TEACHING_OVERLOAD": 0,
+          "H10_PASSED_COURSE": 0
+        }
+      },
+      "best_feasible": null,
+      "final_population_best": {
+        "fingerprint": "6377406f41493f4e8a1cafddae6c920844569e0b65cceab08f8dd7283a5eae2b",
+        "hard_penalty": 1220,
+        "soft_score": 0.6553524898391481,
+        "request_coverage": 0.9583511777301927,
+        "feasible": false,
+        "hard_counts_by_type": {
+          "H02_DISALLOWED_SLOT": 0,
+          "H03_UNQUALIFIED_PROFESSOR": 0,
+          "H04_PROFESSOR_OVERLAP": 6,
+          "H04_ROOM_OVERLAP": 19,
+          "H04_STUDENT_OVERLAP": 422,
+          "H05_PROFESSOR_UNAVAILABLE": 28,
+          "H05_STUDENT_UNAVAILABLE": 241,
+          "H06_ROOM_TYPE": 0,
+          "H07_SECTION_UNDERFLOW": 0,
+          "H07_SECTION_OVERFLOW": 0,
+          "H08_CREDIT_UNDERFLOW": 0,
+          "H08_CREDIT_OVERFLOW": 504,
+          "H09_TEACHING_OVERLOAD": 0,
+          "H10_PASSED_COURSE": 0
+        }
+      },
+      "evaluation_usage": {
+        "initialization": 30,
+        "child_baseline": 560,
+        "post_mutation": 175,
+        "mutation_baseline": 0,
+        "repair_baseline": 0,
+        "repair_candidates": 0,
+        "total": 765,
+        "hard_calls": 765,
+        "soft_calls": 765
+      },
+      "partial_generation": null,
+      "generations": [
+        {
+          "generation_index": 0,
+          "best_hard_penalty": 1305,
+          "mean_hard_penalty": 1537.2,
+          "best_soft_score": 0.6586846577232136,
+          "mean_soft_score": 0.6502994757090389,
+          "feasible_count": 0,
+          "unique_chromosomes": 30,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 30,
+          "cumulative_elapsed_seconds": 0.5613770000054501
+        },
+        {
+          "generation_index": 1,
+          "best_hard_penalty": 1300,
+          "mean_hard_penalty": 1434.4,
+          "best_soft_score": 0.6588061344389747,
+          "mean_soft_score": 0.6579391219014604,
+          "feasible_count": 0,
+          "unique_chromosomes": 30,
+          "mean_request_coverage": 0.9612919343326196,
+          "cumulative_fitness_evaluation_count": 67,
+          "cumulative_elapsed_seconds": 1.765898699988611
+        },
+        {
+          "generation_index": 2,
+          "best_hard_penalty": 1299,
+          "mean_hard_penalty": 1381.7333333333333,
+          "best_soft_score": 0.6586368607843639,
+          "mean_soft_score": 0.66033812780263,
+          "feasible_count": 0,
+          "unique_chromosomes": 26,
+          "mean_request_coverage": 0.9612562455389008,
+          "cumulative_fitness_evaluation_count": 105,
+          "cumulative_elapsed_seconds": 3.044919600011781
+        },
+        {
+          "generation_index": 3,
+          "best_hard_penalty": 1292,
+          "mean_hard_penalty": 1336.6,
+          "best_soft_score": 0.6576533319449449,
+          "mean_soft_score": 0.6593044757381402,
+          "feasible_count": 0,
+          "unique_chromosomes": 25,
+          "mean_request_coverage": 0.9611705924339758,
+          "cumulative_fitness_evaluation_count": 146,
+          "cumulative_elapsed_seconds": 4.378658300032839
+        },
+        {
+          "generation_index": 4,
+          "best_hard_penalty": 1283,
+          "mean_hard_penalty": 1310.1333333333334,
+          "best_soft_score": 0.6577713884727837,
+          "mean_soft_score": 0.6582341750008325,
+          "feasible_count": 0,
+          "unique_chromosomes": 22,
+          "mean_request_coverage": 0.9612348322626695,
+          "cumulative_fitness_evaluation_count": 183,
+          "cumulative_elapsed_seconds": 5.564011800044682
+        },
+        {
+          "generation_index": 5,
+          "best_hard_penalty": 1279,
+          "mean_hard_penalty": 1296.3333333333333,
+          "best_soft_score": 0.6571975897043757,
+          "mean_soft_score": 0.6581768625727781,
+          "feasible_count": 0,
+          "unique_chromosomes": 23,
+          "mean_request_coverage": 0.9610742326909351,
+          "cumulative_fitness_evaluation_count": 217,
+          "cumulative_elapsed_seconds": 6.715845400001854
+        },
+        {
+          "generation_index": 6,
+          "best_hard_penalty": 1275,
+          "mean_hard_penalty": 1288.7333333333333,
+          "best_soft_score": 0.6565716592856787,
+          "mean_soft_score": 0.6576371117167091,
+          "feasible_count": 0,
+          "unique_chromosomes": 25,
+          "mean_request_coverage": 0.9609100642398288,
+          "cumulative_fitness_evaluation_count": 255,
+          "cumulative_elapsed_seconds": 7.987385000044014
+        },
+        {
+          "generation_index": 7,
+          "best_hard_penalty": 1267,
+          "mean_hard_penalty": 1282.3333333333333,
+          "best_soft_score": 0.6564246237158325,
+          "mean_soft_score": 0.6573205750613074,
+          "feasible_count": 0,
+          "unique_chromosomes": 25,
+          "mean_request_coverage": 0.9605317630264097,
+          "cumulative_fitness_evaluation_count": 290,
+          "cumulative_elapsed_seconds": 9.176050300011411
+        },
+        {
+          "generation_index": 8,
+          "best_hard_penalty": 1263,
+          "mean_hard_penalty": 1275.7666666666667,
+          "best_soft_score": 0.6559598507842306,
+          "mean_soft_score": 0.6571422229879214,
+          "feasible_count": 0,
+          "unique_chromosomes": 21,
+          "mean_request_coverage": 0.9600785153461813,
+          "cumulative_fitness_evaluation_count": 324,
+          "cumulative_elapsed_seconds": 10.379778000002261
+        },
+        {
+          "generation_index": 9,
+          "best_hard_penalty": 1262,
+          "mean_hard_penalty": 1271.2,
+          "best_soft_score": 0.6588734730645889,
+          "mean_soft_score": 0.6573335707188765,
+          "feasible_count": 0,
+          "unique_chromosomes": 23,
+          "mean_request_coverage": 0.9602748037116345,
+          "cumulative_fitness_evaluation_count": 362,
+          "cumulative_elapsed_seconds": 11.634843200037722
+        },
+        {
+          "generation_index": 10,
+          "best_hard_penalty": 1248,
+          "mean_hard_penalty": 1267.9666666666667,
+          "best_soft_score": 0.6563442647331517,
+          "mean_soft_score": 0.6568903667876692,
+          "feasible_count": 0,
+          "unique_chromosomes": 23,
+          "mean_request_coverage": 0.9596145610278373,
+          "cumulative_fitness_evaluation_count": 401,
+          "cumulative_elapsed_seconds": 12.973248700029217
+        },
+        {
+          "generation_index": 11,
+          "best_hard_penalty": 1248,
+          "mean_hard_penalty": 1263.7,
+          "best_soft_score": 0.6563442647331517,
+          "mean_soft_score": 0.656316780621468,
+          "feasible_count": 0,
+          "unique_chromosomes": 22,
+          "mean_request_coverage": 0.959100642398287,
+          "cumulative_fitness_evaluation_count": 439,
+          "cumulative_elapsed_seconds": 14.30048330000136
+        },
+        {
+          "generation_index": 12,
+          "best_hard_penalty": 1245,
+          "mean_hard_penalty": 1257.9,
+          "best_soft_score": 0.6598841678272823,
+          "mean_soft_score": 0.6560878411804271,
+          "feasible_count": 0,
+          "unique_chromosomes": 25,
+          "mean_request_coverage": 0.9589436117059243,
+          "cumulative_fitness_evaluation_count": 477,
+          "cumulative_elapsed_seconds": 15.63694310002029
+        },
+        {
+          "generation_index": 13,
+          "best_hard_penalty": 1238,
+          "mean_hard_penalty": 1252.8,
+          "best_soft_score": 0.6573181840394532,
+          "mean_soft_score": 0.6566944038494856,
+          "feasible_count": 0,
+          "unique_chromosomes": 29,
+          "mean_request_coverage": 0.959157744468237,
+          "cumulative_fitness_evaluation_count": 513,
+          "cumulative_elapsed_seconds": 16.968320699990727
+        },
+        {
+          "generation_index": 14,
+          "best_hard_penalty": 1230,
+          "mean_hard_penalty": 1245.7666666666667,
+          "best_soft_score": 0.6592083526689907,
+          "mean_soft_score": 0.6571242544069129,
+          "feasible_count": 0,
+          "unique_chromosomes": 29,
+          "mean_request_coverage": 0.9593825838686653,
+          "cumulative_fitness_evaluation_count": 550,
+          "cumulative_elapsed_seconds": 18.25870310002938
+        },
+        {
+          "generation_index": 15,
+          "best_hard_penalty": 1230,
+          "mean_hard_penalty": 1238.2666666666667,
+          "best_soft_score": 0.660002017590698,
+          "mean_soft_score": 0.6577408999774942,
+          "feasible_count": 0,
+          "unique_chromosomes": 27,
+          "mean_request_coverage": 0.9594610992148466,
+          "cumulative_fitness_evaluation_count": 585,
+          "cumulative_elapsed_seconds": 19.51271129999077
+        },
+        {
+          "generation_index": 16,
+          "best_hard_penalty": 1227,
+          "mean_hard_penalty": 1231.6333333333334,
+          "best_soft_score": 0.6592339704364721,
+          "mean_soft_score": 0.6583596925579935,
+          "feasible_count": 0,
+          "unique_chromosomes": 21,
+          "mean_request_coverage": 0.9593361884368309,
+          "cumulative_fitness_evaluation_count": 620,
+          "cumulative_elapsed_seconds": 20.662900700001046
+        },
+        {
+          "generation_index": 17,
+          "best_hard_penalty": 1227,
+          "mean_hard_penalty": 1229.6666666666667,
+          "best_soft_score": 0.6592339704364721,
+          "mean_soft_score": 0.6590794957899394,
+          "feasible_count": 0,
+          "unique_chromosomes": 20,
+          "mean_request_coverage": 0.9594539614561027,
+          "cumulative_fitness_evaluation_count": 655,
+          "cumulative_elapsed_seconds": 21.874793700000737
+        },
+        {
+          "generation_index": 18,
+          "best_hard_penalty": 1225,
+          "mean_hard_penalty": 1229.5333333333333,
+          "best_soft_score": 0.6567508406976814,
+          "mean_soft_score": 0.6592566218045128,
+          "feasible_count": 0,
+          "unique_chromosomes": 17,
+          "mean_request_coverage": 0.9594004282655246,
+          "cumulative_fitness_evaluation_count": 692,
+          "cumulative_elapsed_seconds": 23.16951470001368
+        },
+        {
+          "generation_index": 19,
+          "best_hard_penalty": 1221,
+          "mean_hard_penalty": 1226.7,
+          "best_soft_score": 0.6595879009292239,
+          "mean_soft_score": 0.6585866078436733,
+          "feasible_count": 0,
+          "unique_chromosomes": 24,
+          "mean_request_coverage": 0.959271948608137,
+          "cumulative_fitness_evaluation_count": 729,
+          "cumulative_elapsed_seconds": 24.495481099991594
+        },
+        {
+          "generation_index": 20,
+          "best_hard_penalty": 1220,
+          "mean_hard_penalty": 1224.5666666666666,
+          "best_soft_score": 0.6553524898391481,
+          "mean_soft_score": 0.658455242839408,
+          "feasible_count": 0,
+          "unique_chromosomes": 27,
+          "mean_request_coverage": 0.9590542469664526,
+          "cumulative_fitness_evaluation_count": 765,
+          "cumulative_elapsed_seconds": 25.79629930004012
+        }
+      ]
+    },
+    {
+      "name": "C_seed11",
+      "settings": {
+        "version": "evolution-phase6-v1",
+        "population_size": 30,
+        "tournament_size": 3,
+        "elite_count": 2,
+        "max_generations": 20,
+        "mutation_probability": 0.3,
+        "crossover_probability": 0.7,
+        "repair_enabled": true,
+        "random_seed": 11,
+        "stop_on_first_feasible": false,
+        "stagnation_generations": null,
+        "max_fitness_evaluations": 4000,
+        "initialization_settings": {
+          "version": "initialization-v1",
+          "strategies": [
+            "compact",
+            "spread",
+            "random"
+          ],
+          "max_attempts_per_individual": 8
+        },
+        "mutation_settings": {
+          "version": "mutation-5b-v1",
+          "mutation_probability": 0.3,
+          "targeted_probability": 0.7,
+          "max_attempts": 8,
+          "max_proposals_per_operator": 8,
+          "operator_weights": [
+            [
+              "MoveMeeting",
+              1.0
+            ],
+            [
+              "SwapMeetings",
+              1.0
+            ],
+            [
+              "ChangeProfessor",
+              1.0
+            ],
+            [
+              "ChangeRoom",
+              1.0
+            ],
+            [
+              "SplitSection",
+              1.0
+            ],
+            [
+              "MergeSections",
+              1.0
+            ],
+            [
+              "ActivateDeactivate",
+              1.0
+            ],
+            [
+              "MoveStudent",
+              1.0
+            ],
+            [
+              "SwapStudents",
+              1.0
+            ],
+            [
+              "AssignUnassign",
+              1.0
+            ]
+          ]
+        },
+        "repair_settings": {
+          "version": "repair-5b-v1",
+          "max_local_candidates": 5,
+          "max_candidate_evaluations": 50,
+          "max_candidate_attempts": 100,
+          "max_conflicts": 50,
+          "max_structural_steps": 20
+        }
+      },
+      "timings": {
+        "context_seconds": 0,
+        "initialization_seconds": 0.5885610000113957,
+        "evolution_seconds": 31.66154010000173
+      },
+      "stop_reasons": [
+        "max_generations"
+      ],
+      "best_overall": {
+        "fingerprint": "8144930c787c1a81c88b2a703c5441dca6c44d533fb364781aa99a58c08a5e21",
+        "hard_penalty": 1102,
+        "soft_score": 0.6527790034459772,
+        "request_coverage": 0.9613490364025696,
+        "feasible": false,
+        "hard_counts_by_type": {
+          "H02_DISALLOWED_SLOT": 0,
+          "H03_UNQUALIFIED_PROFESSOR": 0,
+          "H04_PROFESSOR_OVERLAP": 6,
+          "H04_ROOM_OVERLAP": 22,
+          "H04_STUDENT_OVERLAP": 317,
+          "H05_PROFESSOR_UNAVAILABLE": 26,
+          "H05_STUDENT_UNAVAILABLE": 217,
+          "H06_ROOM_TYPE": 0,
+          "H07_SECTION_UNDERFLOW": 0,
+          "H07_SECTION_OVERFLOW": 0,
+          "H08_CREDIT_UNDERFLOW": 0,
+          "H08_CREDIT_OVERFLOW": 514,
+          "H09_TEACHING_OVERLOAD": 0,
+          "H10_PASSED_COURSE": 0
+        }
+      },
+      "best_feasible": null,
+      "final_population_best": {
+        "fingerprint": "8144930c787c1a81c88b2a703c5441dca6c44d533fb364781aa99a58c08a5e21",
+        "hard_penalty": 1102,
+        "soft_score": 0.6527790034459772,
+        "request_coverage": 0.9613490364025696,
+        "feasible": false,
+        "hard_counts_by_type": {
+          "H02_DISALLOWED_SLOT": 0,
+          "H03_UNQUALIFIED_PROFESSOR": 0,
+          "H04_PROFESSOR_OVERLAP": 6,
+          "H04_ROOM_OVERLAP": 22,
+          "H04_STUDENT_OVERLAP": 317,
+          "H05_PROFESSOR_UNAVAILABLE": 26,
+          "H05_STUDENT_UNAVAILABLE": 217,
+          "H06_ROOM_TYPE": 0,
+          "H07_SECTION_UNDERFLOW": 0,
+          "H07_SECTION_OVERFLOW": 0,
+          "H08_CREDIT_UNDERFLOW": 0,
+          "H08_CREDIT_OVERFLOW": 514,
+          "H09_TEACHING_OVERLOAD": 0,
+          "H10_PASSED_COURSE": 0
+        }
+      },
+      "evaluation_usage": {
+        "initialization": 30,
+        "child_baseline": 560,
+        "post_mutation": 153,
+        "mutation_baseline": 0,
+        "repair_baseline": 0,
+        "repair_candidates": 186,
+        "total": 929,
+        "hard_calls": 929,
+        "soft_calls": 929
+      },
+      "partial_generation": null,
+      "generations": [
+        {
+          "generation_index": 0,
+          "best_hard_penalty": 1305,
+          "mean_hard_penalty": 1537.2,
+          "best_soft_score": 0.6586846577232136,
+          "mean_soft_score": 0.6502994757090389,
+          "feasible_count": 0,
+          "unique_chromosomes": 30,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 30,
+          "cumulative_elapsed_seconds": 0.5885610000113957
+        },
+        {
+          "generation_index": 1,
+          "best_hard_penalty": 1305,
+          "mean_hard_penalty": 1450.4,
+          "best_soft_score": 0.6586846577232136,
+          "mean_soft_score": 0.6589787973489564,
+          "feasible_count": 0,
+          "unique_chromosomes": 28,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 94,
+          "cumulative_elapsed_seconds": 2.512909099983517
+        },
+        {
+          "generation_index": 2,
+          "best_hard_penalty": 1305,
+          "mean_hard_penalty": 1389.6,
+          "best_soft_score": 0.6586846577232136,
+          "mean_soft_score": 0.6600402640676043,
+          "feasible_count": 0,
+          "unique_chromosomes": 26,
+          "mean_request_coverage": 0.9613133476088509,
+          "cumulative_fitness_evaluation_count": 143,
+          "cumulative_elapsed_seconds": 4.164168499992229
+        },
+        {
+          "generation_index": 3,
+          "best_hard_penalty": 1287,
+          "mean_hard_penalty": 1377.4333333333334,
+          "best_soft_score": 0.660057228132234,
+          "mean_soft_score": 0.6593762005213039,
+          "feasible_count": 0,
+          "unique_chromosomes": 27,
+          "mean_request_coverage": 0.9612098501070664,
+          "cumulative_fitness_evaluation_count": 189,
+          "cumulative_elapsed_seconds": 5.736334999965038
+        },
+        {
+          "generation_index": 4,
+          "best_hard_penalty": 1210,
+          "mean_hard_penalty": 1328.7,
+          "best_soft_score": 0.6601111977401738,
+          "mean_soft_score": 0.6602797648537606,
+          "feasible_count": 0,
+          "unique_chromosomes": 25,
+          "mean_request_coverage": 0.961309778729479,
+          "cumulative_fitness_evaluation_count": 244,
+          "cumulative_elapsed_seconds": 7.463935400010087
+        },
+        {
+          "generation_index": 5,
+          "best_hard_penalty": 1210,
+          "mean_hard_penalty": 1285.2,
+          "best_soft_score": 0.6601111977401738,
+          "mean_soft_score": 0.6581488173817072,
+          "feasible_count": 0,
+          "unique_chromosomes": 27,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 286,
+          "cumulative_elapsed_seconds": 8.964585600013379
+        },
+        {
+          "generation_index": 6,
+          "best_hard_penalty": 1210,
+          "mean_hard_penalty": 1257.5,
+          "best_soft_score": 0.6601111977401738,
+          "mean_soft_score": 0.6585195420596824,
+          "feasible_count": 0,
+          "unique_chromosomes": 24,
+          "mean_request_coverage": 0.9613133476088509,
+          "cumulative_fitness_evaluation_count": 326,
+          "cumulative_elapsed_seconds": 10.422005000000354
+        },
+        {
+          "generation_index": 7,
+          "best_hard_penalty": 1173,
+          "mean_hard_penalty": 1230.7333333333333,
+          "best_soft_score": 0.6561729397171815,
+          "mean_soft_score": 0.6590161665986773,
+          "feasible_count": 0,
+          "unique_chromosomes": 26,
+          "mean_request_coverage": 0.961309778729479,
+          "cumulative_fitness_evaluation_count": 365,
+          "cumulative_elapsed_seconds": 11.856478000001516
+        },
+        {
+          "generation_index": 8,
+          "best_hard_penalty": 1173,
+          "mean_hard_penalty": 1203.7333333333333,
+          "best_soft_score": 0.6561729397171815,
+          "mean_soft_score": 0.6587882429268697,
+          "feasible_count": 0,
+          "unique_chromosomes": 23,
+          "mean_request_coverage": 0.9612705210563883,
+          "cumulative_fitness_evaluation_count": 414,
+          "cumulative_elapsed_seconds": 13.617880999983754
+        },
+        {
+          "generation_index": 9,
+          "best_hard_penalty": 1155,
+          "mean_hard_penalty": 1194.4666666666667,
+          "best_soft_score": 0.6537478210940701,
+          "mean_soft_score": 0.6574827478293183,
+          "feasible_count": 0,
+          "unique_chromosomes": 26,
+          "mean_request_coverage": 0.9610813704496788,
+          "cumulative_fitness_evaluation_count": 455,
+          "cumulative_elapsed_seconds": 15.134017299977131
+        },
+        {
+          "generation_index": 10,
+          "best_hard_penalty": 1152,
+          "mean_hard_penalty": 1188.2333333333333,
+          "best_soft_score": 0.658383078823222,
+          "mean_soft_score": 0.6565010425969638,
+          "feasible_count": 0,
+          "unique_chromosomes": 24,
+          "mean_request_coverage": 0.960960028551035,
+          "cumulative_fitness_evaluation_count": 498,
+          "cumulative_elapsed_seconds": 16.69573879998643
+        },
+        {
+          "generation_index": 11,
+          "best_hard_penalty": 1152,
+          "mean_hard_penalty": 1180.0333333333333,
+          "best_soft_score": 0.658383078823222,
+          "mean_soft_score": 0.6550364140777822,
+          "feasible_count": 0,
+          "unique_chromosomes": 24,
+          "mean_request_coverage": 0.9609457530335475,
+          "cumulative_fitness_evaluation_count": 539,
+          "cumulative_elapsed_seconds": 18.290646900015417
+        },
+        {
+          "generation_index": 12,
+          "best_hard_penalty": 1142,
+          "mean_hard_penalty": 1163.6666666666667,
+          "best_soft_score": 0.6541047909542347,
+          "mean_soft_score": 0.6549670194859679,
+          "feasible_count": 0,
+          "unique_chromosomes": 23,
+          "mean_request_coverage": 0.9610992148465382,
+          "cumulative_fitness_evaluation_count": 580,
+          "cumulative_elapsed_seconds": 19.825231299968436
+        },
+        {
+          "generation_index": 13,
+          "best_hard_penalty": 1124,
+          "mean_hard_penalty": 1161.3333333333333,
+          "best_soft_score": 0.6541230555027623,
+          "mean_soft_score": 0.6550467239375348,
+          "feasible_count": 0,
+          "unique_chromosomes": 25,
+          "mean_request_coverage": 0.9611563169164883,
+          "cumulative_fitness_evaluation_count": 629,
+          "cumulative_elapsed_seconds": 21.526714299980085
+        },
+        {
+          "generation_index": 14,
+          "best_hard_penalty": 1124,
+          "mean_hard_penalty": 1149.2333333333333,
+          "best_soft_score": 0.6541230555027623,
+          "mean_soft_score": 0.654456622757742,
+          "feasible_count": 0,
+          "unique_chromosomes": 23,
+          "mean_request_coverage": 0.9611991434689509,
+          "cumulative_fitness_evaluation_count": 669,
+          "cumulative_elapsed_seconds": 23.080707099987194
+        },
+        {
+          "generation_index": 15,
+          "best_hard_penalty": 1115,
+          "mean_hard_penalty": 1138.4,
+          "best_soft_score": 0.6526776523565435,
+          "mean_soft_score": 0.6542197833486502,
+          "feasible_count": 0,
+          "unique_chromosomes": 26,
+          "mean_request_coverage": 0.9611777301927196,
+          "cumulative_fitness_evaluation_count": 719,
+          "cumulative_elapsed_seconds": 24.76044779998483
+        },
+        {
+          "generation_index": 16,
+          "best_hard_penalty": 1115,
+          "mean_hard_penalty": 1130.6666666666667,
+          "best_soft_score": 0.6526776523565435,
+          "mean_soft_score": 0.6538894781141789,
+          "feasible_count": 0,
+          "unique_chromosomes": 26,
+          "mean_request_coverage": 0.9612598144182728,
+          "cumulative_fitness_evaluation_count": 762,
+          "cumulative_elapsed_seconds": 26.279231199994683
+        },
+        {
+          "generation_index": 17,
+          "best_hard_penalty": 1112,
+          "mean_hard_penalty": 1124.0,
+          "best_soft_score": 0.6538510264669016,
+          "mean_soft_score": 0.6537595517416925,
+          "feasible_count": 0,
+          "unique_chromosomes": 23,
+          "mean_request_coverage": 0.9613204853675945,
+          "cumulative_fitness_evaluation_count": 800,
+          "cumulative_elapsed_seconds": 27.780380100011826
+        },
+        {
+          "generation_index": 18,
+          "best_hard_penalty": 1108,
+          "mean_hard_penalty": 1116.9,
+          "best_soft_score": 0.6548414986150903,
+          "mean_soft_score": 0.6535383953152084,
+          "feasible_count": 0,
+          "unique_chromosomes": 23,
+          "mean_request_coverage": 0.961281227694504,
+          "cumulative_fitness_evaluation_count": 844,
+          "cumulative_elapsed_seconds": 29.241116799996234
+        },
+        {
+          "generation_index": 19,
+          "best_hard_penalty": 1108,
+          "mean_hard_penalty": 1113.2666666666667,
+          "best_soft_score": 0.6548414986150903,
+          "mean_soft_score": 0.6531030070997034,
+          "feasible_count": 0,
+          "unique_chromosomes": 18,
+          "mean_request_coverage": 0.9612740899357601,
+          "cumulative_fitness_evaluation_count": 883,
+          "cumulative_elapsed_seconds": 30.64021539996611
+        },
+        {
+          "generation_index": 20,
+          "best_hard_penalty": 1102,
+          "mean_hard_penalty": 1110.4666666666667,
+          "best_soft_score": 0.6527790034459772,
+          "mean_soft_score": 0.6537750186368693,
+          "feasible_count": 0,
+          "unique_chromosomes": 21,
+          "mean_request_coverage": 0.9611991434689509,
+          "cumulative_fitness_evaluation_count": 929,
+          "cumulative_elapsed_seconds": 32.24390349996975
+        }
+      ]
+    },
+    {
+      "name": "A_seed22",
+      "settings": {
+        "version": "evolution-phase6-v1",
+        "population_size": 30,
+        "tournament_size": 3,
+        "elite_count": 2,
+        "max_generations": 20,
+        "mutation_probability": 0,
+        "crossover_probability": 0.7,
+        "repair_enabled": false,
+        "random_seed": 22,
+        "stop_on_first_feasible": false,
+        "stagnation_generations": null,
+        "max_fitness_evaluations": 4000,
+        "initialization_settings": {
+          "version": "initialization-v1",
+          "strategies": [
+            "compact",
+            "spread",
+            "random"
+          ],
+          "max_attempts_per_individual": 8
+        },
+        "mutation_settings": {
+          "version": "mutation-5b-v1",
+          "mutation_probability": 0,
+          "targeted_probability": 0.7,
+          "max_attempts": 8,
+          "max_proposals_per_operator": 8,
+          "operator_weights": [
+            [
+              "MoveMeeting",
+              1.0
+            ],
+            [
+              "SwapMeetings",
+              1.0
+            ],
+            [
+              "ChangeProfessor",
+              1.0
+            ],
+            [
+              "ChangeRoom",
+              1.0
+            ],
+            [
+              "SplitSection",
+              1.0
+            ],
+            [
+              "MergeSections",
+              1.0
+            ],
+            [
+              "ActivateDeactivate",
+              1.0
+            ],
+            [
+              "MoveStudent",
+              1.0
+            ],
+            [
+              "SwapStudents",
+              1.0
+            ],
+            [
+              "AssignUnassign",
+              1.0
+            ]
+          ]
+        },
+        "repair_settings": {
+          "version": "repair-5b-v1",
+          "max_local_candidates": 5,
+          "max_candidate_evaluations": 50,
+          "max_candidate_attempts": 100,
+          "max_conflicts": 50,
+          "max_structural_steps": 20
+        }
+      },
+      "timings": {
+        "context_seconds": 0,
+        "initialization_seconds": 0.5760633000172675,
+        "evolution_seconds": 21.411872099968605
+      },
+      "stop_reasons": [
+        "max_generations"
+      ],
+      "best_overall": {
+        "fingerprint": "28aac31794c1cb250db6d62ed864a687f72a092811c6b149790e7ffc3e1d3ead",
+        "hard_penalty": 1133,
+        "soft_score": 0.6622776758819794,
+        "request_coverage": 0.9613490364025696,
+        "feasible": false,
+        "hard_counts_by_type": {
+          "H02_DISALLOWED_SLOT": 0,
+          "H03_UNQUALIFIED_PROFESSOR": 0,
+          "H04_PROFESSOR_OVERLAP": 7,
+          "H04_ROOM_OVERLAP": 25,
+          "H04_STUDENT_OVERLAP": 361,
+          "H05_PROFESSOR_UNAVAILABLE": 24,
+          "H05_STUDENT_UNAVAILABLE": 202,
+          "H06_ROOM_TYPE": 0,
+          "H07_SECTION_UNDERFLOW": 0,
+          "H07_SECTION_OVERFLOW": 0,
+          "H08_CREDIT_UNDERFLOW": 0,
+          "H08_CREDIT_OVERFLOW": 514,
+          "H09_TEACHING_OVERLOAD": 0,
+          "H10_PASSED_COURSE": 0
+        }
+      },
+      "best_feasible": null,
+      "final_population_best": {
+        "fingerprint": "28aac31794c1cb250db6d62ed864a687f72a092811c6b149790e7ffc3e1d3ead",
+        "hard_penalty": 1133,
+        "soft_score": 0.6622776758819794,
+        "request_coverage": 0.9613490364025696,
+        "feasible": false,
+        "hard_counts_by_type": {
+          "H02_DISALLOWED_SLOT": 0,
+          "H03_UNQUALIFIED_PROFESSOR": 0,
+          "H04_PROFESSOR_OVERLAP": 7,
+          "H04_ROOM_OVERLAP": 25,
+          "H04_STUDENT_OVERLAP": 361,
+          "H05_PROFESSOR_UNAVAILABLE": 24,
+          "H05_STUDENT_UNAVAILABLE": 202,
+          "H06_ROOM_TYPE": 0,
+          "H07_SECTION_UNDERFLOW": 0,
+          "H07_SECTION_OVERFLOW": 0,
+          "H08_CREDIT_UNDERFLOW": 0,
+          "H08_CREDIT_OVERFLOW": 514,
+          "H09_TEACHING_OVERLOAD": 0,
+          "H10_PASSED_COURSE": 0
+        }
+      },
+      "evaluation_usage": {
+        "initialization": 30,
+        "child_baseline": 560,
+        "post_mutation": 0,
+        "mutation_baseline": 0,
+        "repair_baseline": 0,
+        "repair_candidates": 0,
+        "total": 590,
+        "hard_calls": 590,
+        "soft_calls": 590
+      },
+      "partial_generation": null,
+      "generations": [
+        {
+          "generation_index": 0,
+          "best_hard_penalty": 1357,
+          "mean_hard_penalty": 1528.3666666666666,
+          "best_soft_score": 0.6611635737348556,
+          "mean_soft_score": 0.650423778776398,
+          "feasible_count": 0,
+          "unique_chromosomes": 30,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 30,
+          "cumulative_elapsed_seconds": 0.5760633000172675
+        },
+        {
+          "generation_index": 1,
+          "best_hard_penalty": 1344,
+          "mean_hard_penalty": 1460.4333333333334,
+          "best_soft_score": 0.6694287613966123,
+          "mean_soft_score": 0.6579722645682466,
+          "feasible_count": 0,
+          "unique_chromosomes": 25,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 58,
+          "cumulative_elapsed_seconds": 1.5303494000108913
+        },
+        {
+          "generation_index": 2,
+          "best_hard_penalty": 1334,
+          "mean_hard_penalty": 1422.9666666666667,
+          "best_soft_score": 0.6720601067687689,
+          "mean_soft_score": 0.6632250012301679,
+          "feasible_count": 0,
+          "unique_chromosomes": 24,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 86,
+          "cumulative_elapsed_seconds": 2.530134500004351
+        },
+        {
+          "generation_index": 3,
+          "best_hard_penalty": 1276,
+          "mean_hard_penalty": 1374.8,
+          "best_soft_score": 0.6630473993586623,
+          "mean_soft_score": 0.6651269057106998,
+          "feasible_count": 0,
+          "unique_chromosomes": 20,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 114,
+          "cumulative_elapsed_seconds": 3.487253299972508
+        },
+        {
+          "generation_index": 4,
+          "best_hard_penalty": 1276,
+          "mean_hard_penalty": 1344.9666666666667,
+          "best_soft_score": 0.6630473993586623,
+          "mean_soft_score": 0.6652317917063364,
+          "feasible_count": 0,
+          "unique_chromosomes": 23,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 142,
+          "cumulative_elapsed_seconds": 4.47100879997015
+        },
+        {
+          "generation_index": 5,
+          "best_hard_penalty": 1227,
+          "mean_hard_penalty": 1302.7666666666667,
+          "best_soft_score": 0.6579870631302792,
+          "mean_soft_score": 0.6636405309683217,
+          "feasible_count": 0,
+          "unique_chromosomes": 21,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 170,
+          "cumulative_elapsed_seconds": 5.421283499978017
+        },
+        {
+          "generation_index": 6,
+          "best_hard_penalty": 1215,
+          "mean_hard_penalty": 1272.3,
+          "best_soft_score": 0.6616520762285908,
+          "mean_soft_score": 0.6613821184271077,
+          "feasible_count": 0,
+          "unique_chromosomes": 24,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 198,
+          "cumulative_elapsed_seconds": 6.401079899980687
+        },
+        {
+          "generation_index": 7,
+          "best_hard_penalty": 1211,
+          "mean_hard_penalty": 1251.4666666666667,
+          "best_soft_score": 0.6607967019568074,
+          "mean_soft_score": 0.6630281635814363,
+          "feasible_count": 0,
+          "unique_chromosomes": 26,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 226,
+          "cumulative_elapsed_seconds": 7.3897426999756135
+        },
+        {
+          "generation_index": 8,
+          "best_hard_penalty": 1197,
+          "mean_hard_penalty": 1231.1,
+          "best_soft_score": 0.6609741459147662,
+          "mean_soft_score": 0.6628997096788507,
+          "feasible_count": 0,
+          "unique_chromosomes": 25,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 254,
+          "cumulative_elapsed_seconds": 8.340998700005002
+        },
+        {
+          "generation_index": 9,
+          "best_hard_penalty": 1196,
+          "mean_hard_penalty": 1218.4,
+          "best_soft_score": 0.6674687262913259,
+          "mean_soft_score": 0.6614715554960334,
+          "feasible_count": 0,
+          "unique_chromosomes": 24,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 282,
+          "cumulative_elapsed_seconds": 9.33542249997845
+        },
+        {
+          "generation_index": 10,
+          "best_hard_penalty": 1172,
+          "mean_hard_penalty": 1205.6666666666667,
+          "best_soft_score": 0.665038555896686,
+          "mean_soft_score": 0.6622775372129173,
+          "feasible_count": 0,
+          "unique_chromosomes": 22,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 310,
+          "cumulative_elapsed_seconds": 10.43071509996662
+        },
+        {
+          "generation_index": 11,
+          "best_hard_penalty": 1161,
+          "mean_hard_penalty": 1193.5,
+          "best_soft_score": 0.6603898192636661,
+          "mean_soft_score": 0.6623160187530368,
+          "feasible_count": 0,
+          "unique_chromosomes": 27,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 338,
+          "cumulative_elapsed_seconds": 11.527865900017787
+        },
+        {
+          "generation_index": 12,
+          "best_hard_penalty": 1161,
+          "mean_hard_penalty": 1182.8,
+          "best_soft_score": 0.6603898192636661,
+          "mean_soft_score": 0.6611440813480939,
+          "feasible_count": 0,
+          "unique_chromosomes": 26,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 366,
+          "cumulative_elapsed_seconds": 12.759910999971908
+        },
+        {
+          "generation_index": 13,
+          "best_hard_penalty": 1137,
+          "mean_hard_penalty": 1168.5666666666666,
+          "best_soft_score": 0.6601987812228103,
+          "mean_soft_score": 0.6609600075669129,
+          "feasible_count": 0,
+          "unique_chromosomes": 23,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 394,
+          "cumulative_elapsed_seconds": 13.934615599981043
+        },
+        {
+          "generation_index": 14,
+          "best_hard_penalty": 1137,
+          "mean_hard_penalty": 1163.7666666666667,
+          "best_soft_score": 0.6601987812228103,
+          "mean_soft_score": 0.660934070253854,
+          "feasible_count": 0,
+          "unique_chromosomes": 23,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 422,
+          "cumulative_elapsed_seconds": 15.01427489996422
+        },
+        {
+          "generation_index": 15,
+          "best_hard_penalty": 1136,
+          "mean_hard_penalty": 1151.6,
+          "best_soft_score": 0.6645598426734131,
+          "mean_soft_score": 0.6615043598783181,
+          "feasible_count": 0,
+          "unique_chromosomes": 24,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 450,
+          "cumulative_elapsed_seconds": 16.197926399996504
+        },
+        {
+          "generation_index": 16,
+          "best_hard_penalty": 1136,
+          "mean_hard_penalty": 1143.0666666666666,
+          "best_soft_score": 0.6645598426734131,
+          "mean_soft_score": 0.6618927685285748,
+          "feasible_count": 0,
+          "unique_chromosomes": 19,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 478,
+          "cumulative_elapsed_seconds": 17.39218839997193
+        },
+        {
+          "generation_index": 17,
+          "best_hard_penalty": 1133,
+          "mean_hard_penalty": 1137.3666666666666,
+          "best_soft_score": 0.6622776758819794,
+          "mean_soft_score": 0.6639219348885593,
+          "feasible_count": 0,
+          "unique_chromosomes": 10,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 506,
+          "cumulative_elapsed_seconds": 18.65685209998628
+        },
+        {
+          "generation_index": 18,
+          "best_hard_penalty": 1133,
+          "mean_hard_penalty": 1135.7,
+          "best_soft_score": 0.6622776758819794,
+          "mean_soft_score": 0.6643316259942698,
+          "feasible_count": 0,
+          "unique_chromosomes": 2,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 534,
+          "cumulative_elapsed_seconds": 19.892665399995167
+        },
+        {
+          "generation_index": 19,
+          "best_hard_penalty": 1133,
+          "mean_hard_penalty": 1135.0,
+          "best_soft_score": 0.6622776758819794,
+          "mean_soft_score": 0.6637991204096018,
+          "feasible_count": 0,
+          "unique_chromosomes": 2,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 562,
+          "cumulative_elapsed_seconds": 20.948795899981633
+        },
+        {
+          "generation_index": 20,
+          "best_hard_penalty": 1133,
+          "mean_hard_penalty": 1134.1,
+          "best_soft_score": 0.6622776758819794,
+          "mean_soft_score": 0.6631144703721717,
+          "feasible_count": 0,
+          "unique_chromosomes": 2,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 590,
+          "cumulative_elapsed_seconds": 21.98195669997949
+        }
+      ]
+    },
+    {
+      "name": "B_seed22",
+      "settings": {
+        "version": "evolution-phase6-v1",
+        "population_size": 30,
+        "tournament_size": 3,
+        "elite_count": 2,
+        "max_generations": 20,
+        "mutation_probability": 0.3,
+        "crossover_probability": 0.7,
+        "repair_enabled": false,
+        "random_seed": 22,
+        "stop_on_first_feasible": false,
+        "stagnation_generations": null,
+        "max_fitness_evaluations": 4000,
+        "initialization_settings": {
+          "version": "initialization-v1",
+          "strategies": [
+            "compact",
+            "spread",
+            "random"
+          ],
+          "max_attempts_per_individual": 8
+        },
+        "mutation_settings": {
+          "version": "mutation-5b-v1",
+          "mutation_probability": 0.3,
+          "targeted_probability": 0.7,
+          "max_attempts": 8,
+          "max_proposals_per_operator": 8,
+          "operator_weights": [
+            [
+              "MoveMeeting",
+              1.0
+            ],
+            [
+              "SwapMeetings",
+              1.0
+            ],
+            [
+              "ChangeProfessor",
+              1.0
+            ],
+            [
+              "ChangeRoom",
+              1.0
+            ],
+            [
+              "SplitSection",
+              1.0
+            ],
+            [
+              "MergeSections",
+              1.0
+            ],
+            [
+              "ActivateDeactivate",
+              1.0
+            ],
+            [
+              "MoveStudent",
+              1.0
+            ],
+            [
+              "SwapStudents",
+              1.0
+            ],
+            [
+              "AssignUnassign",
+              1.0
+            ]
+          ]
+        },
+        "repair_settings": {
+          "version": "repair-5b-v1",
+          "max_local_candidates": 5,
+          "max_candidate_evaluations": 50,
+          "max_candidate_attempts": 100,
+          "max_conflicts": 50,
+          "max_structural_steps": 20
+        }
+      },
+      "timings": {
+        "context_seconds": 0,
+        "initialization_seconds": 0.6320274000172503,
+        "evolution_seconds": 29.895072099985555
+      },
+      "stop_reasons": [
+        "max_generations"
+      ],
+      "best_overall": {
+        "fingerprint": "f767b0dcd1f37c87a8443e95fabdd907d803a71860bde255bace4a8deca9fbb5",
+        "hard_penalty": 1165,
+        "soft_score": 0.6626637823101489,
+        "request_coverage": 0.9596359743040686,
+        "feasible": false,
+        "hard_counts_by_type": {
+          "H02_DISALLOWED_SLOT": 0,
+          "H03_UNQUALIFIED_PROFESSOR": 0,
+          "H04_PROFESSOR_OVERLAP": 7,
+          "H04_ROOM_OVERLAP": 20,
+          "H04_STUDENT_OVERLAP": 380,
+          "H05_PROFESSOR_UNAVAILABLE": 33,
+          "H05_STUDENT_UNAVAILABLE": 215,
+          "H06_ROOM_TYPE": 0,
+          "H07_SECTION_UNDERFLOW": 0,
+          "H07_SECTION_OVERFLOW": 0,
+          "H08_CREDIT_UNDERFLOW": 0,
+          "H08_CREDIT_OVERFLOW": 510,
+          "H09_TEACHING_OVERLOAD": 0,
+          "H10_PASSED_COURSE": 0
+        }
+      },
+      "best_feasible": null,
+      "final_population_best": {
+        "fingerprint": "f767b0dcd1f37c87a8443e95fabdd907d803a71860bde255bace4a8deca9fbb5",
+        "hard_penalty": 1165,
+        "soft_score": 0.6626637823101489,
+        "request_coverage": 0.9596359743040686,
+        "feasible": false,
+        "hard_counts_by_type": {
+          "H02_DISALLOWED_SLOT": 0,
+          "H03_UNQUALIFIED_PROFESSOR": 0,
+          "H04_PROFESSOR_OVERLAP": 7,
+          "H04_ROOM_OVERLAP": 20,
+          "H04_STUDENT_OVERLAP": 380,
+          "H05_PROFESSOR_UNAVAILABLE": 33,
+          "H05_STUDENT_UNAVAILABLE": 215,
+          "H06_ROOM_TYPE": 0,
+          "H07_SECTION_UNDERFLOW": 0,
+          "H07_SECTION_OVERFLOW": 0,
+          "H08_CREDIT_UNDERFLOW": 0,
+          "H08_CREDIT_OVERFLOW": 510,
+          "H09_TEACHING_OVERLOAD": 0,
+          "H10_PASSED_COURSE": 0
+        }
+      },
+      "evaluation_usage": {
+        "initialization": 30,
+        "child_baseline": 560,
+        "post_mutation": 170,
+        "mutation_baseline": 0,
+        "repair_baseline": 0,
+        "repair_candidates": 0,
+        "total": 760,
+        "hard_calls": 760,
+        "soft_calls": 760
+      },
+      "partial_generation": null,
+      "generations": [
+        {
+          "generation_index": 0,
+          "best_hard_penalty": 1357,
+          "mean_hard_penalty": 1528.3666666666666,
+          "best_soft_score": 0.6611635737348556,
+          "mean_soft_score": 0.650423778776398,
+          "feasible_count": 0,
+          "unique_chromosomes": 30,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 30,
+          "cumulative_elapsed_seconds": 0.6320274000172503
+        },
+        {
+          "generation_index": 1,
+          "best_hard_penalty": 1357,
+          "mean_hard_penalty": 1470.6666666666667,
+          "best_soft_score": 0.6611635737348556,
+          "mean_soft_score": 0.6563497809856095,
+          "feasible_count": 0,
+          "unique_chromosomes": 25,
+          "mean_request_coverage": 0.9613347608850821,
+          "cumulative_fitness_evaluation_count": 65,
+          "cumulative_elapsed_seconds": 1.9660634000319988
+        },
+        {
+          "generation_index": 2,
+          "best_hard_penalty": 1339,
+          "mean_hard_penalty": 1437.2,
+          "best_soft_score": 0.6611574861064069,
+          "mean_soft_score": 0.659766087172166,
+          "feasible_count": 0,
+          "unique_chromosomes": 28,
+          "mean_request_coverage": 0.961249107780157,
+          "cumulative_fitness_evaluation_count": 105,
+          "cumulative_elapsed_seconds": 3.572121600038372
+        },
+        {
+          "generation_index": 3,
+          "best_hard_penalty": 1318,
+          "mean_hard_penalty": 1395.7333333333333,
+          "best_soft_score": 0.6578618351717618,
+          "mean_soft_score": 0.6637339654610485,
+          "feasible_count": 0,
+          "unique_chromosomes": 27,
+          "mean_request_coverage": 0.9613347608850821,
+          "cumulative_fitness_evaluation_count": 140,
+          "cumulative_elapsed_seconds": 5.077514500007965
+        },
+        {
+          "generation_index": 4,
+          "best_hard_penalty": 1290,
+          "mean_hard_penalty": 1367.4333333333334,
+          "best_soft_score": 0.664607986830229,
+          "mean_soft_score": 0.6631079075958021,
+          "feasible_count": 0,
+          "unique_chromosomes": 28,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 173,
+          "cumulative_elapsed_seconds": 6.549222600006033
+        },
+        {
+          "generation_index": 5,
+          "best_hard_penalty": 1273,
+          "mean_hard_penalty": 1333.8333333333333,
+          "best_soft_score": 0.6622492025903479,
+          "mean_soft_score": 0.6626090888244627,
+          "feasible_count": 0,
+          "unique_chromosomes": 26,
+          "mean_request_coverage": 0.9613133476088509,
+          "cumulative_fitness_evaluation_count": 211,
+          "cumulative_elapsed_seconds": 8.180261100002099
+        },
+        {
+          "generation_index": 6,
+          "best_hard_penalty": 1259,
+          "mean_hard_penalty": 1311.6666666666667,
+          "best_soft_score": 0.6633694304643937,
+          "mean_soft_score": 0.6630713152605847,
+          "feasible_count": 0,
+          "unique_chromosomes": 26,
+          "mean_request_coverage": 0.9613240542469665,
+          "cumulative_fitness_evaluation_count": 246,
+          "cumulative_elapsed_seconds": 9.816804700007197
+        },
+        {
+          "generation_index": 7,
+          "best_hard_penalty": 1254,
+          "mean_hard_penalty": 1303.5666666666666,
+          "best_soft_score": 0.6645917438510701,
+          "mean_soft_score": 0.6640092139177388,
+          "feasible_count": 0,
+          "unique_chromosomes": 28,
+          "mean_request_coverage": 0.9613454675231978,
+          "cumulative_fitness_evaluation_count": 283,
+          "cumulative_elapsed_seconds": 11.27393150003627
+        },
+        {
+          "generation_index": 8,
+          "best_hard_penalty": 1220,
+          "mean_hard_penalty": 1281.9,
+          "best_soft_score": 0.6679515071996642,
+          "mean_soft_score": 0.6628641025214214,
+          "feasible_count": 0,
+          "unique_chromosomes": 22,
+          "mean_request_coverage": 0.961309778729479,
+          "cumulative_fitness_evaluation_count": 318,
+          "cumulative_elapsed_seconds": 12.88772700005211
+        },
+        {
+          "generation_index": 9,
+          "best_hard_penalty": 1220,
+          "mean_hard_penalty": 1268.4333333333334,
+          "best_soft_score": 0.6679515071996642,
+          "mean_soft_score": 0.6639978910730677,
+          "feasible_count": 0,
+          "unique_chromosomes": 23,
+          "mean_request_coverage": 0.9612562455389008,
+          "cumulative_fitness_evaluation_count": 354,
+          "cumulative_elapsed_seconds": 14.428487200057134
+        },
+        {
+          "generation_index": 10,
+          "best_hard_penalty": 1215,
+          "mean_hard_penalty": 1246.9666666666667,
+          "best_soft_score": 0.6612322366725983,
+          "mean_soft_score": 0.6654025845049376,
+          "feasible_count": 0,
+          "unique_chromosomes": 27,
+          "mean_request_coverage": 0.9612062812276946,
+          "cumulative_fitness_evaluation_count": 391,
+          "cumulative_elapsed_seconds": 16.009139500034507
+        },
+        {
+          "generation_index": 11,
+          "best_hard_penalty": 1196,
+          "mean_hard_penalty": 1228.3333333333333,
+          "best_soft_score": 0.667785576049329,
+          "mean_soft_score": 0.665533619570635,
+          "feasible_count": 0,
+          "unique_chromosomes": 26,
+          "mean_request_coverage": 0.9612669521770164,
+          "cumulative_fitness_evaluation_count": 427,
+          "cumulative_elapsed_seconds": 17.609270000015385
+        },
+        {
+          "generation_index": 12,
+          "best_hard_penalty": 1196,
+          "mean_hard_penalty": 1210.7,
+          "best_soft_score": 0.6684623194270316,
+          "mean_soft_score": 0.6639012866638426,
+          "feasible_count": 0,
+          "unique_chromosomes": 28,
+          "mean_request_coverage": 0.9612134189864382,
+          "cumulative_fitness_evaluation_count": 465,
+          "cumulative_elapsed_seconds": 19.07505530002527
+        },
+        {
+          "generation_index": 13,
+          "best_hard_penalty": 1184,
+          "mean_hard_penalty": 1203.5333333333333,
+          "best_soft_score": 0.662266953688303,
+          "mean_soft_score": 0.6646538967482678,
+          "feasible_count": 0,
+          "unique_chromosomes": 27,
+          "mean_request_coverage": 0.9608493932905069,
+          "cumulative_fitness_evaluation_count": 500,
+          "cumulative_elapsed_seconds": 20.447136500035413
+        },
+        {
+          "generation_index": 14,
+          "best_hard_penalty": 1180,
+          "mean_hard_penalty": 1196.5333333333333,
+          "best_soft_score": 0.6646812624870524,
+          "mean_soft_score": 0.6652046909455996,
+          "feasible_count": 0,
+          "unique_chromosomes": 30,
+          "mean_request_coverage": 0.9605995717344754,
+          "cumulative_fitness_evaluation_count": 535,
+          "cumulative_elapsed_seconds": 21.79051590000745
+        },
+        {
+          "generation_index": 15,
+          "best_hard_penalty": 1180,
+          "mean_hard_penalty": 1189.8333333333333,
+          "best_soft_score": 0.6646812624870524,
+          "mean_soft_score": 0.6650247171840887,
+          "feasible_count": 0,
+          "unique_chromosomes": 25,
+          "mean_request_coverage": 0.9604354032833691,
+          "cumulative_fitness_evaluation_count": 569,
+          "cumulative_elapsed_seconds": 23.089743000047747
+        },
+        {
+          "generation_index": 16,
+          "best_hard_penalty": 1176,
+          "mean_hard_penalty": 1185.5666666666666,
+          "best_soft_score": 0.6655906937368669,
+          "mean_soft_score": 0.6646325793601867,
+          "feasible_count": 0,
+          "unique_chromosomes": 28,
+          "mean_request_coverage": 0.9604496788008565,
+          "cumulative_fitness_evaluation_count": 609,
+          "cumulative_elapsed_seconds": 24.66085500002373
+        },
+        {
+          "generation_index": 17,
+          "best_hard_penalty": 1172,
+          "mean_hard_penalty": 1180.1333333333334,
+          "best_soft_score": 0.6646647906153973,
+          "mean_soft_score": 0.6648469901065985,
+          "feasible_count": 0,
+          "unique_chromosomes": 27,
+          "mean_request_coverage": 0.9604568165596004,
+          "cumulative_fitness_evaluation_count": 645,
+          "cumulative_elapsed_seconds": 26.11315300001297
+        },
+        {
+          "generation_index": 18,
+          "best_hard_penalty": 1168,
+          "mean_hard_penalty": 1176.6333333333334,
+          "best_soft_score": 0.6631195238694795,
+          "mean_soft_score": 0.6649404659269648,
+          "feasible_count": 0,
+          "unique_chromosomes": 27,
+          "mean_request_coverage": 0.9604710920770878,
+          "cumulative_fitness_evaluation_count": 684,
+          "cumulative_elapsed_seconds": 27.741629700001795
+        },
+        {
+          "generation_index": 19,
+          "best_hard_penalty": 1165,
+          "mean_hard_penalty": 1174.7,
+          "best_soft_score": 0.6626637823101489,
+          "mean_soft_score": 0.6652292623614654,
+          "feasible_count": 0,
+          "unique_chromosomes": 28,
+          "mean_request_coverage": 0.9604175588865097,
+          "cumulative_fitness_evaluation_count": 723,
+          "cumulative_elapsed_seconds": 29.26663600001484
+        },
+        {
+          "generation_index": 20,
+          "best_hard_penalty": 1165,
+          "mean_hard_penalty": 1170.8666666666666,
+          "best_soft_score": 0.6626637823101489,
+          "mean_soft_score": 0.6646642487493224,
+          "feasible_count": 0,
+          "unique_chromosomes": 27,
+          "mean_request_coverage": 0.9603104925053534,
+          "cumulative_fitness_evaluation_count": 760,
+          "cumulative_elapsed_seconds": 30.521194600034505
+        }
+      ]
+    },
+    {
+      "name": "C_seed22",
+      "settings": {
+        "version": "evolution-phase6-v1",
+        "population_size": 30,
+        "tournament_size": 3,
+        "elite_count": 2,
+        "max_generations": 20,
+        "mutation_probability": 0.3,
+        "crossover_probability": 0.7,
+        "repair_enabled": true,
+        "random_seed": 22,
+        "stop_on_first_feasible": false,
+        "stagnation_generations": null,
+        "max_fitness_evaluations": 4000,
+        "initialization_settings": {
+          "version": "initialization-v1",
+          "strategies": [
+            "compact",
+            "spread",
+            "random"
+          ],
+          "max_attempts_per_individual": 8
+        },
+        "mutation_settings": {
+          "version": "mutation-5b-v1",
+          "mutation_probability": 0.3,
+          "targeted_probability": 0.7,
+          "max_attempts": 8,
+          "max_proposals_per_operator": 8,
+          "operator_weights": [
+            [
+              "MoveMeeting",
+              1.0
+            ],
+            [
+              "SwapMeetings",
+              1.0
+            ],
+            [
+              "ChangeProfessor",
+              1.0
+            ],
+            [
+              "ChangeRoom",
+              1.0
+            ],
+            [
+              "SplitSection",
+              1.0
+            ],
+            [
+              "MergeSections",
+              1.0
+            ],
+            [
+              "ActivateDeactivate",
+              1.0
+            ],
+            [
+              "MoveStudent",
+              1.0
+            ],
+            [
+              "SwapStudents",
+              1.0
+            ],
+            [
+              "AssignUnassign",
+              1.0
+            ]
+          ]
+        },
+        "repair_settings": {
+          "version": "repair-5b-v1",
+          "max_local_candidates": 5,
+          "max_candidate_evaluations": 50,
+          "max_candidate_attempts": 100,
+          "max_conflicts": 50,
+          "max_structural_steps": 20
+        }
+      },
+      "timings": {
+        "context_seconds": 0,
+        "initialization_seconds": 0.629824900010135,
+        "evolution_seconds": 33.86931799998274
+      },
+      "stop_reasons": [
+        "max_generations"
+      ],
+      "best_overall": {
+        "fingerprint": "0db59f5f57cc774d4fe58a2d8a6bc93266c3727a33e1ebbe2d8f7394250ba72c",
+        "hard_penalty": 1063,
+        "soft_score": 0.6611438642528625,
+        "request_coverage": 0.960813704496788,
+        "feasible": false,
+        "hard_counts_by_type": {
+          "H02_DISALLOWED_SLOT": 0,
+          "H03_UNQUALIFIED_PROFESSOR": 0,
+          "H04_PROFESSOR_OVERLAP": 7,
+          "H04_ROOM_OVERLAP": 19,
+          "H04_STUDENT_OVERLAP": 294,
+          "H05_PROFESSOR_UNAVAILABLE": 31,
+          "H05_STUDENT_UNAVAILABLE": 199,
+          "H06_ROOM_TYPE": 0,
+          "H07_SECTION_UNDERFLOW": 0,
+          "H07_SECTION_OVERFLOW": 0,
+          "H08_CREDIT_UNDERFLOW": 0,
+          "H08_CREDIT_OVERFLOW": 513,
+          "H09_TEACHING_OVERLOAD": 0,
+          "H10_PASSED_COURSE": 0
+        }
+      },
+      "best_feasible": null,
+      "final_population_best": {
+        "fingerprint": "0db59f5f57cc774d4fe58a2d8a6bc93266c3727a33e1ebbe2d8f7394250ba72c",
+        "hard_penalty": 1063,
+        "soft_score": 0.6611438642528625,
+        "request_coverage": 0.960813704496788,
+        "feasible": false,
+        "hard_counts_by_type": {
+          "H02_DISALLOWED_SLOT": 0,
+          "H03_UNQUALIFIED_PROFESSOR": 0,
+          "H04_PROFESSOR_OVERLAP": 7,
+          "H04_ROOM_OVERLAP": 19,
+          "H04_STUDENT_OVERLAP": 294,
+          "H05_PROFESSOR_UNAVAILABLE": 31,
+          "H05_STUDENT_UNAVAILABLE": 199,
+          "H06_ROOM_TYPE": 0,
+          "H07_SECTION_UNDERFLOW": 0,
+          "H07_SECTION_OVERFLOW": 0,
+          "H08_CREDIT_UNDERFLOW": 0,
+          "H08_CREDIT_OVERFLOW": 513,
+          "H09_TEACHING_OVERLOAD": 0,
+          "H10_PASSED_COURSE": 0
+        }
+      },
+      "evaluation_usage": {
+        "initialization": 30,
+        "child_baseline": 560,
+        "post_mutation": 158,
+        "mutation_baseline": 0,
+        "repair_baseline": 0,
+        "repair_candidates": 192,
+        "total": 940,
+        "hard_calls": 940,
+        "soft_calls": 940
+      },
+      "partial_generation": null,
+      "generations": [
+        {
+          "generation_index": 0,
+          "best_hard_penalty": 1357,
+          "mean_hard_penalty": 1528.3666666666666,
+          "best_soft_score": 0.6611635737348556,
+          "mean_soft_score": 0.650423778776398,
+          "feasible_count": 0,
+          "unique_chromosomes": 30,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 30,
+          "cumulative_elapsed_seconds": 0.629824900010135
+        },
+        {
+          "generation_index": 1,
+          "best_hard_penalty": 1340,
+          "mean_hard_penalty": 1464.3,
+          "best_soft_score": 0.6564965191323902,
+          "mean_soft_score": 0.657347514370669,
+          "feasible_count": 0,
+          "unique_chromosomes": 27,
+          "mean_request_coverage": 0.961338329764454,
+          "cumulative_fitness_evaluation_count": 80,
+          "cumulative_elapsed_seconds": 2.1695438000024296
+        },
+        {
+          "generation_index": 2,
+          "best_hard_penalty": 1340,
+          "mean_hard_penalty": 1425.3333333333333,
+          "best_soft_score": 0.6564965191323902,
+          "mean_soft_score": 0.6604702254039662,
+          "feasible_count": 0,
+          "unique_chromosomes": 24,
+          "mean_request_coverage": 0.9613347608850821,
+          "cumulative_fitness_evaluation_count": 123,
+          "cumulative_elapsed_seconds": 3.711982600041665
+        },
+        {
+          "generation_index": 3,
+          "best_hard_penalty": 1316,
+          "mean_hard_penalty": 1386.0333333333333,
+          "best_soft_score": 0.6600852491563828,
+          "mean_soft_score": 0.6597884131947997,
+          "feasible_count": 0,
+          "unique_chromosomes": 25,
+          "mean_request_coverage": 0.961281227694504,
+          "cumulative_fitness_evaluation_count": 161,
+          "cumulative_elapsed_seconds": 5.169802899996284
+        },
+        {
+          "generation_index": 4,
+          "best_hard_penalty": 1309,
+          "mean_hard_penalty": 1354.3333333333333,
+          "best_soft_score": 0.6518590474950202,
+          "mean_soft_score": 0.660153702102914,
+          "feasible_count": 0,
+          "unique_chromosomes": 25,
+          "mean_request_coverage": 0.9612455389007852,
+          "cumulative_fitness_evaluation_count": 200,
+          "cumulative_elapsed_seconds": 6.613496900012251
+        },
+        {
+          "generation_index": 5,
+          "best_hard_penalty": 1292,
+          "mean_hard_penalty": 1350.3666666666666,
+          "best_soft_score": 0.6586615302132667,
+          "mean_soft_score": 0.6605660845206313,
+          "feasible_count": 0,
+          "unique_chromosomes": 28,
+          "mean_request_coverage": 0.9612562455389008,
+          "cumulative_fitness_evaluation_count": 245,
+          "cumulative_elapsed_seconds": 8.21015709999483
+        },
+        {
+          "generation_index": 6,
+          "best_hard_penalty": 1271,
+          "mean_hard_penalty": 1324.4666666666667,
+          "best_soft_score": 0.6581221070489187,
+          "mean_soft_score": 0.6596942965248169,
+          "feasible_count": 0,
+          "unique_chromosomes": 26,
+          "mean_request_coverage": 0.9612847965738759,
+          "cumulative_fitness_evaluation_count": 279,
+          "cumulative_elapsed_seconds": 9.498233599995729
+        },
+        {
+          "generation_index": 7,
+          "best_hard_penalty": 1206,
+          "mean_hard_penalty": 1296.1333333333334,
+          "best_soft_score": 0.6592163185661662,
+          "mean_soft_score": 0.6598421264100318,
+          "feasible_count": 0,
+          "unique_chromosomes": 25,
+          "mean_request_coverage": 0.9613169164882227,
+          "cumulative_fitness_evaluation_count": 335,
+          "cumulative_elapsed_seconds": 11.22759500000393
+        },
+        {
+          "generation_index": 8,
+          "best_hard_penalty": 1202,
+          "mean_hard_penalty": 1271.7333333333333,
+          "best_soft_score": 0.6613164587652247,
+          "mean_soft_score": 0.6599050998928118,
+          "feasible_count": 0,
+          "unique_chromosomes": 27,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 386,
+          "cumulative_elapsed_seconds": 12.854075100040063
+        },
+        {
+          "generation_index": 9,
+          "best_hard_penalty": 1180,
+          "mean_hard_penalty": 1225.4666666666667,
+          "best_soft_score": 0.660452089913395,
+          "mean_soft_score": 0.659701007894514,
+          "feasible_count": 0,
+          "unique_chromosomes": 27,
+          "mean_request_coverage": 0.9612740899357601,
+          "cumulative_fitness_evaluation_count": 423,
+          "cumulative_elapsed_seconds": 14.661844599992037
+        },
+        {
+          "generation_index": 10,
+          "best_hard_penalty": 1173,
+          "mean_hard_penalty": 1198.1666666666667,
+          "best_soft_score": 0.6585982305991327,
+          "mean_soft_score": 0.6595112402345371,
+          "feasible_count": 0,
+          "unique_chromosomes": 26,
+          "mean_request_coverage": 0.9613347608850821,
+          "cumulative_fitness_evaluation_count": 458,
+          "cumulative_elapsed_seconds": 16.309263200033456
+        },
+        {
+          "generation_index": 11,
+          "best_hard_penalty": 1145,
+          "mean_hard_penalty": 1189.0,
+          "best_soft_score": 0.6616104887096262,
+          "mean_soft_score": 0.6592489376295511,
+          "feasible_count": 0,
+          "unique_chromosomes": 27,
+          "mean_request_coverage": 0.961338329764454,
+          "cumulative_fitness_evaluation_count": 506,
+          "cumulative_elapsed_seconds": 18.315159299992956
+        },
+        {
+          "generation_index": 12,
+          "best_hard_penalty": 1145,
+          "mean_hard_penalty": 1175.8666666666666,
+          "best_soft_score": 0.6616104887096262,
+          "mean_soft_score": 0.6588479854666417,
+          "feasible_count": 0,
+          "unique_chromosomes": 27,
+          "mean_request_coverage": 0.961249107780157,
+          "cumulative_fitness_evaluation_count": 555,
+          "cumulative_elapsed_seconds": 20.23651370004518
+        },
+        {
+          "generation_index": 13,
+          "best_hard_penalty": 1136,
+          "mean_hard_penalty": 1156.8666666666666,
+          "best_soft_score": 0.6628037636035194,
+          "mean_soft_score": 0.6595118599193966,
+          "feasible_count": 0,
+          "unique_chromosomes": 26,
+          "mean_request_coverage": 0.9611099214846539,
+          "cumulative_fitness_evaluation_count": 602,
+          "cumulative_elapsed_seconds": 22.08067390002543
+        },
+        {
+          "generation_index": 14,
+          "best_hard_penalty": 1096,
+          "mean_hard_penalty": 1145.6333333333334,
+          "best_soft_score": 0.6636852663610856,
+          "mean_soft_score": 0.6597886087212621,
+          "feasible_count": 0,
+          "unique_chromosomes": 29,
+          "mean_request_coverage": 0.9611420413990007,
+          "cumulative_fitness_evaluation_count": 645,
+          "cumulative_elapsed_seconds": 23.794812400010414
+        },
+        {
+          "generation_index": 15,
+          "best_hard_penalty": 1090,
+          "mean_hard_penalty": 1129.7666666666667,
+          "best_soft_score": 0.6639315302970324,
+          "mean_soft_score": 0.6600334082720118,
+          "feasible_count": 0,
+          "unique_chromosomes": 29,
+          "mean_request_coverage": 0.9611313347608852,
+          "cumulative_fitness_evaluation_count": 687,
+          "cumulative_elapsed_seconds": 25.483080800040625
+        },
+        {
+          "generation_index": 16,
+          "best_hard_penalty": 1090,
+          "mean_hard_penalty": 1106.9,
+          "best_soft_score": 0.6639315302970324,
+          "mean_soft_score": 0.6625369440169103,
+          "feasible_count": 0,
+          "unique_chromosomes": 26,
+          "mean_request_coverage": 0.9609743040685225,
+          "cumulative_fitness_evaluation_count": 739,
+          "cumulative_elapsed_seconds": 27.367537900048774
+        },
+        {
+          "generation_index": 17,
+          "best_hard_penalty": 1080,
+          "mean_hard_penalty": 1094.6,
+          "best_soft_score": 0.6633404315949458,
+          "mean_soft_score": 0.6635516698565813,
+          "feasible_count": 0,
+          "unique_chromosomes": 25,
+          "mean_request_coverage": 0.9607530335474661,
+          "cumulative_fitness_evaluation_count": 798,
+          "cumulative_elapsed_seconds": 29.326079400023445
+        },
+        {
+          "generation_index": 18,
+          "best_hard_penalty": 1080,
+          "mean_hard_penalty": 1089.7333333333333,
+          "best_soft_score": 0.6633404315949458,
+          "mean_soft_score": 0.6634612891340834,
+          "feasible_count": 0,
+          "unique_chromosomes": 24,
+          "mean_request_coverage": 0.9606709493219129,
+          "cumulative_fitness_evaluation_count": 848,
+          "cumulative_elapsed_seconds": 31.15088910004124
+        },
+        {
+          "generation_index": 19,
+          "best_hard_penalty": 1077,
+          "mean_hard_penalty": 1085.8,
+          "best_soft_score": 0.6638426634621323,
+          "mean_soft_score": 0.6634813369251564,
+          "feasible_count": 0,
+          "unique_chromosomes": 27,
+          "mean_request_coverage": 0.9607316202712348,
+          "cumulative_fitness_evaluation_count": 902,
+          "cumulative_elapsed_seconds": 32.954208000039216
+        },
+        {
+          "generation_index": 20,
+          "best_hard_penalty": 1063,
+          "mean_hard_penalty": 1081.8666666666666,
+          "best_soft_score": 0.6611438642528625,
+          "mean_soft_score": 0.6630592858216195,
+          "feasible_count": 0,
+          "unique_chromosomes": 25,
+          "mean_request_coverage": 0.9606709493219129,
+          "cumulative_fitness_evaluation_count": 940,
+          "cumulative_elapsed_seconds": 34.49046900001122
+        }
+      ]
+    },
+    {
+      "name": "A_seed33",
+      "settings": {
+        "version": "evolution-phase6-v1",
+        "population_size": 30,
+        "tournament_size": 3,
+        "elite_count": 2,
+        "max_generations": 20,
+        "mutation_probability": 0,
+        "crossover_probability": 0.7,
+        "repair_enabled": false,
+        "random_seed": 33,
+        "stop_on_first_feasible": false,
+        "stagnation_generations": null,
+        "max_fitness_evaluations": 4000,
+        "initialization_settings": {
+          "version": "initialization-v1",
+          "strategies": [
+            "compact",
+            "spread",
+            "random"
+          ],
+          "max_attempts_per_individual": 8
+        },
+        "mutation_settings": {
+          "version": "mutation-5b-v1",
+          "mutation_probability": 0,
+          "targeted_probability": 0.7,
+          "max_attempts": 8,
+          "max_proposals_per_operator": 8,
+          "operator_weights": [
+            [
+              "MoveMeeting",
+              1.0
+            ],
+            [
+              "SwapMeetings",
+              1.0
+            ],
+            [
+              "ChangeProfessor",
+              1.0
+            ],
+            [
+              "ChangeRoom",
+              1.0
+            ],
+            [
+              "SplitSection",
+              1.0
+            ],
+            [
+              "MergeSections",
+              1.0
+            ],
+            [
+              "ActivateDeactivate",
+              1.0
+            ],
+            [
+              "MoveStudent",
+              1.0
+            ],
+            [
+              "SwapStudents",
+              1.0
+            ],
+            [
+              "AssignUnassign",
+              1.0
+            ]
+          ]
+        },
+        "repair_settings": {
+          "version": "repair-5b-v1",
+          "max_local_candidates": 5,
+          "max_candidate_evaluations": 50,
+          "max_candidate_attempts": 100,
+          "max_conflicts": 50,
+          "max_structural_steps": 20
+        }
+      },
+      "timings": {
+        "context_seconds": 0,
+        "initialization_seconds": 0.5759975000401028,
+        "evolution_seconds": 21.910351199971046
+      },
+      "stop_reasons": [
+        "max_generations"
+      ],
+      "best_overall": {
+        "fingerprint": "49ed9c503876fb59be52165d24d4e135466688fe505beb78026d962cacc5504a",
+        "hard_penalty": 1202,
+        "soft_score": 0.6597152775914672,
+        "request_coverage": 0.9613490364025696,
+        "feasible": false,
+        "hard_counts_by_type": {
+          "H02_DISALLOWED_SLOT": 0,
+          "H03_UNQUALIFIED_PROFESSOR": 0,
+          "H04_PROFESSOR_OVERLAP": 7,
+          "H04_ROOM_OVERLAP": 27,
+          "H04_STUDENT_OVERLAP": 409,
+          "H05_PROFESSOR_UNAVAILABLE": 35,
+          "H05_STUDENT_UNAVAILABLE": 210,
+          "H06_ROOM_TYPE": 0,
+          "H07_SECTION_UNDERFLOW": 0,
+          "H07_SECTION_OVERFLOW": 0,
+          "H08_CREDIT_UNDERFLOW": 0,
+          "H08_CREDIT_OVERFLOW": 514,
+          "H09_TEACHING_OVERLOAD": 0,
+          "H10_PASSED_COURSE": 0
+        }
+      },
+      "best_feasible": null,
+      "final_population_best": {
+        "fingerprint": "49ed9c503876fb59be52165d24d4e135466688fe505beb78026d962cacc5504a",
+        "hard_penalty": 1202,
+        "soft_score": 0.6597152775914672,
+        "request_coverage": 0.9613490364025696,
+        "feasible": false,
+        "hard_counts_by_type": {
+          "H02_DISALLOWED_SLOT": 0,
+          "H03_UNQUALIFIED_PROFESSOR": 0,
+          "H04_PROFESSOR_OVERLAP": 7,
+          "H04_ROOM_OVERLAP": 27,
+          "H04_STUDENT_OVERLAP": 409,
+          "H05_PROFESSOR_UNAVAILABLE": 35,
+          "H05_STUDENT_UNAVAILABLE": 210,
+          "H06_ROOM_TYPE": 0,
+          "H07_SECTION_UNDERFLOW": 0,
+          "H07_SECTION_OVERFLOW": 0,
+          "H08_CREDIT_UNDERFLOW": 0,
+          "H08_CREDIT_OVERFLOW": 514,
+          "H09_TEACHING_OVERLOAD": 0,
+          "H10_PASSED_COURSE": 0
+        }
+      },
+      "evaluation_usage": {
+        "initialization": 30,
+        "child_baseline": 560,
+        "post_mutation": 0,
+        "mutation_baseline": 0,
+        "repair_baseline": 0,
+        "repair_candidates": 0,
+        "total": 590,
+        "hard_calls": 590,
+        "soft_calls": 590
+      },
+      "partial_generation": null,
+      "generations": [
+        {
+          "generation_index": 0,
+          "best_hard_penalty": 1374,
+          "mean_hard_penalty": 1535.7666666666667,
+          "best_soft_score": 0.6725609824315916,
+          "mean_soft_score": 0.6514344938103863,
+          "feasible_count": 0,
+          "unique_chromosomes": 30,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 30,
+          "cumulative_elapsed_seconds": 0.5759975000401028
+        },
+        {
+          "generation_index": 1,
+          "best_hard_penalty": 1369,
+          "mean_hard_penalty": 1459.8666666666666,
+          "best_soft_score": 0.6606069984015583,
+          "mean_soft_score": 0.6613387227109675,
+          "feasible_count": 0,
+          "unique_chromosomes": 26,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 58,
+          "cumulative_elapsed_seconds": 1.5619594000163488
+        },
+        {
+          "generation_index": 2,
+          "best_hard_penalty": 1332,
+          "mean_hard_penalty": 1444.3333333333333,
+          "best_soft_score": 0.6632214046829147,
+          "mean_soft_score": 0.6615517291060853,
+          "feasible_count": 0,
+          "unique_chromosomes": 24,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 86,
+          "cumulative_elapsed_seconds": 2.5175352000514977
+        },
+        {
+          "generation_index": 3,
+          "best_hard_penalty": 1326,
+          "mean_hard_penalty": 1384.4666666666667,
+          "best_soft_score": 0.6692354549487923,
+          "mean_soft_score": 0.6636693355377296,
+          "feasible_count": 0,
+          "unique_chromosomes": 20,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 114,
+          "cumulative_elapsed_seconds": 3.65066140005365
+        },
+        {
+          "generation_index": 4,
+          "best_hard_penalty": 1326,
+          "mean_hard_penalty": 1383.8333333333333,
+          "best_soft_score": 0.6692354549487923,
+          "mean_soft_score": 0.6662354159978271,
+          "feasible_count": 0,
+          "unique_chromosomes": 20,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 142,
+          "cumulative_elapsed_seconds": 4.791731200006325
+        },
+        {
+          "generation_index": 5,
+          "best_hard_penalty": 1297,
+          "mean_hard_penalty": 1361.9333333333334,
+          "best_soft_score": 0.6577473507738824,
+          "mean_soft_score": 0.6666924931717967,
+          "feasible_count": 0,
+          "unique_chromosomes": 16,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 170,
+          "cumulative_elapsed_seconds": 5.841409300046507
+        },
+        {
+          "generation_index": 6,
+          "best_hard_penalty": 1262,
+          "mean_hard_penalty": 1355.2,
+          "best_soft_score": 0.6652685396584198,
+          "mean_soft_score": 0.6658132980017284,
+          "feasible_count": 0,
+          "unique_chromosomes": 20,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 198,
+          "cumulative_elapsed_seconds": 6.975080100004561
+        },
+        {
+          "generation_index": 7,
+          "best_hard_penalty": 1262,
+          "mean_hard_penalty": 1323.4666666666667,
+          "best_soft_score": 0.6652685396584198,
+          "mean_soft_score": 0.6639928135357545,
+          "feasible_count": 0,
+          "unique_chromosomes": 23,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 226,
+          "cumulative_elapsed_seconds": 8.085259300016332
+        },
+        {
+          "generation_index": 8,
+          "best_hard_penalty": 1242,
+          "mean_hard_penalty": 1299.2333333333333,
+          "best_soft_score": 0.6602211030564181,
+          "mean_soft_score": 0.6636257786940625,
+          "feasible_count": 0,
+          "unique_chromosomes": 23,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 254,
+          "cumulative_elapsed_seconds": 9.151126500044484
+        },
+        {
+          "generation_index": 9,
+          "best_hard_penalty": 1241,
+          "mean_hard_penalty": 1269.5666666666666,
+          "best_soft_score": 0.6619717844755997,
+          "mean_soft_score": 0.6628546543871291,
+          "feasible_count": 0,
+          "unique_chromosomes": 19,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 282,
+          "cumulative_elapsed_seconds": 10.211151100054849
+        },
+        {
+          "generation_index": 10,
+          "best_hard_penalty": 1222,
+          "mean_hard_penalty": 1250.0333333333333,
+          "best_soft_score": 0.6614370693739573,
+          "mean_soft_score": 0.6612296584078982,
+          "feasible_count": 0,
+          "unique_chromosomes": 21,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 310,
+          "cumulative_elapsed_seconds": 11.344739200023469
+        },
+        {
+          "generation_index": 11,
+          "best_hard_penalty": 1215,
+          "mean_hard_penalty": 1236.6333333333334,
+          "best_soft_score": 0.6602694586518068,
+          "mean_soft_score": 0.6607558146861149,
+          "feasible_count": 0,
+          "unique_chromosomes": 23,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 338,
+          "cumulative_elapsed_seconds": 12.366974500007927
+        },
+        {
+          "generation_index": 12,
+          "best_hard_penalty": 1214,
+          "mean_hard_penalty": 1226.4333333333334,
+          "best_soft_score": 0.6576164800533902,
+          "mean_soft_score": 0.660527090363415,
+          "feasible_count": 0,
+          "unique_chromosomes": 18,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 366,
+          "cumulative_elapsed_seconds": 13.406181400001515
+        },
+        {
+          "generation_index": 13,
+          "best_hard_penalty": 1203,
+          "mean_hard_penalty": 1218.9,
+          "best_soft_score": 0.6588638484548188,
+          "mean_soft_score": 0.6600443176400135,
+          "feasible_count": 0,
+          "unique_chromosomes": 17,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 394,
+          "cumulative_elapsed_seconds": 14.470206100028008
+        },
+        {
+          "generation_index": 14,
+          "best_hard_penalty": 1202,
+          "mean_hard_penalty": 1212.5333333333333,
+          "best_soft_score": 0.6579630737239348,
+          "mean_soft_score": 0.6596764514056636,
+          "feasible_count": 0,
+          "unique_chromosomes": 16,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 422,
+          "cumulative_elapsed_seconds": 15.547548500006087
+        },
+        {
+          "generation_index": 15,
+          "best_hard_penalty": 1202,
+          "mean_hard_penalty": 1205.9333333333334,
+          "best_soft_score": 0.6579630737239348,
+          "mean_soft_score": 0.6591814496468232,
+          "feasible_count": 0,
+          "unique_chromosomes": 6,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 450,
+          "cumulative_elapsed_seconds": 16.607672400015872
+        },
+        {
+          "generation_index": 16,
+          "best_hard_penalty": 1202,
+          "mean_hard_penalty": 1205.5333333333333,
+          "best_soft_score": 0.6597152775914672,
+          "mean_soft_score": 0.6594150297123403,
+          "feasible_count": 0,
+          "unique_chromosomes": 7,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 478,
+          "cumulative_elapsed_seconds": 17.678517000051215
+        },
+        {
+          "generation_index": 17,
+          "best_hard_penalty": 1202,
+          "mean_hard_penalty": 1205.7666666666667,
+          "best_soft_score": 0.6597152775914672,
+          "mean_soft_score": 0.6589503836627344,
+          "feasible_count": 0,
+          "unique_chromosomes": 8,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 506,
+          "cumulative_elapsed_seconds": 18.838728400005493
+        },
+        {
+          "generation_index": 18,
+          "best_hard_penalty": 1202,
+          "mean_hard_penalty": 1210.1,
+          "best_soft_score": 0.6597152775914672,
+          "mean_soft_score": 0.6589192986150387,
+          "feasible_count": 0,
+          "unique_chromosomes": 4,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 534,
+          "cumulative_elapsed_seconds": 20.183581300021615
+        },
+        {
+          "generation_index": 19,
+          "best_hard_penalty": 1202,
+          "mean_hard_penalty": 1205.1333333333334,
+          "best_soft_score": 0.6597152775914672,
+          "mean_soft_score": 0.6594675273626963,
+          "feasible_count": 0,
+          "unique_chromosomes": 4,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 562,
+          "cumulative_elapsed_seconds": 21.31926400004886
+        },
+        {
+          "generation_index": 20,
+          "best_hard_penalty": 1202,
+          "mean_hard_penalty": 1204.2,
+          "best_soft_score": 0.6597152775914672,
+          "mean_soft_score": 0.6596038799109982,
+          "feasible_count": 0,
+          "unique_chromosomes": 4,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 590,
+          "cumulative_elapsed_seconds": 22.478556200047024
+        }
+      ]
+    },
+    {
+      "name": "B_seed33",
+      "settings": {
+        "version": "evolution-phase6-v1",
+        "population_size": 30,
+        "tournament_size": 3,
+        "elite_count": 2,
+        "max_generations": 20,
+        "mutation_probability": 0.3,
+        "crossover_probability": 0.7,
+        "repair_enabled": false,
+        "random_seed": 33,
+        "stop_on_first_feasible": false,
+        "stagnation_generations": null,
+        "max_fitness_evaluations": 4000,
+        "initialization_settings": {
+          "version": "initialization-v1",
+          "strategies": [
+            "compact",
+            "spread",
+            "random"
+          ],
+          "max_attempts_per_individual": 8
+        },
+        "mutation_settings": {
+          "version": "mutation-5b-v1",
+          "mutation_probability": 0.3,
+          "targeted_probability": 0.7,
+          "max_attempts": 8,
+          "max_proposals_per_operator": 8,
+          "operator_weights": [
+            [
+              "MoveMeeting",
+              1.0
+            ],
+            [
+              "SwapMeetings",
+              1.0
+            ],
+            [
+              "ChangeProfessor",
+              1.0
+            ],
+            [
+              "ChangeRoom",
+              1.0
+            ],
+            [
+              "SplitSection",
+              1.0
+            ],
+            [
+              "MergeSections",
+              1.0
+            ],
+            [
+              "ActivateDeactivate",
+              1.0
+            ],
+            [
+              "MoveStudent",
+              1.0
+            ],
+            [
+              "SwapStudents",
+              1.0
+            ],
+            [
+              "AssignUnassign",
+              1.0
+            ]
+          ]
+        },
+        "repair_settings": {
+          "version": "repair-5b-v1",
+          "max_local_candidates": 5,
+          "max_candidate_evaluations": 50,
+          "max_candidate_attempts": 100,
+          "max_conflicts": 50,
+          "max_structural_steps": 20
+        }
+      },
+      "timings": {
+        "context_seconds": 0,
+        "initialization_seconds": 0.6296793000074103,
+        "evolution_seconds": 28.02174539997941
+      },
+      "stop_reasons": [
+        "max_generations"
+      ],
+      "best_overall": {
+        "fingerprint": "1effb7c221fb9dc5c50130f7b646aaa77f062f9d4c82b5f62ac927c51d128035",
+        "hard_penalty": 1094,
+        "soft_score": 0.642335624855192,
+        "request_coverage": 0.9612419700214133,
+        "feasible": false,
+        "hard_counts_by_type": {
+          "H02_DISALLOWED_SLOT": 0,
+          "H03_UNQUALIFIED_PROFESSOR": 0,
+          "H04_PROFESSOR_OVERLAP": 10,
+          "H04_ROOM_OVERLAP": 16,
+          "H04_STUDENT_OVERLAP": 312,
+          "H05_PROFESSOR_UNAVAILABLE": 28,
+          "H05_STUDENT_UNAVAILABLE": 218,
+          "H06_ROOM_TYPE": 0,
+          "H07_SECTION_UNDERFLOW": 0,
+          "H07_SECTION_OVERFLOW": 0,
+          "H08_CREDIT_UNDERFLOW": 0,
+          "H08_CREDIT_OVERFLOW": 510,
+          "H09_TEACHING_OVERLOAD": 0,
+          "H10_PASSED_COURSE": 0
+        }
+      },
+      "best_feasible": null,
+      "final_population_best": {
+        "fingerprint": "1effb7c221fb9dc5c50130f7b646aaa77f062f9d4c82b5f62ac927c51d128035",
+        "hard_penalty": 1094,
+        "soft_score": 0.642335624855192,
+        "request_coverage": 0.9612419700214133,
+        "feasible": false,
+        "hard_counts_by_type": {
+          "H02_DISALLOWED_SLOT": 0,
+          "H03_UNQUALIFIED_PROFESSOR": 0,
+          "H04_PROFESSOR_OVERLAP": 10,
+          "H04_ROOM_OVERLAP": 16,
+          "H04_STUDENT_OVERLAP": 312,
+          "H05_PROFESSOR_UNAVAILABLE": 28,
+          "H05_STUDENT_UNAVAILABLE": 218,
+          "H06_ROOM_TYPE": 0,
+          "H07_SECTION_UNDERFLOW": 0,
+          "H07_SECTION_OVERFLOW": 0,
+          "H08_CREDIT_UNDERFLOW": 0,
+          "H08_CREDIT_OVERFLOW": 510,
+          "H09_TEACHING_OVERLOAD": 0,
+          "H10_PASSED_COURSE": 0
+        }
+      },
+      "evaluation_usage": {
+        "initialization": 30,
+        "child_baseline": 560,
+        "post_mutation": 157,
+        "mutation_baseline": 0,
+        "repair_baseline": 0,
+        "repair_candidates": 0,
+        "total": 747,
+        "hard_calls": 747,
+        "soft_calls": 747
+      },
+      "partial_generation": null,
+      "generations": [
+        {
+          "generation_index": 0,
+          "best_hard_penalty": 1374,
+          "mean_hard_penalty": 1535.7666666666667,
+          "best_soft_score": 0.6725609824315916,
+          "mean_soft_score": 0.6514344938103863,
+          "feasible_count": 0,
+          "unique_chromosomes": 30,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 30,
+          "cumulative_elapsed_seconds": 0.6296793000074103
+        },
+        {
+          "generation_index": 1,
+          "best_hard_penalty": 1332,
+          "mean_hard_penalty": 1490.4,
+          "best_soft_score": 0.6595818037298031,
+          "mean_soft_score": 0.6602089397612366,
+          "feasible_count": 0,
+          "unique_chromosomes": 29,
+          "mean_request_coverage": 0.961277658815132,
+          "cumulative_fitness_evaluation_count": 67,
+          "cumulative_elapsed_seconds": 2.0100350999855436
+        },
+        {
+          "generation_index": 2,
+          "best_hard_penalty": 1294,
+          "mean_hard_penalty": 1417.9666666666667,
+          "best_soft_score": 0.6445411964021401,
+          "mean_soft_score": 0.6625306532772118,
+          "feasible_count": 0,
+          "unique_chromosomes": 26,
+          "mean_request_coverage": 0.9611241970021414,
+          "cumulative_fitness_evaluation_count": 102,
+          "cumulative_elapsed_seconds": 3.2638743999996223
+        },
+        {
+          "generation_index": 3,
+          "best_hard_penalty": 1293,
+          "mean_hard_penalty": 1373.2333333333333,
+          "best_soft_score": 0.6591111866723576,
+          "mean_soft_score": 0.6605454928197498,
+          "feasible_count": 0,
+          "unique_chromosomes": 26,
+          "mean_request_coverage": 0.9611206281227694,
+          "cumulative_fitness_evaluation_count": 135,
+          "cumulative_elapsed_seconds": 4.516690000018571
+        },
+        {
+          "generation_index": 4,
+          "best_hard_penalty": 1271,
+          "mean_hard_penalty": 1342.0333333333333,
+          "best_soft_score": 0.6606988827785955,
+          "mean_soft_score": 0.6588595361888319,
+          "feasible_count": 0,
+          "unique_chromosomes": 25,
+          "mean_request_coverage": 0.9610099928622413,
+          "cumulative_fitness_evaluation_count": 172,
+          "cumulative_elapsed_seconds": 6.067485300009139
+        },
+        {
+          "generation_index": 5,
+          "best_hard_penalty": 1215,
+          "mean_hard_penalty": 1310.6666666666667,
+          "best_soft_score": 0.6522921634883297,
+          "mean_soft_score": 0.6566840975120777,
+          "feasible_count": 0,
+          "unique_chromosomes": 27,
+          "mean_request_coverage": 0.9610635260528195,
+          "cumulative_fitness_evaluation_count": 210,
+          "cumulative_elapsed_seconds": 7.723694599990267
+        },
+        {
+          "generation_index": 6,
+          "best_hard_penalty": 1207,
+          "mean_hard_penalty": 1283.6,
+          "best_soft_score": 0.648298607871405,
+          "mean_soft_score": 0.6554750502899406,
+          "feasible_count": 0,
+          "unique_chromosomes": 25,
+          "mean_request_coverage": 0.9612312633832977,
+          "cumulative_fitness_evaluation_count": 245,
+          "cumulative_elapsed_seconds": 9.14629430003697
+        },
+        {
+          "generation_index": 7,
+          "best_hard_penalty": 1203,
+          "mean_hard_penalty": 1266.3,
+          "best_soft_score": 0.644160241960422,
+          "mean_soft_score": 0.6514775266288384,
+          "feasible_count": 0,
+          "unique_chromosomes": 27,
+          "mean_request_coverage": 0.9612348322626695,
+          "cumulative_fitness_evaluation_count": 281,
+          "cumulative_elapsed_seconds": 10.55691260000458
+        },
+        {
+          "generation_index": 8,
+          "best_hard_penalty": 1171,
+          "mean_hard_penalty": 1232.7666666666667,
+          "best_soft_score": 0.6404774749203207,
+          "mean_soft_score": 0.647315754547759,
+          "feasible_count": 0,
+          "unique_chromosomes": 23,
+          "mean_request_coverage": 0.9613062098501072,
+          "cumulative_fitness_evaluation_count": 314,
+          "cumulative_elapsed_seconds": 11.935937600035686
+        },
+        {
+          "generation_index": 9,
+          "best_hard_penalty": 1171,
+          "mean_hard_penalty": 1212.2666666666667,
+          "best_soft_score": 0.6404774749203207,
+          "mean_soft_score": 0.6465369148076836,
+          "feasible_count": 0,
+          "unique_chromosomes": 23,
+          "mean_request_coverage": 0.9613204853675945,
+          "cumulative_fitness_evaluation_count": 347,
+          "cumulative_elapsed_seconds": 13.263928400003351
+        },
+        {
+          "generation_index": 10,
+          "best_hard_penalty": 1170,
+          "mean_hard_penalty": 1201.0333333333333,
+          "best_soft_score": 0.6458241843601183,
+          "mean_soft_score": 0.6460084125080067,
+          "feasible_count": 0,
+          "unique_chromosomes": 24,
+          "mean_request_coverage": 0.9612955032119914,
+          "cumulative_fitness_evaluation_count": 389,
+          "cumulative_elapsed_seconds": 14.830857900029514
+        },
+        {
+          "generation_index": 11,
+          "best_hard_penalty": 1157,
+          "mean_hard_penalty": 1193.9666666666667,
+          "best_soft_score": 0.6438716808817441,
+          "mean_soft_score": 0.6451253509861937,
+          "feasible_count": 0,
+          "unique_chromosomes": 24,
+          "mean_request_coverage": 0.9612419700214133,
+          "cumulative_fitness_evaluation_count": 422,
+          "cumulative_elapsed_seconds": 16.37293240003055
+        },
+        {
+          "generation_index": 12,
+          "best_hard_penalty": 1136,
+          "mean_hard_penalty": 1171.8333333333333,
+          "best_soft_score": 0.6412697071825181,
+          "mean_soft_score": 0.6430102641763042,
+          "feasible_count": 0,
+          "unique_chromosomes": 22,
+          "mean_request_coverage": 0.9612740899357601,
+          "cumulative_fitness_evaluation_count": 459,
+          "cumulative_elapsed_seconds": 17.7062631000299
+        },
+        {
+          "generation_index": 13,
+          "best_hard_penalty": 1135,
+          "mean_hard_penalty": 1160.0666666666666,
+          "best_soft_score": 0.6435210320985731,
+          "mean_soft_score": 0.6427533894758397,
+          "feasible_count": 0,
+          "unique_chromosomes": 25,
+          "mean_request_coverage": 0.9612348322626695,
+          "cumulative_fitness_evaluation_count": 496,
+          "cumulative_elapsed_seconds": 18.984405099996366
+        },
+        {
+          "generation_index": 14,
+          "best_hard_penalty": 1120,
+          "mean_hard_penalty": 1151.9333333333334,
+          "best_soft_score": 0.6406511376495142,
+          "mean_soft_score": 0.6426082529729018,
+          "feasible_count": 0,
+          "unique_chromosomes": 28,
+          "mean_request_coverage": 0.961249107780157,
+          "cumulative_fitness_evaluation_count": 534,
+          "cumulative_elapsed_seconds": 20.243930500000715
+        },
+        {
+          "generation_index": 15,
+          "best_hard_penalty": 1118,
+          "mean_hard_penalty": 1140.8,
+          "best_soft_score": 0.6408841711085614,
+          "mean_soft_score": 0.6422637861972262,
+          "feasible_count": 0,
+          "unique_chromosomes": 29,
+          "mean_request_coverage": 0.9612169878658102,
+          "cumulative_fitness_evaluation_count": 572,
+          "cumulative_elapsed_seconds": 21.58441509999102
+        },
+        {
+          "generation_index": 16,
+          "best_hard_penalty": 1113,
+          "mean_hard_penalty": 1136.2333333333333,
+          "best_soft_score": 0.6442065724500895,
+          "mean_soft_score": 0.6416215961878576,
+          "feasible_count": 0,
+          "unique_chromosomes": 28,
+          "mean_request_coverage": 0.9611206281227694,
+          "cumulative_fitness_evaluation_count": 611,
+          "cumulative_elapsed_seconds": 23.242591199988965
+        },
+        {
+          "generation_index": 17,
+          "best_hard_penalty": 1110,
+          "mean_hard_penalty": 1126.7333333333333,
+          "best_soft_score": 0.6423471660792702,
+          "mean_soft_score": 0.6420838261626167,
+          "feasible_count": 0,
+          "unique_chromosomes": 26,
+          "mean_request_coverage": 0.9612134189864382,
+          "cumulative_fitness_evaluation_count": 646,
+          "cumulative_elapsed_seconds": 24.654696099983994
+        },
+        {
+          "generation_index": 18,
+          "best_hard_penalty": 1108,
+          "mean_hard_penalty": 1119.2333333333333,
+          "best_soft_score": 0.6440399075977403,
+          "mean_soft_score": 0.6416778713707872,
+          "feasible_count": 0,
+          "unique_chromosomes": 21,
+          "mean_request_coverage": 0.9612348322626695,
+          "cumulative_fitness_evaluation_count": 680,
+          "cumulative_elapsed_seconds": 25.907341099984478
+        },
+        {
+          "generation_index": 19,
+          "best_hard_penalty": 1106,
+          "mean_hard_penalty": 1115.4,
+          "best_soft_score": 0.6443836479119472,
+          "mean_soft_score": 0.6422631221221983,
+          "feasible_count": 0,
+          "unique_chromosomes": 26,
+          "mean_request_coverage": 0.961224125624554,
+          "cumulative_fitness_evaluation_count": 713,
+          "cumulative_elapsed_seconds": 27.153078100003768
+        },
+        {
+          "generation_index": 20,
+          "best_hard_penalty": 1094,
+          "mean_hard_penalty": 1111.8666666666666,
+          "best_soft_score": 0.642335624855192,
+          "mean_soft_score": 0.6430638433936543,
+          "feasible_count": 0,
+          "unique_chromosomes": 23,
+          "mean_request_coverage": 0.9612455389007852,
+          "cumulative_fitness_evaluation_count": 747,
+          "cumulative_elapsed_seconds": 28.645315000030678
+        }
+      ]
+    },
+    {
+      "name": "C_seed33",
+      "settings": {
+        "version": "evolution-phase6-v1",
+        "population_size": 30,
+        "tournament_size": 3,
+        "elite_count": 2,
+        "max_generations": 20,
+        "mutation_probability": 0.3,
+        "crossover_probability": 0.7,
+        "repair_enabled": true,
+        "random_seed": 33,
+        "stop_on_first_feasible": false,
+        "stagnation_generations": null,
+        "max_fitness_evaluations": 4000,
+        "initialization_settings": {
+          "version": "initialization-v1",
+          "strategies": [
+            "compact",
+            "spread",
+            "random"
+          ],
+          "max_attempts_per_individual": 8
+        },
+        "mutation_settings": {
+          "version": "mutation-5b-v1",
+          "mutation_probability": 0.3,
+          "targeted_probability": 0.7,
+          "max_attempts": 8,
+          "max_proposals_per_operator": 8,
+          "operator_weights": [
+            [
+              "MoveMeeting",
+              1.0
+            ],
+            [
+              "SwapMeetings",
+              1.0
+            ],
+            [
+              "ChangeProfessor",
+              1.0
+            ],
+            [
+              "ChangeRoom",
+              1.0
+            ],
+            [
+              "SplitSection",
+              1.0
+            ],
+            [
+              "MergeSections",
+              1.0
+            ],
+            [
+              "ActivateDeactivate",
+              1.0
+            ],
+            [
+              "MoveStudent",
+              1.0
+            ],
+            [
+              "SwapStudents",
+              1.0
+            ],
+            [
+              "AssignUnassign",
+              1.0
+            ]
+          ]
+        },
+        "repair_settings": {
+          "version": "repair-5b-v1",
+          "max_local_candidates": 5,
+          "max_candidate_evaluations": 50,
+          "max_candidate_attempts": 100,
+          "max_conflicts": 50,
+          "max_structural_steps": 20
+        }
+      },
+      "timings": {
+        "context_seconds": 0,
+        "initialization_seconds": 0.590285699989181,
+        "evolution_seconds": 36.34816779999528
+      },
+      "stop_reasons": [
+        "max_generations"
+      ],
+      "best_overall": {
+        "fingerprint": "2506852ee18af2fdb94e572fdfc3d77740996478d6e919717d63a8731e653e34",
+        "hard_penalty": 1100,
+        "soft_score": 0.661388757425313,
+        "request_coverage": 0.9598501070663812,
+        "feasible": false,
+        "hard_counts_by_type": {
+          "H02_DISALLOWED_SLOT": 0,
+          "H03_UNQUALIFIED_PROFESSOR": 0,
+          "H04_PROFESSOR_OVERLAP": 12,
+          "H04_ROOM_OVERLAP": 33,
+          "H04_STUDENT_OVERLAP": 287,
+          "H05_PROFESSOR_UNAVAILABLE": 38,
+          "H05_STUDENT_UNAVAILABLE": 220,
+          "H06_ROOM_TYPE": 0,
+          "H07_SECTION_UNDERFLOW": 0,
+          "H07_SECTION_OVERFLOW": 0,
+          "H08_CREDIT_UNDERFLOW": 0,
+          "H08_CREDIT_OVERFLOW": 510,
+          "H09_TEACHING_OVERLOAD": 0,
+          "H10_PASSED_COURSE": 0
+        }
+      },
+      "best_feasible": null,
+      "final_population_best": {
+        "fingerprint": "2506852ee18af2fdb94e572fdfc3d77740996478d6e919717d63a8731e653e34",
+        "hard_penalty": 1100,
+        "soft_score": 0.661388757425313,
+        "request_coverage": 0.9598501070663812,
+        "feasible": false,
+        "hard_counts_by_type": {
+          "H02_DISALLOWED_SLOT": 0,
+          "H03_UNQUALIFIED_PROFESSOR": 0,
+          "H04_PROFESSOR_OVERLAP": 12,
+          "H04_ROOM_OVERLAP": 33,
+          "H04_STUDENT_OVERLAP": 287,
+          "H05_PROFESSOR_UNAVAILABLE": 38,
+          "H05_STUDENT_UNAVAILABLE": 220,
+          "H06_ROOM_TYPE": 0,
+          "H07_SECTION_UNDERFLOW": 0,
+          "H07_SECTION_OVERFLOW": 0,
+          "H08_CREDIT_UNDERFLOW": 0,
+          "H08_CREDIT_OVERFLOW": 510,
+          "H09_TEACHING_OVERLOAD": 0,
+          "H10_PASSED_COURSE": 0
+        }
+      },
+      "evaluation_usage": {
+        "initialization": 30,
+        "child_baseline": 560,
+        "post_mutation": 160,
+        "mutation_baseline": 0,
+        "repair_baseline": 0,
+        "repair_candidates": 270,
+        "total": 1020,
+        "hard_calls": 1020,
+        "soft_calls": 1020
+      },
+      "partial_generation": null,
+      "generations": [
+        {
+          "generation_index": 0,
+          "best_hard_penalty": 1374,
+          "mean_hard_penalty": 1535.7666666666667,
+          "best_soft_score": 0.6725609824315916,
+          "mean_soft_score": 0.6514344938103863,
+          "feasible_count": 0,
+          "unique_chromosomes": 30,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 30,
+          "cumulative_elapsed_seconds": 0.590285699989181
+        },
+        {
+          "generation_index": 1,
+          "best_hard_penalty": 1363,
+          "mean_hard_penalty": 1482.7,
+          "best_soft_score": 0.6648008190030105,
+          "mean_soft_score": 0.6595916488699665,
+          "feasible_count": 0,
+          "unique_chromosomes": 27,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 78,
+          "cumulative_elapsed_seconds": 2.3791427999385633
+        },
+        {
+          "generation_index": 2,
+          "best_hard_penalty": 1319,
+          "mean_hard_penalty": 1444.7,
+          "best_soft_score": 0.6619263842291344,
+          "mean_soft_score": 0.6626929040936673,
+          "feasible_count": 0,
+          "unique_chromosomes": 28,
+          "mean_request_coverage": 0.9613347608850821,
+          "cumulative_fitness_evaluation_count": 118,
+          "cumulative_elapsed_seconds": 3.9714722999488004
+        },
+        {
+          "generation_index": 3,
+          "best_hard_penalty": 1251,
+          "mean_hard_penalty": 1384.1666666666667,
+          "best_soft_score": 0.6682423516527264,
+          "mean_soft_score": 0.665462275589931,
+          "feasible_count": 0,
+          "unique_chromosomes": 29,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 169,
+          "cumulative_elapsed_seconds": 6.1209290999686345
+        },
+        {
+          "generation_index": 4,
+          "best_hard_penalty": 1251,
+          "mean_hard_penalty": 1347.3,
+          "best_soft_score": 0.6682434844731697,
+          "mean_soft_score": 0.663000433082439,
+          "feasible_count": 0,
+          "unique_chromosomes": 29,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 230,
+          "cumulative_elapsed_seconds": 8.528449899982661
+        },
+        {
+          "generation_index": 5,
+          "best_hard_penalty": 1239,
+          "mean_hard_penalty": 1317.2666666666667,
+          "best_soft_score": 0.6560447129198574,
+          "mean_soft_score": 0.6636876685111215,
+          "feasible_count": 0,
+          "unique_chromosomes": 26,
+          "mean_request_coverage": 0.9612883654532477,
+          "cumulative_fitness_evaluation_count": 289,
+          "cumulative_elapsed_seconds": 10.533856199937873
+        },
+        {
+          "generation_index": 6,
+          "best_hard_penalty": 1215,
+          "mean_hard_penalty": 1281.1333333333334,
+          "best_soft_score": 0.6651062331150137,
+          "mean_soft_score": 0.6655513260513097,
+          "feasible_count": 0,
+          "unique_chromosomes": 25,
+          "mean_request_coverage": 0.9612955032119914,
+          "cumulative_fitness_evaluation_count": 333,
+          "cumulative_elapsed_seconds": 12.252945499960333
+        },
+        {
+          "generation_index": 7,
+          "best_hard_penalty": 1208,
+          "mean_hard_penalty": 1263.2,
+          "best_soft_score": 0.6639779955513487,
+          "mean_soft_score": 0.6645313578655342,
+          "feasible_count": 0,
+          "unique_chromosomes": 27,
+          "mean_request_coverage": 0.9612847965738759,
+          "cumulative_fitness_evaluation_count": 392,
+          "cumulative_elapsed_seconds": 14.214223899994977
+        },
+        {
+          "generation_index": 8,
+          "best_hard_penalty": 1205,
+          "mean_hard_penalty": 1240.3666666666666,
+          "best_soft_score": 0.6638108476822978,
+          "mean_soft_score": 0.6639627331392419,
+          "feasible_count": 0,
+          "unique_chromosomes": 30,
+          "mean_request_coverage": 0.9612455389007852,
+          "cumulative_fitness_evaluation_count": 462,
+          "cumulative_elapsed_seconds": 16.434155999973882
+        },
+        {
+          "generation_index": 9,
+          "best_hard_penalty": 1170,
+          "mean_hard_penalty": 1216.3333333333333,
+          "best_soft_score": 0.6648763986291506,
+          "mean_soft_score": 0.6636925330010118,
+          "feasible_count": 0,
+          "unique_chromosomes": 28,
+          "mean_request_coverage": 0.9612562455389008,
+          "cumulative_fitness_evaluation_count": 512,
+          "cumulative_elapsed_seconds": 18.164247799955774
+        },
+        {
+          "generation_index": 10,
+          "best_hard_penalty": 1140,
+          "mean_hard_penalty": 1196.6333333333334,
+          "best_soft_score": 0.6601438720023016,
+          "mean_soft_score": 0.6634811105141948,
+          "feasible_count": 0,
+          "unique_chromosomes": 29,
+          "mean_request_coverage": 0.9611812990720914,
+          "cumulative_fitness_evaluation_count": 558,
+          "cumulative_elapsed_seconds": 19.8619945999817
+        },
+        {
+          "generation_index": 11,
+          "best_hard_penalty": 1139,
+          "mean_hard_penalty": 1175.4666666666667,
+          "best_soft_score": 0.6613963556134245,
+          "mean_soft_score": 0.6625147360956163,
+          "feasible_count": 0,
+          "unique_chromosomes": 29,
+          "mean_request_coverage": 0.9609957173447538,
+          "cumulative_fitness_evaluation_count": 613,
+          "cumulative_elapsed_seconds": 21.698641799972393
+        },
+        {
+          "generation_index": 12,
+          "best_hard_penalty": 1130,
+          "mean_hard_penalty": 1157.1,
+          "best_soft_score": 0.6607389130571685,
+          "mean_soft_score": 0.662000005812198,
+          "feasible_count": 0,
+          "unique_chromosomes": 24,
+          "mean_request_coverage": 0.9610421127765882,
+          "cumulative_fitness_evaluation_count": 660,
+          "cumulative_elapsed_seconds": 23.427660199988168
+        },
+        {
+          "generation_index": 13,
+          "best_hard_penalty": 1130,
+          "mean_hard_penalty": 1142.9333333333334,
+          "best_soft_score": 0.6607389130571685,
+          "mean_soft_score": 0.6614017463018764,
+          "feasible_count": 0,
+          "unique_chromosomes": 24,
+          "mean_request_coverage": 0.9611170592433976,
+          "cumulative_fitness_evaluation_count": 703,
+          "cumulative_elapsed_seconds": 25.182683099992573
+        },
+        {
+          "generation_index": 14,
+          "best_hard_penalty": 1115,
+          "mean_hard_penalty": 1134.6333333333334,
+          "best_soft_score": 0.6601453310806007,
+          "mean_soft_score": 0.6612578815851581,
+          "feasible_count": 0,
+          "unique_chromosomes": 27,
+          "mean_request_coverage": 0.961134903640257,
+          "cumulative_fitness_evaluation_count": 753,
+          "cumulative_elapsed_seconds": 26.936921999964397
+        },
+        {
+          "generation_index": 15,
+          "best_hard_penalty": 1115,
+          "mean_hard_penalty": 1127.5666666666666,
+          "best_soft_score": 0.6614447237442969,
+          "mean_soft_score": 0.6611564759814053,
+          "feasible_count": 0,
+          "unique_chromosomes": 28,
+          "mean_request_coverage": 0.9609778729478945,
+          "cumulative_fitness_evaluation_count": 802,
+          "cumulative_elapsed_seconds": 28.828461699944455
+        },
+        {
+          "generation_index": 16,
+          "best_hard_penalty": 1110,
+          "mean_hard_penalty": 1121.6666666666667,
+          "best_soft_score": 0.6596275500988928,
+          "mean_soft_score": 0.6609903707264361,
+          "feasible_count": 0,
+          "unique_chromosomes": 27,
+          "mean_request_coverage": 0.9606709493219129,
+          "cumulative_fitness_evaluation_count": 847,
+          "cumulative_elapsed_seconds": 30.577581699937582
+        },
+        {
+          "generation_index": 17,
+          "best_hard_penalty": 1107,
+          "mean_hard_penalty": 1118.6333333333334,
+          "best_soft_score": 0.6599829846815701,
+          "mean_soft_score": 0.6608149792303922,
+          "feasible_count": 0,
+          "unique_chromosomes": 28,
+          "mean_request_coverage": 0.9606281227694505,
+          "cumulative_fitness_evaluation_count": 883,
+          "cumulative_elapsed_seconds": 32.072525599971414
+        },
+        {
+          "generation_index": 18,
+          "best_hard_penalty": 1106,
+          "mean_hard_penalty": 1115.0333333333333,
+          "best_soft_score": 0.6610593742929931,
+          "mean_soft_score": 0.6606493570965982,
+          "feasible_count": 0,
+          "unique_chromosomes": 28,
+          "mean_request_coverage": 0.9601927194860813,
+          "cumulative_fitness_evaluation_count": 922,
+          "cumulative_elapsed_seconds": 33.634981799987145
+        },
+        {
+          "generation_index": 19,
+          "best_hard_penalty": 1100,
+          "mean_hard_penalty": 1111.0,
+          "best_soft_score": 0.661388757425313,
+          "mean_soft_score": 0.660842048269532,
+          "feasible_count": 0,
+          "unique_chromosomes": 27,
+          "mean_request_coverage": 0.9600713775874375,
+          "cumulative_fitness_evaluation_count": 964,
+          "cumulative_elapsed_seconds": 35.19221389997983
+        },
+        {
+          "generation_index": 20,
+          "best_hard_penalty": 1100,
+          "mean_hard_penalty": 1108.9,
+          "best_soft_score": 0.661388757425313,
+          "mean_soft_score": 0.6606428091379167,
+          "feasible_count": 0,
+          "unique_chromosomes": 29,
+          "mean_request_coverage": 0.9597787294789436,
+          "cumulative_fitness_evaluation_count": 1020,
+          "cumulative_elapsed_seconds": 36.93114629999036
+        }
+      ]
+    },
+    {
+      "name": "large",
+      "settings": {
+        "version": "evolution-phase6-v1",
+        "population_size": 100,
+        "tournament_size": 3,
+        "elite_count": 2,
+        "max_generations": 30,
+        "mutation_probability": 0.3,
+        "crossover_probability": 0.7,
+        "repair_enabled": true,
+        "random_seed": 11,
+        "stop_on_first_feasible": false,
+        "stagnation_generations": null,
+        "max_fitness_evaluations": 4000,
+        "initialization_settings": {
+          "version": "initialization-v1",
+          "strategies": [
+            "compact",
+            "spread",
+            "random"
+          ],
+          "max_attempts_per_individual": 8
+        },
+        "mutation_settings": {
+          "version": "mutation-5b-v1",
+          "mutation_probability": 0.3,
+          "targeted_probability": 0.7,
+          "max_attempts": 8,
+          "max_proposals_per_operator": 8,
+          "operator_weights": [
+            [
+              "MoveMeeting",
+              1.0
+            ],
+            [
+              "SwapMeetings",
+              1.0
+            ],
+            [
+              "ChangeProfessor",
+              1.0
+            ],
+            [
+              "ChangeRoom",
+              1.0
+            ],
+            [
+              "SplitSection",
+              1.0
+            ],
+            [
+              "MergeSections",
+              1.0
+            ],
+            [
+              "ActivateDeactivate",
+              1.0
+            ],
+            [
+              "MoveStudent",
+              1.0
+            ],
+            [
+              "SwapStudents",
+              1.0
+            ],
+            [
+              "AssignUnassign",
+              1.0
+            ]
+          ]
+        },
+        "repair_settings": {
+          "version": "repair-5b-v1",
+          "max_local_candidates": 5,
+          "max_candidate_evaluations": 50,
+          "max_candidate_attempts": 100,
+          "max_conflicts": 50,
+          "max_structural_steps": 20
+        }
+      },
+      "timings": {
+        "context_seconds": 0.012820200005080551,
+        "initialization_seconds": 1.8777045999886468,
+        "evolution_seconds": 134.13065609999467
+      },
+      "stop_reasons": [
+        "fitness_budget"
+      ],
+      "best_overall": {
+        "fingerprint": "0f8cc67d6ec824addf6aa2a6508e344f8a7f728bd47b22a2eb024180ebcd54f7",
+        "hard_penalty": 957,
+        "soft_score": 0.657087652302823,
+        "request_coverage": 0.9602783725910065,
+        "feasible": false,
+        "hard_counts_by_type": {
+          "H02_DISALLOWED_SLOT": 0,
+          "H03_UNQUALIFIED_PROFESSOR": 0,
+          "H04_PROFESSOR_OVERLAP": 7,
+          "H04_ROOM_OVERLAP": 12,
+          "H04_STUDENT_OVERLAP": 197,
+          "H05_PROFESSOR_UNAVAILABLE": 26,
+          "H05_STUDENT_UNAVAILABLE": 207,
+          "H06_ROOM_TYPE": 0,
+          "H07_SECTION_UNDERFLOW": 0,
+          "H07_SECTION_OVERFLOW": 0,
+          "H08_CREDIT_UNDERFLOW": 0,
+          "H08_CREDIT_OVERFLOW": 508,
+          "H09_TEACHING_OVERLOAD": 0,
+          "H10_PASSED_COURSE": 0
+        }
+      },
+      "best_feasible": null,
+      "final_population_best": {
+        "fingerprint": "0f8cc67d6ec824addf6aa2a6508e344f8a7f728bd47b22a2eb024180ebcd54f7",
+        "hard_penalty": 957,
+        "soft_score": 0.657087652302823,
+        "request_coverage": 0.9602783725910065,
+        "feasible": false,
+        "hard_counts_by_type": {
+          "H02_DISALLOWED_SLOT": 0,
+          "H03_UNQUALIFIED_PROFESSOR": 0,
+          "H04_PROFESSOR_OVERLAP": 7,
+          "H04_ROOM_OVERLAP": 12,
+          "H04_STUDENT_OVERLAP": 197,
+          "H05_PROFESSOR_UNAVAILABLE": 26,
+          "H05_STUDENT_UNAVAILABLE": 207,
+          "H06_ROOM_TYPE": 0,
+          "H07_SECTION_UNDERFLOW": 0,
+          "H07_SECTION_OVERFLOW": 0,
+          "H08_CREDIT_UNDERFLOW": 0,
+          "H08_CREDIT_OVERFLOW": 508,
+          "H09_TEACHING_OVERLOAD": 0,
+          "H10_PASSED_COURSE": 0
+        }
+      },
+      "evaluation_usage": {
+        "initialization": 100,
+        "child_baseline": 2447,
+        "post_mutation": 723,
+        "mutation_baseline": 0,
+        "repair_baseline": 0,
+        "repair_candidates": 730,
+        "known_calls": 4000,
+        "total": 4000,
+        "hard_calls": 4000,
+        "soft_calls": 4000
+      },
+      "partial_generation": {
+        "generation_index": 25,
+        "completed_children": 95,
+        "operators": {
+          "children": 95,
+          "crossover_applied": 76,
+          "parent_cloned": 19,
+          "self_matings": 3,
+          "mutation_applied": 29,
+          "mutation_skipped": 66,
+          "mutation_failed": 0,
+          "mutation_not_applicable": 0,
+          "mutation_targeted": 19,
+          "mutation_fallback": 0,
+          "mutation_operations": [
+            [
+              "AssignUnassign",
+              4
+            ],
+            [
+              "ChangeProfessor",
+              3
+            ],
+            [
+              "ChangeRoom",
+              1
+            ],
+            [
+              "MoveMeeting",
+              6
+            ],
+            [
+              "MoveStudent",
+              4
+            ],
+            [
+              "SplitSection",
+              2
+            ],
+            [
+              "SwapMeetings",
+              4
+            ],
+            [
+              "SwapStudents",
+              5
+            ]
+          ],
+          "repair_improved": 0,
+          "repair_unchanged": 95,
+          "repair_disabled": 0,
+          "better_than_both_parents": 18,
+          "between_parents": 53,
+          "worse_than_both_parents": 24,
+          "identical_to_a_parent": 19
+        },
+        "evaluations": {
+          "initialization": 0,
+          "child_baseline": 95,
+          "post_mutation": 29,
+          "mutation_baseline": 0,
+          "repair_baseline": 0,
+          "repair_candidates": 20
+        },
+        "elapsed_seconds": 4.983081099984702,
+        "reason": "fitness_budget"
+      },
+      "generations": [
+        {
+          "generation_index": 0,
+          "best_hard_penalty": 1305,
+          "mean_hard_penalty": 1535.7,
+          "best_soft_score": 0.6586846577232136,
+          "mean_soft_score": 0.6505801848683204,
+          "feasible_count": 0,
+          "unique_chromosomes": 100,
+          "mean_request_coverage": 0.9613490364025696,
+          "cumulative_fitness_evaluation_count": 100,
+          "cumulative_elapsed_seconds": 1.8905247999937274
+        },
+        {
+          "generation_index": 1,
+          "best_hard_penalty": 1305,
+          "mean_hard_penalty": 1465.73,
+          "best_soft_score": 0.6586846577232136,
+          "mean_soft_score": 0.6584888235041113,
+          "feasible_count": 0,
+          "unique_chromosomes": 93,
+          "mean_request_coverage": 0.9613179871520343,
+          "cumulative_fitness_evaluation_count": 302,
+          "cumulative_elapsed_seconds": 7.599199699994642
+        },
+        {
+          "generation_index": 2,
+          "best_hard_penalty": 1277,
+          "mean_hard_penalty": 1428.51,
+          "best_soft_score": 0.6641112394334194,
+          "mean_soft_score": 0.66046405010676,
+          "feasible_count": 0,
+          "unique_chromosomes": 98,
+          "mean_request_coverage": 0.9612698072805139,
+          "cumulative_fitness_evaluation_count": 494,
+          "cumulative_elapsed_seconds": 13.837570999981835
+        },
+        {
+          "generation_index": 3,
+          "best_hard_penalty": 1265,
+          "mean_hard_penalty": 1410.74,
+          "best_soft_score": 0.6550788976809139,
+          "mean_soft_score": 0.6613870831093055,
+          "feasible_count": 0,
+          "unique_chromosomes": 96,
+          "mean_request_coverage": 0.961220556745182,
+          "cumulative_fitness_evaluation_count": 673,
+          "cumulative_elapsed_seconds": 19.767128099978436
+        },
+        {
+          "generation_index": 4,
+          "best_hard_penalty": 1250,
+          "mean_hard_penalty": 1388.78,
+          "best_soft_score": 0.6583806291119411,
+          "mean_soft_score": 0.6619295536597463,
+          "feasible_count": 0,
+          "unique_chromosomes": 95,
+          "mean_request_coverage": 0.9612698072805139,
+          "cumulative_fitness_evaluation_count": 828,
+          "cumulative_elapsed_seconds": 25.266385999973863
+        },
+        {
+          "generation_index": 5,
+          "best_hard_penalty": 1232,
+          "mean_hard_penalty": 1365.83,
+          "best_soft_score": 0.6571857437830714,
+          "mean_soft_score": 0.6617153753290098,
+          "feasible_count": 0,
+          "unique_chromosomes": 95,
+          "mean_request_coverage": 0.9612730192719486,
+          "cumulative_fitness_evaluation_count": 991,
+          "cumulative_elapsed_seconds": 30.71592829999281
+        },
+        {
+          "generation_index": 6,
+          "best_hard_penalty": 1232,
+          "mean_hard_penalty": 1341.09,
+          "best_soft_score": 0.6571857437830714,
+          "mean_soft_score": 0.6609047782019101,
+          "feasible_count": 0,
+          "unique_chromosomes": 96,
+          "mean_request_coverage": 0.9612708779443255,
+          "cumulative_fitness_evaluation_count": 1141,
+          "cumulative_elapsed_seconds": 36.08787139999913
+        },
+        {
+          "generation_index": 7,
+          "best_hard_penalty": 1232,
+          "mean_hard_penalty": 1326.48,
+          "best_soft_score": 0.6571857437830714,
+          "mean_soft_score": 0.6613325407872742,
+          "feasible_count": 0,
+          "unique_chromosomes": 96,
+          "mean_request_coverage": 0.9612901498929337,
+          "cumulative_fitness_evaluation_count": 1301,
+          "cumulative_elapsed_seconds": 41.605698200000916
+        },
+        {
+          "generation_index": 8,
+          "best_hard_penalty": 1214,
+          "mean_hard_penalty": 1292.8,
+          "best_soft_score": 0.6561160569702252,
+          "mean_soft_score": 0.6603494116192361,
+          "feasible_count": 0,
+          "unique_chromosomes": 92,
+          "mean_request_coverage": 0.9612997858672376,
+          "cumulative_fitness_evaluation_count": 1444,
+          "cumulative_elapsed_seconds": 46.79863699997077
+        },
+        {
+          "generation_index": 9,
+          "best_hard_penalty": 1153,
+          "mean_hard_penalty": 1275.94,
+          "best_soft_score": 0.6657399662857587,
+          "mean_soft_score": 0.6602339619788996,
+          "feasible_count": 0,
+          "unique_chromosomes": 96,
+          "mean_request_coverage": 0.9613137044967881,
+          "cumulative_fitness_evaluation_count": 1610,
+          "cumulative_elapsed_seconds": 52.45800149999559
+        },
+        {
+          "generation_index": 10,
+          "best_hard_penalty": 1153,
+          "mean_hard_penalty": 1248.83,
+          "best_soft_score": 0.6657399662857587,
+          "mean_soft_score": 0.6603423874441154,
+          "feasible_count": 0,
+          "unique_chromosomes": 98,
+          "mean_request_coverage": 0.9612569593147753,
+          "cumulative_fitness_evaluation_count": 1775,
+          "cumulative_elapsed_seconds": 58.06347439996898
+        },
+        {
+          "generation_index": 11,
+          "best_hard_penalty": 1140,
+          "mean_hard_penalty": 1221.65,
+          "best_soft_score": 0.6623979323664102,
+          "mean_soft_score": 0.6600233576738873,
+          "feasible_count": 0,
+          "unique_chromosomes": 97,
+          "mean_request_coverage": 0.9612259100642399,
+          "cumulative_fitness_evaluation_count": 1925,
+          "cumulative_elapsed_seconds": 63.252411099965684
+        },
+        {
+          "generation_index": 12,
+          "best_hard_penalty": 1086,
+          "mean_hard_penalty": 1201.87,
+          "best_soft_score": 0.6578382693176245,
+          "mean_soft_score": 0.6608157224177085,
+          "feasible_count": 0,
+          "unique_chromosomes": 96,
+          "mean_request_coverage": 0.9612194860813704,
+          "cumulative_fitness_evaluation_count": 2091,
+          "cumulative_elapsed_seconds": 68.70998359995428
+        },
+        {
+          "generation_index": 13,
+          "best_hard_penalty": 1086,
+          "mean_hard_penalty": 1182.15,
+          "best_soft_score": 0.6578382693176245,
+          "mean_soft_score": 0.6614349759274358,
+          "feasible_count": 0,
+          "unique_chromosomes": 91,
+          "mean_request_coverage": 0.9612162740899357,
+          "cumulative_fitness_evaluation_count": 2238,
+          "cumulative_elapsed_seconds": 73.81203589995857
+        },
+        {
+          "generation_index": 14,
+          "best_hard_penalty": 1083,
+          "mean_hard_penalty": 1159.8,
+          "best_soft_score": 0.6566293743491382,
+          "mean_soft_score": 0.6612906035205723,
+          "feasible_count": 0,
+          "unique_chromosomes": 90,
+          "mean_request_coverage": 0.961213062098501,
+          "cumulative_fitness_evaluation_count": 2379,
+          "cumulative_elapsed_seconds": 79.04308029997628
+        },
+        {
+          "generation_index": 15,
+          "best_hard_penalty": 1074,
+          "mean_hard_penalty": 1133.5,
+          "best_soft_score": 0.658665742905974,
+          "mean_soft_score": 0.660407193658723,
+          "feasible_count": 0,
+          "unique_chromosomes": 92,
+          "mean_request_coverage": 0.9612152034261243,
+          "cumulative_fitness_evaluation_count": 2530,
+          "cumulative_elapsed_seconds": 84.39201289997436
+        },
+        {
+          "generation_index": 16,
+          "best_hard_penalty": 1062,
+          "mean_hard_penalty": 1113.98,
+          "best_soft_score": 0.6606760199663122,
+          "mean_soft_score": 0.6598795403687054,
+          "feasible_count": 0,
+          "unique_chromosomes": 95,
+          "mean_request_coverage": 0.9612505353319059,
+          "cumulative_fitness_evaluation_count": 2662,
+          "cumulative_elapsed_seconds": 89.34409939998295
+        },
+        {
+          "generation_index": 17,
+          "best_hard_penalty": 1043,
+          "mean_hard_penalty": 1096.5,
+          "best_soft_score": 0.6620270409196549,
+          "mean_soft_score": 0.659264854806883,
+          "feasible_count": 0,
+          "unique_chromosomes": 92,
+          "mean_request_coverage": 0.9612173447537473,
+          "cumulative_fitness_evaluation_count": 2816,
+          "cumulative_elapsed_seconds": 94.66909709997708
+        },
+        {
+          "generation_index": 18,
+          "best_hard_penalty": 1022,
+          "mean_hard_penalty": 1076.71,
+          "best_soft_score": 0.6614974455160961,
+          "mean_soft_score": 0.6587614332033465,
+          "feasible_count": 0,
+          "unique_chromosomes": 92,
+          "mean_request_coverage": 0.9611927194860814,
+          "cumulative_fitness_evaluation_count": 2967,
+          "cumulative_elapsed_seconds": 99.8430631000083
+        },
+        {
+          "generation_index": 19,
+          "best_hard_penalty": 1010,
+          "mean_hard_penalty": 1057.1,
+          "best_soft_score": 0.6621887802061035,
+          "mean_soft_score": 0.659756356943515,
+          "feasible_count": 0,
+          "unique_chromosomes": 93,
+          "mean_request_coverage": 0.9612216274089935,
+          "cumulative_fitness_evaluation_count": 3127,
+          "cumulative_elapsed_seconds": 105.27274029998807
+        },
+        {
+          "generation_index": 20,
+          "best_hard_penalty": 983,
+          "mean_hard_penalty": 1040.75,
+          "best_soft_score": 0.658456430427061,
+          "mean_soft_score": 0.6593407436604306,
+          "feasible_count": 0,
+          "unique_chromosomes": 96,
+          "mean_request_coverage": 0.9611498929336189,
+          "cumulative_fitness_evaluation_count": 3261,
+          "cumulative_elapsed_seconds": 110.36575150000863
+        },
+        {
+          "generation_index": 21,
+          "best_hard_penalty": 974,
+          "mean_hard_penalty": 1029.97,
+          "best_soft_score": 0.6603511226055233,
+          "mean_soft_score": 0.6602863306403246,
+          "feasible_count": 0,
+          "unique_chromosomes": 94,
+          "mean_request_coverage": 0.9611231263383299,
+          "cumulative_fitness_evaluation_count": 3419,
+          "cumulative_elapsed_seconds": 115.67094059998635
+        },
+        {
+          "generation_index": 22,
+          "best_hard_penalty": 974,
+          "mean_hard_penalty": 1017.77,
+          "best_soft_score": 0.6603511226055233,
+          "mean_soft_score": 0.6604372851629325,
+          "feasible_count": 0,
+          "unique_chromosomes": 90,
+          "mean_request_coverage": 0.9610385438972163,
+          "cumulative_fitness_evaluation_count": 3570,
+          "cumulative_elapsed_seconds": 120.86869519995525
+        },
+        {
+          "generation_index": 23,
+          "best_hard_penalty": 974,
+          "mean_hard_penalty": 1008.19,
+          "best_soft_score": 0.6603511226055233,
+          "mean_soft_score": 0.6599017431201187,
+          "feasible_count": 0,
+          "unique_chromosomes": 89,
+          "mean_request_coverage": 0.9607644539614562,
+          "cumulative_fitness_evaluation_count": 3707,
+          "cumulative_elapsed_seconds": 125.81934489996638
+        },
+        {
+          "generation_index": 24,
+          "best_hard_penalty": 957,
+          "mean_hard_penalty": 996.98,
+          "best_soft_score": 0.657087652302823,
+          "mean_soft_score": 0.6596675586011028,
+          "feasible_count": 0,
+          "unique_chromosomes": 90,
+          "mean_request_coverage": 0.9606059957173448,
+          "cumulative_fitness_evaluation_count": 3856,
+          "cumulative_elapsed_seconds": 131.03151890001027
+        }
+      ]
+    }
+  ]
+}
