@@ -1,5 +1,7 @@
 # طراحی الگوریتم ژنتیک
 
+وضعیت اجرایی Phase 5B: قرارداد جاری ۱۰ Mutation، Atomicity و دو سطح Repair محدود در [MUTATION_REPAIR.md](MUTATION_REPAIR.md) و نتایج در [PHASE5B_REPORT.md](PHASE5B_REPORT.md) آمده است. Selection/Crossover طبق GENETIC_OPERATORS.md و Fitness طبق SOFT_FITNESS.md اجرا می‌شوند. توضیح‌های پیشنهادی قدیمی در ادامه تاریخچه طراحی‌اند؛ فرمول جاری Soft همان پوشش × رضایت است. Evolution Loop هنوز ساخته نشده است.
+
 به‌روزرسانی اجرایی مرحله دوم: مدل واقعی از نام `enrollments` برای تخصیص‌ها و از زوج `(Day, TimeSlot)` برای جلسات استفاده می‌کند، مطابق نمونه اخیر کاربر. در شرح مفهومی زیر assignments همان enrollments است و SlotID به زوج یکتای متناظر در TimeSlots نگاشت می‌شود. مرجع قرارداد اجرایی جاری CHROMOSOME.md است؛ دو نمایش موازی در ژن ذخیره نمی‌شود.
 
 ## ۱. وضعیت طراحی

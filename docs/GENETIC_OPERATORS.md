@@ -1,5 +1,7 @@
 # Phase 5A — Tournament Selection و Course-Based Crossover
 
+ادامه اجرایی در Phase 5B: [Mutation اتمی و Repair محدود](MUTATION_REPAIR.md). شرح پایین محدوده تاریخی فاز 5A است؛ Selection و Crossover همچنان بدون Repair پنهانی باقی مانده‌اند.
+
 این فاز از main ادغام‌شده فاز چهارم شروع شده است. فقط دو ماژول selection.py و crossover.py به موتور اضافه شده‌اند؛ ساختار کروموزوم، Context، Initialization و Fitness تغییر نکرده است. Mutation، Student-Based Crossover، Split/Merge، Repair، Elitism Manager، Evolution Loop، توقف نسل‌ها و UI در این فاز ساخته نشده‌اند. PR و merge طبق دستور جاری با کاربر است.
 
 ## API و مثال اتصال

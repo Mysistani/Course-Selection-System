@@ -6,7 +6,7 @@ from copy import deepcopy
 from dataclasses import dataclass
 import math
 from types import MappingProxyType
-from typing import Mapping, TYPE_CHECKING
+from typing import Mapping, Protocol, TYPE_CHECKING
 
 from .domain import Dataset
 
@@ -15,6 +15,15 @@ if TYPE_CHECKING:
 
 SlotKey = tuple[str, str]
 RequestKey = tuple[str, str]
+
+
+class GeneMappings(Protocol):
+    """Read-only view accepted by validation before an atomic commit."""
+    @property
+    def sections(self) -> Mapping[str, SectionGene]: ...
+
+    @property
+    def enrollments(self) -> Mapping[RequestKey, str | None]: ...
 
 
 @dataclass(frozen=True)
@@ -184,7 +193,7 @@ def build_empty_chromosome(dataset: Dataset, *,
     return Chromosome(sections, {key: None for key in sorted(context.requests)})
 
 
-def validate_structure(chromosome: Chromosome, dataset: Dataset | EvaluationContext, *,
+def validate_structure(chromosome: GeneMappings, dataset: Dataset | EvaluationContext, *,
                        context: EvaluationContext | None = None) -> tuple[StructureIssue, ...]:
     """Validate references and meeting structure, not capacity or timetable fitness."""
     issues = []
