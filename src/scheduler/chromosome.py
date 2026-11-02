@@ -6,9 +6,12 @@ from copy import deepcopy
 from dataclasses import dataclass
 import math
 from types import MappingProxyType
-from typing import Mapping
+from typing import Mapping, TYPE_CHECKING
 
 from .domain import Dataset
+
+if TYPE_CHECKING:
+    from .evaluation_context import EvaluationContext
 
 SlotKey = tuple[str, str]
 RequestKey = tuple[str, str]
@@ -164,32 +167,36 @@ def build_empty_chromosome(dataset: Dataset, *,
     in structural validation. Legacy section_limits may only repeat that rule.
     This creates a structure, not a random population or feasible schedule.
     """
-    courses = dataset.courses
+    from .evaluation_context import get_evaluation_context
+    context = get_evaluation_context(dataset)
+    courses = context.courses
     limits = {} if section_limits is None else dict(section_limits)
     if set(limits) - set(courses):
         raise ValueError('section_limits contains an unknown course')
     if any(type(n) is not int or n < 0 for n in limits.values()):
         raise ValueError('section limits must be non-negative integers')
-    slots = _expected_section_slots(dataset)
-    counts = Counter(slots.values())
-    if any(count != counts[cid] for cid, count in limits.items()):
-        raise ValueError('section_limits cannot override dataset-defined stable slots')
+    slots = context.expected_sections
+    if limits:
+        counts = Counter(slots.values())
+        if any(count != counts[cid] for cid, count in limits.items()):
+            raise ValueError('section_limits cannot override dataset-defined stable slots')
     sections = {sid: SectionGene(sid, cid) for sid, cid in slots.items()}
-    return Chromosome(sections, {key: None for key in _request_keys(dataset)})
+    return Chromosome(sections, {key: None for key in sorted(context.requests)})
 
 
-def validate_structure(chromosome: Chromosome, dataset: Dataset) -> tuple[StructureIssue, ...]:
+def validate_structure(chromosome: Chromosome, dataset: Dataset | EvaluationContext, *,
+                       context: EvaluationContext | None = None) -> tuple[StructureIssue, ...]:
     """Validate references and meeting structure, not capacity or timetable fitness."""
     issues = []
 
     def report(location, message):
         issues.append(StructureIssue(location, message))
 
-    courses, professors = dataset.courses, dataset.professors
-    rooms = {r.room_id for r in dataset.tables['Classrooms']}
-    slots = {(r.day, r.time_slot): r for r in dataset.tables['TimeSlots']}
-    requests = set(_request_keys(dataset))
-    expected_slots = _expected_section_slots(dataset)
+    from .evaluation_context import resolve_context
+    context = resolve_context(dataset, context)
+    courses, professors = context.courses, context.professors
+    rooms, slots = context.rooms, context.slots
+    requests, expected_slots = context.requests, context.expected_sections
     for sid in sorted(expected_slots.keys() - chromosome.sections.keys()):
         report(f'sections[{sid}]', 'dataset-defined section slot is missing')
     for sid in sorted(chromosome.sections.keys() - expected_slots.keys()):

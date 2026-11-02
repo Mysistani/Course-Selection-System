@@ -5,10 +5,13 @@ from collections import Counter, defaultdict
 from dataclasses import dataclass
 from itertools import combinations
 from types import MappingProxyType
-from typing import Mapping
+from typing import Mapping, TYPE_CHECKING
 
 from .chromosome import Chromosome, RequestKey, SlotKey, StructureIssue, validate_structure
 from .domain import Dataset
+
+if TYPE_CHECKING:
+    from .evaluation_context import EvaluationContext
 
 
 CONSTRAINT_TYPES = (
@@ -88,6 +91,7 @@ class HardEvaluation:
     counts_by_type: Mapping[str, int]  # Sum of severity, not number of records.
     metrics: HardMetrics
     diagnostics: tuple[Diagnostic, ...]
+    context_id: tuple[str, str] = ('', '')
 
     @property
     def total_penalty(self) -> int:
@@ -122,28 +126,29 @@ def _overlap(start_a: int, end_a: int, start_b: int, end_b: int) -> bool:
     return max(start_a, start_b) < min(end_a, end_b)
 
 
-def evaluate_hard_constraints(chromosome: Chromosome, dataset: Dataset) -> HardEvaluation:
+def evaluate_hard_constraints(chromosome: Chromosome, dataset: Dataset | EvaluationContext, *,
+                              context: EvaluationContext | None = None) -> HardEvaluation:
     """Evaluate H01-H10 after structural validation, using raw baseline counts.
 
     Dataset must already satisfy the loader's integrity contract. Known but
     forbidden slots are hard violations; unknown slots are structural errors.
     MinHours is measured only. No soft score, cache writes or repair occur.
     """
-    issues = validate_structure(chromosome, dataset)
+    from .evaluation_context import resolve_context
+    context = resolve_context(dataset, context)
+    issues = validate_structure(chromosome, context)
     if issues:
         raise StructuralValidationError(issues)
 
-    courses, students, professors = dataset.courses, dataset.students, dataset.professors
-    rooms = {r.room_id: r for r in dataset.tables['Classrooms']}
-    slots = {(s.day, s.time_slot): s for s in dataset.tables['TimeSlots']}
+    courses, students, professors = context.courses, context.students, context.professors
+    rooms, slots = context.rooms, context.slots
     active = {sid: s for sid, s in sorted(chromosome.sections.items()) if s.active}
     members = {sid: set() for sid in chromosome.sections}
     credits = dict.fromkeys(students, 0)
     teaching = dict.fromkeys(professors, 0)
     capacities, violations = {}, []
     unassigned = []
-    passed = {(r.student_id, r.course_id) for r in dataset.tables.get('PassedCourses', ())}
-    qualified = {(q.professor_id, q.course_id) for q in dataset.tables.get('ProfessorCourses', ()) if q.can_teach}
+    passed, qualified = context.passed, context.qualified
 
     def add(kind, severity=1, **details):
         violations.append(Violation(kind, severity, **details))
@@ -163,7 +168,7 @@ def evaluate_hard_constraints(chromosome: Chromosome, dataset: Dataset) -> HardE
     for sid, section in active.items():
         course, room = courses[section.course_id], rooms[section.room_id]
         common = dict(section_ids=(sid,), course_ids=(section.course_id,))
-        capacities[sid] = min(course.max_section_size, room.capacity)
+        capacities[sid] = context.effective_capacities[(section.course_id, section.room_id)]
         if (section.professor_id, section.course_id) not in qualified:
             add('H03_UNQUALIFIED_PROFESSOR', professor_id=section.professor_id, **common)
         if course.required_room_type != room.room_type:
@@ -188,14 +193,8 @@ def evaluate_hard_constraints(chromosome: Chromosome, dataset: Dataset) -> HardE
 
     # Unavailable rows denote real time intervals. Multiple overlapping blocked
     # rows still count only one unavailable presence per meeting and person.
-    unavailable = {}
-    for table in ('ProfessorAvailability', 'StudentAvailability'):
-        blocked = defaultdict(list)
-        for row in dataset.tables.get(table, ()):
-            if row.status == 'Unavailable':
-                slot = slots[(row.day, row.time_slot)]
-                blocked[(row.person_id, row.day)].append((slot.start_time, slot.end_time))
-        unavailable[table] = blocked
+    unavailable = {'ProfessorAvailability': context.professor_unavailable,
+                   'StudentAvailability': context.student_unavailable}
 
     professor_meetings, room_meetings, student_meetings = (defaultdict(list) for _ in range(3))
     for meeting in meetings:
@@ -205,12 +204,12 @@ def evaluate_hard_constraints(chromosome: Chromosome, dataset: Dataset) -> HardE
         professor_meetings[(meeting.professor_id, meeting.day)].append(meeting)
         room_meetings[(meeting.room_id, meeting.day)].append(meeting)
         if any(_overlap(meeting.start, meeting.end, start, end)
-               for start, end in unavailable['ProfessorAvailability'][(meeting.professor_id, meeting.day)]):
+               for start, end in unavailable['ProfessorAvailability'].get((meeting.professor_id, meeting.day), ())):
             add('H05_PROFESSOR_UNAVAILABLE', professor_id=meeting.professor_id, **common)
         for student_id in sorted(members[meeting.section_id]):
             student_meetings[(student_id, meeting.day)].append(meeting)
             if any(_overlap(meeting.start, meeting.end, start, end)
-                   for start, end in unavailable['StudentAvailability'][(student_id, meeting.day)]):
+                   for start, end in unavailable['StudentAvailability'].get((student_id, meeting.day), ())):
                 add('H05_STUDENT_UNAVAILABLE', student_id=student_id, **common)
 
     for kind, resource_field, groups in (
@@ -227,7 +226,7 @@ def evaluate_hard_constraints(chromosome: Chromosome, dataset: Dataset) -> HardE
                         start_minute=max(first.start, second.start),
                         end_minute=min(first.end, second.end), **{resource_field: resource_id})
 
-    for student_id, student in sorted(students.items()):
+    for student_id, student in students.items():
         if credits[student_id] < student.min_credits:
             add('H08_CREDIT_UNDERFLOW', student.min_credits - credits[student_id],
                 student_id=student_id, measured_value=credits[student_id],
@@ -238,33 +237,13 @@ def evaluate_hard_constraints(chromosome: Chromosome, dataset: Dataset) -> HardE
                 limit=student.max_credits, unit='credits')
 
     shortfall, excess = {}, {}
-    for professor_id, professor in sorted(professors.items()):
-        shortfall[professor_id] = max(0, professor.min_minutes - teaching[professor_id])
-        excess[professor_id] = max(0, teaching[professor_id] - professor.max_minutes)
+    for professor_id in professors:
+        shortfall[professor_id] = max(0, context.professor_min_minutes[professor_id] - teaching[professor_id])
+        excess[professor_id] = max(0, teaching[professor_id] - context.professor_max_minutes[professor_id])
         if excess[professor_id]:
             add('H09_TEACHING_OVERLOAD', (excess[professor_id] + 29) // 30,
                 professor_id=professor_id, measured_value=teaching[professor_id],
-                limit=professor.max_minutes, unit='minutes')
-
-    diagnostics = []
-    demand = Counter(r.course_id for r in dataset.tables['StudentRequests'])
-    eligible_credits = Counter()
-    for request in dataset.tables['StudentRequests']:
-        course = courses[request.course_id]
-        if demand[request.course_id] >= course.min_section_size and (request.student_id, request.course_id) not in passed:
-            eligible_credits[request.student_id] += course.credits
-    for course_id, course in sorted(courses.items()):
-        if demand[course_id] < course.min_section_size:
-            diagnostics.append(Diagnostic('DATASET_LOW_DEMAND', (course_id,),
-                                          f'{demand[course_id]} requests; section minimum {course.min_section_size}'))
-        if not any(cid == course_id for _, cid in qualified):
-            diagnostics.append(Diagnostic('DATASET_NO_QUALIFIED_PROFESSOR', (course_id,), 'No qualified professor in sample'))
-        if not any(r.room_type == course.required_room_type and min(r.capacity, course.max_section_size) >= course.min_section_size for r in rooms.values()):
-            diagnostics.append(Diagnostic('DATASET_NO_COMPATIBLE_ROOM', (course_id,), 'No sufficiently large compatible room in sample'))
-    for student_id, student in sorted(students.items()):
-        if eligible_credits[student_id] < student.min_credits:
-            diagnostics.append(Diagnostic('DATASET_CREDIT_UPPER_BOUND_BELOW_MINIMUM', (student_id,),
-                                          f'At most {eligible_credits[student_id]} credits before resource/time constraints; minimum {student.min_credits}'))
+                limit=context.professor_max_minutes[professor_id], unit='minutes')
 
     counts = dict.fromkeys(CONSTRAINT_TYPES, 0)
     for violation in violations:
@@ -274,4 +253,9 @@ def evaluate_hard_constraints(chromosome: Chromosome, dataset: Dataset) -> HardE
         MappingProxyType(capacities), MappingProxyType(credits), MappingProxyType(teaching),
         MappingProxyType(shortfall), MappingProxyType(excess), tuple(unassigned),
     )
-    return HardEvaluation(tuple(violations), MappingProxyType(counts), metrics, tuple(diagnostics))
+    runtime_diagnostics = tuple(
+        Diagnostic('PROFESSOR_MIN_HOURS_SHORTFALL', (pid,), f'{minutes} minutes below MinHours; no penalty')
+        for pid, minutes in shortfall.items() if minutes
+    )
+    return HardEvaluation(tuple(violations), MappingProxyType(counts), metrics,
+                          context.diagnostics + runtime_diagnostics, context.context_id)
