@@ -1,6 +1,9 @@
 __pycache__/
 *.pyc
 .venv/
+.venv-ui/
+.idea/
+venv/
 outputs/
 dataset_inspection.json
 docs/SOURCE_CONVERSATION.md
