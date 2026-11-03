@@ -1,0 +1,75 @@
+{
+  "scope": "diagnostic only, not a GA/Repair search or witness injection",
+  "fixture_sha256": "2b824515e073d78967605f4db7a2cddead50db3263fb0b4aeac87acae380b893",
+  "diagnostic_candidate_bound": 400,
+  "production_attempt_budget": 100,
+  "canonical_diagnostic_evaluations": 2,
+  "single_meeting_neighborhood": [
+    {
+      "sections": [
+        "B-CIV-04-05",
+        "B-ME-01-05"
+      ],
+      "candidates_screened": 200,
+      "admissible_count": 0
+    },
+    {
+      "sections": [
+        "B-EE-03-06",
+        "B-ME-04-04"
+      ],
+      "candidates_screened": 200,
+      "admissible_count": 0
+    }
+  ],
+  "room_only_examples": [
+    {
+      "target_section": "B-CIV-04-05",
+      "replacement_room": "B-R04",
+      "hard": 4,
+      "new_room_violations": [
+        {
+          "sections": [
+            "B-CE-05-01",
+            "B-CIV-04-05"
+          ],
+          "day": "Saturday",
+          "slots": [
+            [
+              "Saturday",
+              "T3"
+            ],
+            [
+              "Saturday",
+              "T3"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "target_section": "B-ME-04-04",
+      "replacement_room": "B-R04",
+      "hard": 4,
+      "new_room_violations": [
+        {
+          "sections": [
+            "B-CIV-06-06",
+            "B-ME-04-04"
+          ],
+          "day": "Monday",
+          "slots": [
+            [
+              "Monday",
+              "T4"
+            ],
+            [
+              "Monday",
+              "T4"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
