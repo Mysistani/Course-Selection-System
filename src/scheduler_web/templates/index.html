@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="local-token" content="{{ token }}" />
+    <title>دیدبان انتخاب واحد | مدیریت آموزش</title>
+    <link rel="stylesheet" href="/static/vendor/bootstrap.rtl.min.css" />
+    <link rel="stylesheet" href="/static/app.css" />
+    <script defer src="/static/vendor/chart.umd.js"></script>
+    <script defer src="/static/app.js"></script>
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-icon">◈</span>
+        <div>دیدبان انتخاب واحد<small>سامانه تکاملی دانشکده</small></div>
+      </div>
+      <div class="nav-label">میز کار آموزش</div>
+      <nav>
+        <button data-page="dashboard" class="active">
+          ◫ <span>داشبورد</span></button
+        ><button data-page="experiment">＋ <span>آزمایش جدید</span></button>
+        <button data-page="monitor">◷ <span>پایش زنده تکامل</span></button
+        ><button data-page="inspector">
+          ▦ <span>کروموزوم و برنامه هفتگی</span></button
+        ><button data-page="results">↓ <span>نتایج و دریافت‌ها</span></button>
+      </nav>
+      <div class="sidebar-foot">
+        <span class="pulse"></span> اجرای محلی · مدیر آموزش<br /><small
+          >Hard-first · Course-Based Crossover</small
+        >
+      </div>
+    </aside>
+    <main>
+      <header>
+        <div>
+          <small>مدیریت آموزش / آزمایشگاه بهینه‌سازی</small>
+          <h1 id="pageTitle">نمای کلی دانشکده</h1>
+        </div>
+        <div class="header-actions">
+          <select id="runSelect" aria-label="انتخاب اجرا">
+            <option value="">بدون اجرا</option></select
+          ><span id="status" class="status">آماده</span
+          ><button id="theme" class="quiet">◐</button>
+        </div>
+      </header>
+      <div id="notice" role="alert" hidden></div>
+      <section id="dashboard" class="page">
+        <div class="hero">
+          <div>
+            <span class="eyebrow">از داده تا برنامهٔ قابل بررسی</span>
+            <h2>تصمیم‌گیری با مشاهدهٔ واقعی تکامل</h2>
+            <p>
+              داده را بررسی کنید، اجرای الگوریتم را زیر نظر بگیرید و برنامهٔ هر
+              فرد را در کروموزوم منتخب ببینید.
+            </p>
+          </div>
+          <button class="primary" data-go="experiment">آزمایش جدید ←</button>
+        </div>
+        <div class="section-heading">
+          <h3 id="datasetName">هنوز داده‌ای انتخاب نشده</h3>
+          <span id="datasetStatus" class="muted"
+            >ابتدا یک فایل معتبر بارگذاری کنید</span
+          >
+        </div>
+        <div id="datasetCards" class="metrics"></div>
+        <div class="two-col">
+          <article class="panel">
+            <div class="section-heading">
+              <h3>آخرین وضعیت تکامل</h3>
+              <button class="quiet" data-go="monitor">پایش زنده ←</button>
+            </div>
+            <div id="dashboardRun" class="empty">آزمایشی ثبت نشده است.</div>
+          </article>
+          <article class="panel">
+            <h3>مسیر کار</h3>
+            <ol class="steps">
+              <li>بارگذاری و کنترل صحت ساختاری داده</li>
+              <li>تنظیم پارامترها و اجرای الگوریتم</li>
+              <li>بررسی نقض‌ها و برنامهٔ هفتگی منتخب</li>
+              <li>دریافت خروجی قابل ردیابی</li>
+            </ol>
+            <p class="muted">
+              صحت فایل ورودی به معنی معتبر بودن جواب زمان‌بندی نیست.
+            </p>
+          </article>
+        </div>
+        <article class="panel">
+          <h3>تاریخچهٔ آزمایش‌ها</h3>
+          <div id="history" class="table-wrap"></div>
+        </article>
+      </section>
+      <section id="experiment" class="page" hidden>
+        <div class="two-col">
+          <article class="panel">
+            <span class="eyebrow">۰۱ / دادهٔ ورودی</span>
+            <h3>انتخاب مجموعه‌داده</h3>
+            <p class="muted">
+              فایل xlsx مطابق قرارداد ۱۴ شیت؛ حداکثر ۱۰ مگابایت. فایل مبنا تغییر
+              نمی‌کند.
+            </p>
+            <div class="upload-zone">
+              <input
+                type="file"
+                id="upload"
+                accept=".xlsx"
+                aria-label="انتخاب فایل اکسل"
+              /><button id="uploadButton" class="primary">
+                بارگذاری و اعتبارسنجی
+              </button>
+            </div>
+            <div class="button-row">
+              <button id="exampleA" class="quiet">دیتاست A · تصادفی</button
+              ><button id="exampleB" class="quiet">دیتاست B · حل‌پذیر</button>
+            </div>
+            <label
+              >داده‌های بارگذاری‌شده<select id="datasetSelect"></select
+            ></label>
+            <div id="validation" class="validation empty">
+              نتیجهٔ اعتبارسنجی اینجا نمایش داده می‌شود.
+            </div>
+          </article>
+          <article class="panel">
+            <span class="eyebrow">۰۲ / پیکربندی</span>
+            <h3>تنظیم اجرای تکامل</h3>
+            <form id="settings">
+              <div class="form-grid">
+                <label
+                  >اندازهٔ جمعیت<input
+                    name="population_size"
+                    type="number"
+                    value="100"
+                    min="2"
+                    required /></label
+                ><label
+                  >حداکثر نسل<input
+                    name="max_generations"
+                    type="number"
+                    value="500"
+                    min="0"
+                    required
+                /></label>
+                <label
+                  >اندازهٔ Tournament<input
+                    name="tournament_size"
+                    type="number"
+                    value="3"
+                    min="1"
+                    required /></label
+                ><label
+                  >تعداد Elite<input
+                    name="elite_count"
+                    type="number"
+                    value="2"
+                    min="1"
+                    required
+                /></label>
+                <label
+                  >احتمال Mutation<input
+                    name="mutation_probability"
+                    type="number"
+                    value="0.30"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    required /></label
+                ><label
+                  >احتمال Crossover<input
+                    name="crossover_probability"
+                    type="number"
+                    value="0.70"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    required
+                /></label>
+                <label
+                  >Seed<input
+                    name="random_seed"
+                    type="number"
+                    value="11"
+                    required /></label
+                ><label
+                  >بودجهٔ کاندیداهای Repair<input
+                    name="repair_candidate_budget"
+                    type="number"
+                    value="50"
+                    min="0"
+                    required
+                /></label>
+                <label
+                  >توقف پس از رکود (خالی: خاموش)<input
+                    name="stagnation_generations"
+                    type="number"
+                    min="1" /></label
+                ><label
+                  >سقف تعداد ارزیابی Fitness (اختیاری)<input
+                    name="max_fitness_evaluations"
+                    type="number"
+                    min="1"
+                /></label>
+                <label
+                  >تعداد جمعیت‌های قبلی برای نگهداری<input
+                    name="previous_populations"
+                    type="number"
+                    min="0"
+                    max="20"
+                    value="10"
+                /></label>
+              </div>
+              <div class="checks">
+                <label
+                  ><input type="checkbox" name="repair_enabled" checked />
+                  Repair فعال</label
+                ><label
+                  ><input type="checkbox" name="stop_on_first_feasible" /> توقف
+                  با اولین جواب معتبر</label
+                >
+              </div>
+              <p class="muted">
+                بودجهٔ کلی، تعداد ارزیابی‌ها را محدود می‌کند، نه مقدار عددی
+                Fitness. خالی یعنی بدون سقف کلی. رکود اثبات بهینگی نیست.
+              </p>
+              <button type="submit" class="primary" id="start">
+                شروع آزمایش ←
+              </button>
+            </form>
+          </article>
+        </div>
+      </section>
+      <section id="monitor" class="page" hidden>
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">LIVE / نسل‌های کامل</span>
+            <h2>روند تکامل جمعیت</h2>
+          </div>
+          <button class="danger" id="stop">درخواست توقف ایمن</button>
+        </div>
+        <div class="progress-track"><div id="generationProgress"></div></div>
+        <div id="liveMetrics" class="metrics"></div>
+        <div id="bests" class="three-col"></div>
+        <div class="charts">
+          <article class="panel">
+            <h3>بهترین جریمهٔ سخت ↓</h3>
+            <canvas id="bestHard"></canvas>
+          </article>
+          <article class="panel">
+            <h3>میانگین جریمهٔ سخت ↓</h3>
+            <canvas id="meanHard"></canvas>
+          </article>
+          <article class="panel">
+            <h3>Soft فرد برتر Hard-first ↑</h3>
+            <canvas id="bestSoft"></canvas>
+          </article>
+          <article class="panel">
+            <h3>میانگین Soft ↑</h3>
+            <canvas id="meanSoft"></canvas>
+          </article>
+          <article class="panel">
+            <h3>کروموزوم‌های یکتا</h3>
+            <canvas id="diversity"></canvas>
+          </article>
+          <article class="panel">
+            <h3>هزینهٔ تجمعی · ارزیابی / زمان</h3>
+            <canvas id="cost"></canvas>
+          </article>
+        </div>
+        <article class="panel">
+          <h3>عملگرهای نسل منتخب</h3>
+          <label>نسل<select id="operatorGeneration"></select></label>
+          <div id="operators" class="empty">در انتظار نسل صفر</div>
+        </article>
+      </section>
+      <section id="inspector" class="page" hidden>
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">INSPECT / snapshot ثابت</span>
+            <h2>کروموزوم و برنامهٔ هفتگی</h2>
+          </div>
+          <div class="button-row">
+            <label>نسل<select id="generationSelect"></select></label
+            ><button id="persistGeneration" class="quiet">
+              حفظ کامل این نسل
+            </button>
+          </div>
+        </div>
+        <article class="panel">
+          <p id="retentionNotice" class="muted"></p>
+          <div id="population" class="table-wrap"></div>
+        </article>
+        <article class="panel">
+          <div class="section-heading">
+            <h3 id="selectedGeneration">کروموزوم منتخب</h3>
+            <code id="fingerprint">—</code>
+          </div>
+          <div id="snapshotMetrics" class="metrics"></div>
+          <div id="violations"></div>
+        </article>
+        <article class="panel">
+          <div class="section-heading">
+            <h3>تقویم هفتگی</h3>
+            <div class="button-row">
+              <select id="role">
+                <option value="student">دانشجو</option>
+                <option value="professor">استاد</option>
+                <option value="room">کلاس فیزیکی</option></select
+              ><input
+                id="entitySearch"
+                placeholder="جست‌وجوی شناسه یا نام"
+                aria-label="جست‌وجوی فرد یا کلاس"
+              /><select id="entity" aria-label="انتخاب فرد یا کلاس"></select>
+            </div>
+          </div>
+          <div id="entityDetails" class="muted"></div>
+          <div id="calendar" class="calendar empty">
+            یک کروموزوم انتخاب کنید.
+          </div>
+          <div id="eventDetails" class="event-details" hidden></div>
+        </article>
+        <article class="panel">
+          <h3>خروجی همین کروموزوم</h3>
+          <p id="exportWarning"></p>
+          <div class="button-row">
+            <a id="downloadXlsx" class="primary">دریافت Excel</a
+            ><a id="downloadJson" class="quiet">snapshot JSON</a>
+          </div>
+        </article>
+      </section>
+      <section id="results" class="page" hidden>
+        <article class="panel">
+          <div class="section-heading">
+            <h2>نتیجهٔ اجرا</h2>
+            <a id="reportDownload" class="quiet">دریافت گزارش کامل JSON</a>
+          </div>
+          <div id="resultSummary" class="empty">اجرایی انتخاب نشده است.</div>
+          <div id="resultBests" class="three-col"></div>
+          <details>
+            <summary>پیکربندی و دادهٔ اجرا</summary>
+            <pre id="resultConfig"></pre>
+          </details>
+          <button class="primary" data-go="monitor">
+            نمودارهای کامل اجرا ←
+          </button>
+        </article>
+      </section>
+      <footer>
+        نسخهٔ محلی مدیریت آموزش · هر برنامه با HardPenalty مثبت، نامعتبر است.
+      </footer>
+    </main>
+  </body>
+</html>
