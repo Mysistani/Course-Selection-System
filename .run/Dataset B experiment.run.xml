@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Dataset B experiment" type="PythonConfigurationType" factoryName="Python">
+    <module name="Course-Selection-System" />
+    <option name="IS_MODULE_SDK" value="true" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/run_evolution_experiment.py" />
+    <option name="PARAMETERS" value="--workbook data/Dataset_B_Constructive_seed20261103.xlsx --population-size 100 --max-generations 500 --random-seed 11 --max-fitness-evaluations 4000 --output outputs/PYCHARM_EXPERIMENT.json" />
+    <option name="ADD_CONTENT_ROOTS" value="true" />
+    <option name="ADD_SOURCE_ROOTS" value="true" />
+    <method v="2" />
+  </configuration>
+</component>
