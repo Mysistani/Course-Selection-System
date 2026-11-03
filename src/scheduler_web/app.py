@@ -83,7 +83,7 @@ def create_app(storage=None):
     @app.post('/api/runs')
     def start(body: dict):
         try:
-            return manager.start(body['dataset_id'],body.get('settings',{}))
+            return manager.start(body['dataset_id'],body.get('settings',{}),seed_mode=body.get('seed_mode'))
         except RuntimeError as exc:
             raise HTTPException(409,str(exc)) from exc
 

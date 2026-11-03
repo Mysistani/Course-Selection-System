@@ -45,6 +45,7 @@
           ><button id="theme" class="quiet">◐</button>
         </div>
       </header>
+      <p id="runSeed" class="muted" hidden>Seed استفاده‌شده در این اجرا: <code id="resolvedSeed"></code></p>
       <div id="notice" role="alert" hidden></div>
       <section id="dashboard" class="page">
         <div class="hero">
@@ -176,11 +177,19 @@
                     required
                 /></label>
                 <label
-                  >Seed<input
+                  >روش تعیین Seed<select id="seedMode">
+                    <option value="auto" selected>تولید خودکار Seed</option>
+                    <option value="manual">ورود دستی Seed</option>
+                  </select></label>
+                <label id="manualSeedLabel" hidden
+                  >Seed دستی<input
+                    id="manualSeed"
                     name="random_seed"
                     type="number"
-                    value="11"
-                    required /></label
+                    step="1"
+                    min="-9007199254740991"
+                    max="9007199254740991"
+                    disabled /></label
                 ><label
                   >بودجهٔ کاندیداهای Repair<input
                     name="repair_candidate_budget"

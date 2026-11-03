@@ -6,6 +6,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import secrets
 from threading import Event, RLock, Thread
 from uuid import uuid4
 import zipfile
@@ -21,6 +22,7 @@ from scheduler.repair import RepairSettings
 ROOT = Path(__file__).resolve().parents[2]
 MAX_UPLOAD = 10*1024*1024
 ID = re.compile(r'^[0-9a-f]{32}$')
+AUTO_SEED_UPPER_BOUND = 2**32  # Exclusive; exactly representable in browser JSON.
 
 
 def atomic_json(path, value):
@@ -117,16 +119,27 @@ class RunManager:
     def _persist(self, run):
         atomic_json(self.path('runs',run['id'])/'metadata.json',run)
 
-    def start(self, dataset_id, values):
-        settings, retention = configuration(values)
+    def start(self, dataset_id, values, *, seed_mode=None):
+        values = dict(values)
+        # Legacy explicit integer seeds retain their exact meaning.
+        mode = seed_mode if seed_mode is not None else ('manual' if 'random_seed' in values else 'auto')
+        if mode not in ('auto','manual'):
+            raise ValueError('seed_mode must be auto or manual')
+        if mode == 'manual' and 'random_seed' not in values:
+            raise ValueError('manual seed mode requires an integer random_seed')
+        if mode == 'auto' and 'random_seed' in values:
+            raise ValueError('auto seed mode must omit random_seed')
+        settings, retention = configuration({**values, **({'random_seed':0} if mode == 'auto' else {})})
         context = self.dataset_context(dataset_id)
         with self.lock:
             if self.active_id is not None:
                 raise RuntimeError('یک اجرای فعال وجود دارد؛ ابتدا آن را متوقف کنید.')
+            if mode == 'auto':
+                settings = replace(settings,random_seed=secrets.randbelow(AUTO_SEED_UPPER_BOUND))
             identifier = uuid4().hex
             run = {'id':identifier,'dataset_id':dataset_id,'dataset_name':self.datasets[dataset_id]['name'],
                 'dataset_sha256':context.dataset.sha256,'context_id':list(context.context_id),
-                'created':datetime.now(timezone.utc).isoformat(),'settings':json_value(settings),
+                'created':datetime.now(timezone.utc).isoformat(),'settings':json_value(settings),'seed_mode':mode,
                 'previous_populations':retention,'status':'Running','events':[], 'completed_generations':None,
                 'stagnant_generations':0,'best_overall':None,'best_feasible':None,'current_best':None,
                 'error':None,'stop_reasons':[],'persisted_generations':[]}
@@ -184,7 +197,7 @@ class RunManager:
         try:
             result = run_evolution(context,settings,on_generation=publish,stop_requested=self.cancel.is_set)
             with self.lock:
-                atomic_json(directory/'report.json',result_payload(result))
+                atomic_json(directory/'report.json',{**result_payload(result),'seed_mode':run['seed_mode']})
                 for name, member in [('best_overall',result.best_overall),('best_feasible',result.best_feasible),('final_population_best',result.final_population_best)]:
                     if member:
                         path = directory/(name+'.json')
@@ -200,7 +213,7 @@ class RunManager:
         except Exception as exc:
             with self.lock:
                 if isinstance(exc,EvolutionFailure) and exc.result is not None:
-                    atomic_json(directory/'report.json',result_payload(exc.result))
+                    atomic_json(directory/'report.json',{**result_payload(exc.result),'seed_mode':run['seed_mode']})
                     for name, member in [('best_overall',exc.result.best_overall),('best_feasible',exc.result.best_feasible),('final_population_best',exc.result.final_population_best)]:
                         if member:
                             payload = solution_payload(member,context.context_id)

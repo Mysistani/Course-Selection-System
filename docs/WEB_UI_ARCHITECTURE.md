@@ -49,7 +49,7 @@ Thread اجرای GA مستقل از درخواست‌های وب است. برن
 
 `selection`: شمارهٔ فرد جمعیت، `best` نسل انتخابی، `best_overall`، `best_feasible` یا `final_population_best`. برای انتخاب‌های کلی، `observed_generation` زمان اولین مشاهدهٔ همین fingerprint را نشان می‌دهد. این مشخصه نسب‌نامه یا مراحل کامل فرزند نیست.
 
-تنظیمات از EvolutionSettings/RepairSettings فعلی اعتبارسنجی می‌شوند. بودجهٔ اختیاری Fitness پیش‌فرض None است؛ cap مخفی اضافه نشده است. retention یک تنظیم نمایشی مستقل است. UI پیش‌فرض Seed=11 دارد؛ همهٔ تنظیمات واقعی در گزارش ثبت می‌شوند.
+تنظیمات از EvolutionSettings/RepairSettings فعلی اعتبارسنجی می‌شوند. بودجهٔ اختیاری Fitness پیش‌فرض None است؛ cap مخفی اضافه نشده است. retention یک تنظیم نمایشی مستقل است. UI به‌صورت پیش‌فرض Seed خودکار دارد؛ حالت دستی برای بازتولید و درخواست‌های قدیمی دارای Seed عددی حفظ شده‌اند. قرارداد و بازه در [AUTOMATIC_SEED.md](AUTOMATIC_SEED.md) آمده و Seed واقعی در گزارش ثبت می‌شود.
 
 ## تقویم و خروجی
 

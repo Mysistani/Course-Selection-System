@@ -213,12 +213,18 @@ $("uploadButton").onclick = () =>
     const ds = await api("/api/datasets/upload", { method: "POST", body });
     await refreshState(ds.id);
   });
+$("seedMode").onchange = () => {
+  const manual = $("seedMode").value === "manual";
+  $("manualSeedLabel").hidden = !manual;
+  $("manualSeed").disabled = !manual;
+  $("manualSeed").required = manual;
+};
 $("settings").onsubmit = (e) => {
   e.preventDefault();
   action(async () => {
     const settings = {};
     for (const el of e.target.elements) {
-      if (!el.name) continue;
+      if (!el.name || el.disabled) continue;
       settings[el.name] =
         el.type === "checkbox"
           ? el.checked
@@ -226,10 +232,13 @@ $("settings").onsubmit = (e) => {
             ? null
             : Number(el.value);
     }
+    if ($("seedMode").value === "manual" && !Number.isSafeInteger(settings.random_seed)) {
+      throw Error('Seed دستی باید عدد صحیح در محدودهٔ دقیق مرورگر باشد.');
+    }
     const result = await api("/api/runs", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ dataset_id: $("datasetSelect").value, settings }),
+      body: JSON.stringify({ dataset_id: $("datasetSelect").value, settings, seed_mode: $("seedMode").value }),
     });
     await refreshState();
     await selectRun(result.id);
@@ -362,6 +371,8 @@ function bestButtons(container) {
 }
 function renderRun() {
   if (!run) return;
+  $("runSeed").hidden = false;
+  $("resolvedSeed").textContent = String(run.settings.random_seed);
   const last = rows.at(-1);
   $("status").textContent = statusNames[run.status] || run.status;
   const runOption = [...$("runSelect").options].find((o) => o.value === run.id);
