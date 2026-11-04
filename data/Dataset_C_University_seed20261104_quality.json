@@ -1,0 +1,1454 @@
+{
+  "generator_version": "constructive-university-c-v1",
+  "dataset_seed": 20261104,
+  "dataset_sha256": "f593af4a3214f1bccdc0f6c89d407fbbbe688e736008d66a84458311a46fd6aa",
+  "canonical_content_sha256": "6da0e14d22541d68f0ba0a2658166db7acb0ec53f2292ca4e7684ce30f431d87",
+  "counts": {
+    "Faculties": 4,
+    "Majors": 12,
+    "Courses": 160,
+    "Classrooms": 80,
+    "TimeSlots": 25,
+    "Professors": 104,
+    "ProfessorCourses": 456,
+    "Students": 1000,
+    "PassedCourses": 3243,
+    "StudentRequests": 6007,
+    "ProfessorAvailability": 2600,
+    "StudentAvailability": 25000,
+    "ProfessorPreferences": 416,
+    "StudentPreferences": 4000
+  },
+  "students_by_faculty": {
+    "C-MGT": 230,
+    "C-ENG": 360,
+    "C-SCI": 260,
+    "C-HUM": 150
+  },
+  "students_by_program": {
+    "C-ACC": 78,
+    "C-BUS": 80,
+    "C-CE": 96,
+    "C-CHEM": 82,
+    "C-CIV": 84,
+    "C-ECON": 72,
+    "C-EE": 90,
+    "C-LAW": 70,
+    "C-MATH": 90,
+    "C-ME": 90,
+    "C-PHY": 88,
+    "C-PSY": 80
+  },
+  "professors_by_faculty": {
+    "C-MGT": 23,
+    "C-ENG": 38,
+    "C-SCI": 27,
+    "C-HUM": 16
+  },
+  "students_by_semester": {
+    "1": 129,
+    "2": 129,
+    "3": 125,
+    "4": 125,
+    "5": 124,
+    "6": 124,
+    "7": 122,
+    "8": 122
+  },
+  "requests_per_student": {
+    "6": 703,
+    "5": 145,
+    "7": 152
+  },
+  "requested_credits_distribution": {
+    "18": 155,
+    "16": 93,
+    "17": 291,
+    "13": 97,
+    "21": 39,
+    "19": 23,
+    "15": 148,
+    "14": 53,
+    "20": 62,
+    "11": 9,
+    "12": 21,
+    "10": 9
+  },
+  "passed_counts_distribution": {
+    "0": 207,
+    "1": 114,
+    "2": 116,
+    "3": 132,
+    "5": 116,
+    "6": 81,
+    "7": 47,
+    "8": 67,
+    "4": 102,
+    "9": 18
+  },
+  "failed_retake_counts_distribution": {
+    "0": 800,
+    "1": 200
+  },
+  "delayed_counts_distribution": {
+    "0": 902,
+    "1": 98
+  },
+  "course_demand": {
+    "C-ACC-01": 20,
+    "C-ACC-02": 27,
+    "C-ACC-03": 35,
+    "C-ACC-04": 50,
+    "C-ACC-05": 59,
+    "C-ACC-06": 65,
+    "C-ACC-07": 64,
+    "C-ACC-08": 55,
+    "C-ACC-09": 43,
+    "C-ACC-10": 24,
+    "C-ACC-11": 18,
+    "C-ACC-12": 9,
+    "C-BUS-01": 15,
+    "C-BUS-02": 23,
+    "C-BUS-03": 39,
+    "C-BUS-04": 50,
+    "C-BUS-05": 60,
+    "C-BUS-06": 67,
+    "C-BUS-07": 67,
+    "C-BUS-08": 54,
+    "C-BUS-09": 46,
+    "C-BUS-10": 27,
+    "C-BUS-11": 20,
+    "C-BUS-12": 10,
+    "C-CE-01": 17,
+    "C-CE-02": 28,
+    "C-CE-03": 29,
+    "C-CE-04": 37,
+    "C-CE-05": 49,
+    "C-CE-06": 63,
+    "C-CE-07": 57,
+    "C-CE-08": 43,
+    "C-CE-09": 60,
+    "C-CE-10": 59,
+    "C-CE-11": 47,
+    "C-CE-12": 30,
+    "C-CE-13": 21,
+    "C-CE-14": 24,
+    "C-CE-15": 12,
+    "C-CHEM-01": 22,
+    "C-CHEM-02": 23,
+    "C-CHEM-03": 36,
+    "C-CHEM-04": 40,
+    "C-CHEM-05": 45,
+    "C-CHEM-06": 51,
+    "C-CHEM-07": 55,
+    "C-CHEM-08": 51,
+    "C-CHEM-09": 45,
+    "C-CHEM-10": 35,
+    "C-CHEM-11": 34,
+    "C-CHEM-12": 28,
+    "C-CHEM-13": 20,
+    "C-CHEM-14": 10,
+    "C-CIV-01": 19,
+    "C-CIV-02": 24,
+    "C-CIV-03": 25,
+    "C-CIV-04": 37,
+    "C-CIV-05": 42,
+    "C-CIV-06": 53,
+    "C-CIV-07": 52,
+    "C-CIV-08": 35,
+    "C-CIV-09": 52,
+    "C-CIV-10": 48,
+    "C-CIV-11": 40,
+    "C-CIV-12": 28,
+    "C-CIV-13": 15,
+    "C-CIV-14": 20,
+    "C-CIV-15": 10,
+    "C-ECON-01": 18,
+    "C-ECON-02": 21,
+    "C-ECON-03": 27,
+    "C-ECON-04": 47,
+    "C-ECON-05": 52,
+    "C-ECON-06": 61,
+    "C-ECON-07": 61,
+    "C-ECON-08": 47,
+    "C-ECON-09": 42,
+    "C-ECON-10": 26,
+    "C-ECON-11": 18,
+    "C-ECON-12": 9,
+    "C-EE-01": 22,
+    "C-EE-02": 27,
+    "C-EE-03": 26,
+    "C-EE-04": 38,
+    "C-EE-05": 48,
+    "C-EE-06": 59,
+    "C-EE-07": 54,
+    "C-EE-08": 43,
+    "C-EE-09": 55,
+    "C-EE-10": 54,
+    "C-EE-11": 41,
+    "C-EE-12": 26,
+    "C-EE-13": 20,
+    "C-EE-14": 22,
+    "C-EE-15": 11,
+    "C-LAW-01": 24,
+    "C-LAW-02": 31,
+    "C-LAW-03": 36,
+    "C-LAW-04": 46,
+    "C-LAW-05": 59,
+    "C-LAW-06": 66,
+    "C-LAW-07": 54,
+    "C-LAW-08": 39,
+    "C-LAW-09": 32,
+    "C-LAW-10": 25,
+    "C-LAW-11": 8,
+    "C-MATH-01": 24,
+    "C-MATH-02": 27,
+    "C-MATH-03": 40,
+    "C-MATH-04": 45,
+    "C-MATH-05": 42,
+    "C-MATH-06": 54,
+    "C-MATH-07": 55,
+    "C-MATH-08": 56,
+    "C-MATH-09": 53,
+    "C-MATH-10": 40,
+    "C-MATH-11": 41,
+    "C-MATH-12": 32,
+    "C-MATH-13": 22,
+    "C-MATH-14": 11,
+    "C-ME-01": 24,
+    "C-ME-02": 28,
+    "C-ME-03": 24,
+    "C-ME-04": 35,
+    "C-ME-05": 45,
+    "C-ME-06": 57,
+    "C-ME-07": 52,
+    "C-ME-08": 43,
+    "C-ME-09": 54,
+    "C-ME-10": 53,
+    "C-ME-11": 42,
+    "C-ME-12": 30,
+    "C-ME-13": 18,
+    "C-ME-14": 22,
+    "C-ME-15": 11,
+    "C-PHY-01": 19,
+    "C-PHY-02": 30,
+    "C-PHY-03": 36,
+    "C-PHY-04": 45,
+    "C-PHY-05": 44,
+    "C-PHY-06": 54,
+    "C-PHY-07": 54,
+    "C-PHY-08": 52,
+    "C-PHY-09": 51,
+    "C-PHY-10": 42,
+    "C-PHY-11": 40,
+    "C-PHY-12": 31,
+    "C-PHY-13": 22,
+    "C-PHY-14": 11,
+    "C-PSY-01": 23,
+    "C-PSY-02": 38,
+    "C-PSY-03": 41,
+    "C-PSY-04": 49,
+    "C-PSY-05": 62,
+    "C-PSY-06": 78,
+    "C-PSY-07": 67,
+    "C-PSY-08": 46,
+    "C-PSY-09": 39,
+    "C-PSY-10": 30,
+    "C-PSY-11": 10
+  },
+  "qualified_professors_per_course": {
+    "C-ACC-01": 3,
+    "C-ACC-02": 3,
+    "C-ACC-03": 3,
+    "C-ACC-04": 3,
+    "C-ACC-05": 3,
+    "C-ACC-06": 3,
+    "C-ACC-07": 3,
+    "C-ACC-08": 3,
+    "C-ACC-09": 3,
+    "C-ACC-10": 3,
+    "C-ACC-11": 3,
+    "C-ACC-12": 1,
+    "C-BUS-01": 3,
+    "C-BUS-02": 3,
+    "C-BUS-03": 3,
+    "C-BUS-04": 3,
+    "C-BUS-05": 3,
+    "C-BUS-06": 3,
+    "C-BUS-07": 3,
+    "C-BUS-08": 3,
+    "C-BUS-09": 3,
+    "C-BUS-10": 3,
+    "C-BUS-11": 3,
+    "C-BUS-12": 1,
+    "C-CE-01": 3,
+    "C-CE-02": 3,
+    "C-CE-03": 3,
+    "C-CE-04": 3,
+    "C-CE-05": 3,
+    "C-CE-06": 3,
+    "C-CE-07": 3,
+    "C-CE-08": 3,
+    "C-CE-09": 3,
+    "C-CE-10": 3,
+    "C-CE-11": 3,
+    "C-CE-12": 3,
+    "C-CE-13": 3,
+    "C-CE-14": 3,
+    "C-CE-15": 1,
+    "C-CHEM-01": 3,
+    "C-CHEM-02": 3,
+    "C-CHEM-03": 3,
+    "C-CHEM-04": 3,
+    "C-CHEM-05": 3,
+    "C-CHEM-06": 3,
+    "C-CHEM-07": 3,
+    "C-CHEM-08": 3,
+    "C-CHEM-09": 3,
+    "C-CHEM-10": 3,
+    "C-CHEM-11": 3,
+    "C-CHEM-12": 3,
+    "C-CHEM-13": 3,
+    "C-CHEM-14": 1,
+    "C-CIV-01": 3,
+    "C-CIV-02": 3,
+    "C-CIV-03": 3,
+    "C-CIV-04": 3,
+    "C-CIV-05": 3,
+    "C-CIV-06": 3,
+    "C-CIV-07": 3,
+    "C-CIV-08": 3,
+    "C-CIV-09": 3,
+    "C-CIV-10": 3,
+    "C-CIV-11": 3,
+    "C-CIV-12": 3,
+    "C-CIV-13": 3,
+    "C-CIV-14": 3,
+    "C-CIV-15": 1,
+    "C-ECON-01": 3,
+    "C-ECON-02": 3,
+    "C-ECON-03": 3,
+    "C-ECON-04": 3,
+    "C-ECON-05": 3,
+    "C-ECON-06": 3,
+    "C-ECON-07": 3,
+    "C-ECON-08": 3,
+    "C-ECON-09": 3,
+    "C-ECON-10": 3,
+    "C-ECON-11": 3,
+    "C-ECON-12": 1,
+    "C-EE-01": 3,
+    "C-EE-02": 3,
+    "C-EE-03": 3,
+    "C-EE-04": 3,
+    "C-EE-05": 3,
+    "C-EE-06": 3,
+    "C-EE-07": 3,
+    "C-EE-08": 3,
+    "C-EE-09": 3,
+    "C-EE-10": 3,
+    "C-EE-11": 3,
+    "C-EE-12": 3,
+    "C-EE-13": 3,
+    "C-EE-14": 3,
+    "C-EE-15": 1,
+    "C-LAW-01": 3,
+    "C-LAW-02": 3,
+    "C-LAW-03": 3,
+    "C-LAW-04": 3,
+    "C-LAW-05": 3,
+    "C-LAW-06": 3,
+    "C-LAW-07": 3,
+    "C-LAW-08": 3,
+    "C-LAW-09": 3,
+    "C-LAW-10": 3,
+    "C-LAW-11": 1,
+    "C-MATH-01": 3,
+    "C-MATH-02": 3,
+    "C-MATH-03": 3,
+    "C-MATH-04": 3,
+    "C-MATH-05": 3,
+    "C-MATH-06": 3,
+    "C-MATH-07": 3,
+    "C-MATH-08": 3,
+    "C-MATH-09": 3,
+    "C-MATH-10": 3,
+    "C-MATH-11": 3,
+    "C-MATH-12": 3,
+    "C-MATH-13": 3,
+    "C-MATH-14": 1,
+    "C-ME-01": 3,
+    "C-ME-02": 3,
+    "C-ME-03": 3,
+    "C-ME-04": 3,
+    "C-ME-05": 3,
+    "C-ME-06": 3,
+    "C-ME-07": 3,
+    "C-ME-08": 3,
+    "C-ME-09": 3,
+    "C-ME-10": 3,
+    "C-ME-11": 3,
+    "C-ME-12": 3,
+    "C-ME-13": 3,
+    "C-ME-14": 3,
+    "C-ME-15": 1,
+    "C-PHY-01": 3,
+    "C-PHY-02": 3,
+    "C-PHY-03": 3,
+    "C-PHY-04": 3,
+    "C-PHY-05": 3,
+    "C-PHY-06": 3,
+    "C-PHY-07": 3,
+    "C-PHY-08": 3,
+    "C-PHY-09": 3,
+    "C-PHY-10": 3,
+    "C-PHY-11": 3,
+    "C-PHY-12": 3,
+    "C-PHY-13": 3,
+    "C-PHY-14": 1,
+    "C-PSY-01": 3,
+    "C-PSY-02": 3,
+    "C-PSY-03": 3,
+    "C-PSY-04": 3,
+    "C-PSY-05": 3,
+    "C-PSY-06": 3,
+    "C-PSY-07": 3,
+    "C-PSY-08": 3,
+    "C-PSY-09": 3,
+    "C-PSY-10": 3,
+    "C-PSY-11": 1
+  },
+  "qualified_courses_per_professor": {
+    "C-ACC-P01": 5,
+    "C-ACC-P02": 3,
+    "C-ACC-P03": 6,
+    "C-ACC-P04": 3,
+    "C-ACC-P05": 6,
+    "C-ACC-P06": 3,
+    "C-ACC-P07": 6,
+    "C-ACC-P08": 2,
+    "C-BUS-P01": 5,
+    "C-BUS-P02": 3,
+    "C-BUS-P03": 6,
+    "C-BUS-P04": 3,
+    "C-BUS-P05": 6,
+    "C-BUS-P06": 3,
+    "C-BUS-P07": 6,
+    "C-BUS-P08": 2,
+    "C-CE-P01": 5,
+    "C-CE-P02": 3,
+    "C-CE-P03": 6,
+    "C-CE-P04": 3,
+    "C-CE-P05": 6,
+    "C-CE-P06": 3,
+    "C-CE-P07": 6,
+    "C-CE-P08": 3,
+    "C-CE-P09": 6,
+    "C-CE-P10": 2,
+    "C-CHEM-P01": 4,
+    "C-CHEM-P02": 4,
+    "C-CHEM-P03": 5,
+    "C-CHEM-P04": 4,
+    "C-CHEM-P05": 5,
+    "C-CHEM-P06": 4,
+    "C-CHEM-P07": 5,
+    "C-CHEM-P08": 4,
+    "C-CHEM-P09": 5,
+    "C-CIV-P01": 5,
+    "C-CIV-P02": 6,
+    "C-CIV-P03": 5,
+    "C-CIV-P04": 4,
+    "C-CIV-P05": 5,
+    "C-CIV-P06": 4,
+    "C-CIV-P07": 5,
+    "C-CIV-P08": 4,
+    "C-CIV-P09": 5,
+    "C-ECON-P01": 5,
+    "C-ECON-P02": 6,
+    "C-ECON-P03": 5,
+    "C-ECON-P04": 4,
+    "C-ECON-P05": 5,
+    "C-ECON-P06": 4,
+    "C-ECON-P07": 5,
+    "C-EE-P01": 5,
+    "C-EE-P02": 3,
+    "C-EE-P03": 6,
+    "C-EE-P04": 3,
+    "C-EE-P05": 6,
+    "C-EE-P06": 3,
+    "C-EE-P07": 6,
+    "C-EE-P08": 3,
+    "C-EE-P09": 6,
+    "C-EE-P10": 2,
+    "C-LAW-P01": 5,
+    "C-LAW-P02": 3,
+    "C-LAW-P03": 6,
+    "C-LAW-P04": 3,
+    "C-LAW-P05": 6,
+    "C-LAW-P06": 2,
+    "C-LAW-P07": 4,
+    "C-LAW-P08": 2,
+    "C-MATH-P01": 4,
+    "C-MATH-P02": 4,
+    "C-MATH-P03": 5,
+    "C-MATH-P04": 4,
+    "C-MATH-P05": 5,
+    "C-MATH-P06": 4,
+    "C-MATH-P07": 5,
+    "C-MATH-P08": 4,
+    "C-MATH-P09": 5,
+    "C-ME-P01": 5,
+    "C-ME-P02": 6,
+    "C-ME-P03": 5,
+    "C-ME-P04": 4,
+    "C-ME-P05": 5,
+    "C-ME-P06": 4,
+    "C-ME-P07": 5,
+    "C-ME-P08": 4,
+    "C-ME-P09": 5,
+    "C-PHY-P01": 4,
+    "C-PHY-P02": 4,
+    "C-PHY-P03": 5,
+    "C-PHY-P04": 4,
+    "C-PHY-P05": 5,
+    "C-PHY-P06": 4,
+    "C-PHY-P07": 5,
+    "C-PHY-P08": 4,
+    "C-PHY-P09": 5,
+    "C-PSY-P01": 5,
+    "C-PSY-P02": 3,
+    "C-PSY-P03": 6,
+    "C-PSY-P04": 3,
+    "C-PSY-P05": 6,
+    "C-PSY-P06": 2,
+    "C-PSY-P07": 4,
+    "C-PSY-P08": 2
+  },
+  "professor_unavailable_slots": {
+    "C-CE-P01": 2,
+    "C-CE-P02": 2,
+    "C-CE-P03": 2,
+    "C-CE-P04": 2,
+    "C-CE-P05": 2,
+    "C-CE-P06": 2,
+    "C-CE-P07": 2,
+    "C-CE-P08": 2,
+    "C-CE-P09": 2,
+    "C-CE-P10": 2,
+    "C-EE-P01": 2,
+    "C-EE-P02": 2,
+    "C-EE-P03": 2,
+    "C-EE-P04": 2,
+    "C-EE-P05": 2,
+    "C-EE-P06": 2,
+    "C-EE-P07": 2,
+    "C-EE-P08": 2,
+    "C-EE-P09": 2,
+    "C-EE-P10": 2,
+    "C-ME-P01": 2,
+    "C-ME-P02": 2,
+    "C-ME-P03": 2,
+    "C-ME-P04": 2,
+    "C-ME-P05": 2,
+    "C-ME-P06": 2,
+    "C-ME-P07": 2,
+    "C-ME-P08": 2,
+    "C-ME-P09": 2,
+    "C-CIV-P01": 2,
+    "C-CIV-P02": 2,
+    "C-CIV-P03": 2,
+    "C-CIV-P04": 2,
+    "C-CIV-P05": 2,
+    "C-CIV-P06": 2,
+    "C-CIV-P07": 2,
+    "C-CIV-P08": 2,
+    "C-CIV-P09": 2,
+    "C-MATH-P01": 2,
+    "C-MATH-P02": 2,
+    "C-MATH-P03": 2,
+    "C-MATH-P04": 2,
+    "C-MATH-P05": 2,
+    "C-MATH-P06": 2,
+    "C-MATH-P07": 2,
+    "C-MATH-P08": 2,
+    "C-MATH-P09": 2,
+    "C-PHY-P01": 2,
+    "C-PHY-P02": 2,
+    "C-PHY-P03": 2,
+    "C-PHY-P04": 2,
+    "C-PHY-P05": 2,
+    "C-PHY-P06": 2,
+    "C-PHY-P07": 2,
+    "C-PHY-P08": 2,
+    "C-PHY-P09": 2,
+    "C-CHEM-P01": 2,
+    "C-CHEM-P02": 2,
+    "C-CHEM-P03": 2,
+    "C-CHEM-P04": 2,
+    "C-CHEM-P05": 2,
+    "C-CHEM-P06": 2,
+    "C-CHEM-P07": 2,
+    "C-CHEM-P08": 2,
+    "C-CHEM-P09": 2,
+    "C-BUS-P01": 2,
+    "C-BUS-P02": 2,
+    "C-BUS-P03": 2,
+    "C-BUS-P04": 2,
+    "C-BUS-P05": 2,
+    "C-BUS-P06": 2,
+    "C-BUS-P07": 2,
+    "C-BUS-P08": 2,
+    "C-ACC-P01": 2,
+    "C-ACC-P02": 2,
+    "C-ACC-P03": 2,
+    "C-ACC-P04": 2,
+    "C-ACC-P05": 2,
+    "C-ACC-P06": 2,
+    "C-ACC-P07": 2,
+    "C-ACC-P08": 2,
+    "C-ECON-P01": 2,
+    "C-ECON-P02": 2,
+    "C-ECON-P03": 2,
+    "C-ECON-P04": 2,
+    "C-ECON-P05": 2,
+    "C-ECON-P06": 2,
+    "C-ECON-P07": 2,
+    "C-PSY-P01": 2,
+    "C-PSY-P02": 2,
+    "C-PSY-P03": 2,
+    "C-PSY-P04": 2,
+    "C-PSY-P05": 2,
+    "C-PSY-P06": 2,
+    "C-PSY-P07": 2,
+    "C-PSY-P08": 2,
+    "C-LAW-P01": 2,
+    "C-LAW-P02": 2,
+    "C-LAW-P03": 2,
+    "C-LAW-P04": 2,
+    "C-LAW-P05": 2,
+    "C-LAW-P06": 2,
+    "C-LAW-P07": 2,
+    "C-LAW-P08": 2
+  },
+  "room_types": {
+    "Theory": 60,
+    "ComputingLab": 4,
+    "ElectronicsLab": 3,
+    "MechanicalWorkshop": 2,
+    "CivilLab": 2,
+    "PhysicsLab": 3,
+    "ChemistryLab": 3,
+    "BusinessWorkshop": 1,
+    "LegalWorkshop": 1,
+    "PsychologyLab": 1
+  },
+  "room_capacity_distribution": {
+    "35": 15,
+    "40": 14,
+    "45": 18,
+    "30": 13,
+    "20": 9,
+    "18": 4,
+    "16": 7
+  },
+  "active_sections": 242,
+  "preallocated_section_slots": 679,
+  "section_size_distribution": {
+    "20": 8,
+    "27": 28,
+    "35": 4,
+    "25": 10,
+    "30": 13,
+    "29": 7,
+    "33": 6,
+    "32": 6,
+    "28": 12,
+    "22": 13,
+    "21": 16,
+    "24": 15,
+    "18": 6,
+    "9": 2,
+    "15": 4,
+    "23": 17,
+    "39": 5,
+    "34": 4,
+    "10": 6,
+    "17": 1,
+    "37": 2,
+    "31": 7,
+    "12": 4,
+    "36": 2,
+    "40": 4,
+    "26": 19,
+    "19": 4,
+    "42": 1,
+    "38": 1,
+    "11": 12,
+    "13": 1,
+    "8": 1,
+    "41": 1
+  },
+  "room_utilization": {
+    "C-ENG-T01": {
+      "meetings": 6,
+      "fraction_of_25_slots": 0.24
+    },
+    "C-ENG-T02": {
+      "meetings": 5,
+      "fraction_of_25_slots": 0.2
+    },
+    "C-ENG-T03": {
+      "meetings": 4,
+      "fraction_of_25_slots": 0.16
+    },
+    "C-ENG-T04": {
+      "meetings": 6,
+      "fraction_of_25_slots": 0.24
+    },
+    "C-ENG-T05": {
+      "meetings": 0,
+      "fraction_of_25_slots": 0.0
+    },
+    "C-ENG-T06": {
+      "meetings": 0,
+      "fraction_of_25_slots": 0.0
+    },
+    "C-ENG-T07": {
+      "meetings": 5,
+      "fraction_of_25_slots": 0.2
+    },
+    "C-ENG-T08": {
+      "meetings": 8,
+      "fraction_of_25_slots": 0.32
+    },
+    "C-ENG-T09": {
+      "meetings": 4,
+      "fraction_of_25_slots": 0.16
+    },
+    "C-ENG-T10": {
+      "meetings": 8,
+      "fraction_of_25_slots": 0.32
+    },
+    "C-ENG-T11": {
+      "meetings": 5,
+      "fraction_of_25_slots": 0.2
+    },
+    "C-ENG-T12": {
+      "meetings": 5,
+      "fraction_of_25_slots": 0.2
+    },
+    "C-ENG-T13": {
+      "meetings": 9,
+      "fraction_of_25_slots": 0.36
+    },
+    "C-ENG-T14": {
+      "meetings": 2,
+      "fraction_of_25_slots": 0.08
+    },
+    "C-ENG-T15": {
+      "meetings": 6,
+      "fraction_of_25_slots": 0.24
+    },
+    "C-ENG-T16": {
+      "meetings": 3,
+      "fraction_of_25_slots": 0.12
+    },
+    "C-ENG-T17": {
+      "meetings": 8,
+      "fraction_of_25_slots": 0.32
+    },
+    "C-ENG-T18": {
+      "meetings": 11,
+      "fraction_of_25_slots": 0.44
+    },
+    "C-ENG-T19": {
+      "meetings": 10,
+      "fraction_of_25_slots": 0.4
+    },
+    "C-ENG-T20": {
+      "meetings": 10,
+      "fraction_of_25_slots": 0.4
+    },
+    "C-ENG-T21": {
+      "meetings": 0,
+      "fraction_of_25_slots": 0.0
+    },
+    "C-ENG-P01": {
+      "meetings": 3,
+      "fraction_of_25_slots": 0.12
+    },
+    "C-ENG-P02": {
+      "meetings": 3,
+      "fraction_of_25_slots": 0.12
+    },
+    "C-ENG-P03": {
+      "meetings": 0,
+      "fraction_of_25_slots": 0.0
+    },
+    "C-ENG-P04": {
+      "meetings": 2,
+      "fraction_of_25_slots": 0.08
+    },
+    "C-ENG-P05": {
+      "meetings": 1,
+      "fraction_of_25_slots": 0.04
+    },
+    "C-ENG-P06": {
+      "meetings": 1,
+      "fraction_of_25_slots": 0.04
+    },
+    "C-ENG-P07": {
+      "meetings": 2,
+      "fraction_of_25_slots": 0.08
+    },
+    "C-ENG-P08": {
+      "meetings": 1,
+      "fraction_of_25_slots": 0.04
+    },
+    "C-ENG-P09": {
+      "meetings": 1,
+      "fraction_of_25_slots": 0.04
+    },
+    "C-SCI-T01": {
+      "meetings": 3,
+      "fraction_of_25_slots": 0.12
+    },
+    "C-SCI-T02": {
+      "meetings": 17,
+      "fraction_of_25_slots": 0.68
+    },
+    "C-SCI-T03": {
+      "meetings": 7,
+      "fraction_of_25_slots": 0.28
+    },
+    "C-SCI-T04": {
+      "meetings": 12,
+      "fraction_of_25_slots": 0.48
+    },
+    "C-SCI-T05": {
+      "meetings": 8,
+      "fraction_of_25_slots": 0.32
+    },
+    "C-SCI-T06": {
+      "meetings": 5,
+      "fraction_of_25_slots": 0.2
+    },
+    "C-SCI-T07": {
+      "meetings": 0,
+      "fraction_of_25_slots": 0.0
+    },
+    "C-SCI-T08": {
+      "meetings": 2,
+      "fraction_of_25_slots": 0.08
+    },
+    "C-SCI-T09": {
+      "meetings": 6,
+      "fraction_of_25_slots": 0.24
+    },
+    "C-SCI-T10": {
+      "meetings": 7,
+      "fraction_of_25_slots": 0.28
+    },
+    "C-SCI-T11": {
+      "meetings": 7,
+      "fraction_of_25_slots": 0.28
+    },
+    "C-SCI-T12": {
+      "meetings": 7,
+      "fraction_of_25_slots": 0.28
+    },
+    "C-SCI-T13": {
+      "meetings": 5,
+      "fraction_of_25_slots": 0.2
+    },
+    "C-SCI-T14": {
+      "meetings": 7,
+      "fraction_of_25_slots": 0.28
+    },
+    "C-SCI-T15": {
+      "meetings": 5,
+      "fraction_of_25_slots": 0.2
+    },
+    "C-SCI-P01": {
+      "meetings": 1,
+      "fraction_of_25_slots": 0.04
+    },
+    "C-SCI-P02": {
+      "meetings": 0,
+      "fraction_of_25_slots": 0.0
+    },
+    "C-SCI-P03": {
+      "meetings": 2,
+      "fraction_of_25_slots": 0.08
+    },
+    "C-SCI-P04": {
+      "meetings": 1,
+      "fraction_of_25_slots": 0.04
+    },
+    "C-SCI-P05": {
+      "meetings": 0,
+      "fraction_of_25_slots": 0.0
+    },
+    "C-SCI-P06": {
+      "meetings": 1,
+      "fraction_of_25_slots": 0.04
+    },
+    "C-SCI-P07": {
+      "meetings": 1,
+      "fraction_of_25_slots": 0.04
+    },
+    "C-MGT-T01": {
+      "meetings": 2,
+      "fraction_of_25_slots": 0.08
+    },
+    "C-MGT-T02": {
+      "meetings": 8,
+      "fraction_of_25_slots": 0.32
+    },
+    "C-MGT-T03": {
+      "meetings": 4,
+      "fraction_of_25_slots": 0.16
+    },
+    "C-MGT-T04": {
+      "meetings": 11,
+      "fraction_of_25_slots": 0.44
+    },
+    "C-MGT-T05": {
+      "meetings": 11,
+      "fraction_of_25_slots": 0.44
+    },
+    "C-MGT-T06": {
+      "meetings": 8,
+      "fraction_of_25_slots": 0.32
+    },
+    "C-MGT-T07": {
+      "meetings": 6,
+      "fraction_of_25_slots": 0.24
+    },
+    "C-MGT-T08": {
+      "meetings": 9,
+      "fraction_of_25_slots": 0.36
+    },
+    "C-MGT-T09": {
+      "meetings": 7,
+      "fraction_of_25_slots": 0.28
+    },
+    "C-MGT-T10": {
+      "meetings": 1,
+      "fraction_of_25_slots": 0.04
+    },
+    "C-MGT-T11": {
+      "meetings": 6,
+      "fraction_of_25_slots": 0.24
+    },
+    "C-MGT-T12": {
+      "meetings": 8,
+      "fraction_of_25_slots": 0.32
+    },
+    "C-MGT-T13": {
+      "meetings": 7,
+      "fraction_of_25_slots": 0.28
+    },
+    "C-MGT-P01": {
+      "meetings": 3,
+      "fraction_of_25_slots": 0.12
+    },
+    "C-MGT-P02": {
+      "meetings": 3,
+      "fraction_of_25_slots": 0.12
+    },
+    "C-MGT-P03": {
+      "meetings": 3,
+      "fraction_of_25_slots": 0.12
+    },
+    "C-HUM-T01": {
+      "meetings": 5,
+      "fraction_of_25_slots": 0.2
+    },
+    "C-HUM-T02": {
+      "meetings": 8,
+      "fraction_of_25_slots": 0.32
+    },
+    "C-HUM-T03": {
+      "meetings": 6,
+      "fraction_of_25_slots": 0.24
+    },
+    "C-HUM-T04": {
+      "meetings": 13,
+      "fraction_of_25_slots": 0.52
+    },
+    "C-HUM-T05": {
+      "meetings": 8,
+      "fraction_of_25_slots": 0.32
+    },
+    "C-HUM-T06": {
+      "meetings": 5,
+      "fraction_of_25_slots": 0.2
+    },
+    "C-HUM-T07": {
+      "meetings": 3,
+      "fraction_of_25_slots": 0.12
+    },
+    "C-HUM-T08": {
+      "meetings": 2,
+      "fraction_of_25_slots": 0.08
+    },
+    "C-HUM-T09": {
+      "meetings": 3,
+      "fraction_of_25_slots": 0.12
+    },
+    "C-HUM-T10": {
+      "meetings": 9,
+      "fraction_of_25_slots": 0.36
+    },
+    "C-HUM-T11": {
+      "meetings": 9,
+      "fraction_of_25_slots": 0.36
+    },
+    "C-HUM-P01": {
+      "meetings": 3,
+      "fraction_of_25_slots": 0.12
+    }
+  },
+  "professor_utilization": {
+    "C-ACC-P01": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-ACC-P02": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-ACC-P03": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-ACC-P04": {
+      "minutes": 270,
+      "max_minutes": 720
+    },
+    "C-ACC-P05": {
+      "minutes": 270,
+      "max_minutes": 720
+    },
+    "C-ACC-P06": {
+      "minutes": 180,
+      "max_minutes": 720
+    },
+    "C-ACC-P07": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-ACC-P08": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-BUS-P01": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-BUS-P02": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-BUS-P03": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-BUS-P04": {
+      "minutes": 270,
+      "max_minutes": 720
+    },
+    "C-BUS-P05": {
+      "minutes": 270,
+      "max_minutes": 720
+    },
+    "C-BUS-P06": {
+      "minutes": 270,
+      "max_minutes": 720
+    },
+    "C-BUS-P07": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-BUS-P08": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-CE-P01": {
+      "minutes": 270,
+      "max_minutes": 720
+    },
+    "C-CE-P02": {
+      "minutes": 270,
+      "max_minutes": 720
+    },
+    "C-CE-P03": {
+      "minutes": 270,
+      "max_minutes": 720
+    },
+    "C-CE-P04": {
+      "minutes": 180,
+      "max_minutes": 720
+    },
+    "C-CE-P05": {
+      "minutes": 540,
+      "max_minutes": 720
+    },
+    "C-CE-P06": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-CE-P07": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-CE-P08": {
+      "minutes": 270,
+      "max_minutes": 720
+    },
+    "C-CE-P09": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-CE-P10": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-CHEM-P01": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-CHEM-P02": {
+      "minutes": 270,
+      "max_minutes": 720
+    },
+    "C-CHEM-P03": {
+      "minutes": 270,
+      "max_minutes": 720
+    },
+    "C-CHEM-P04": {
+      "minutes": 270,
+      "max_minutes": 720
+    },
+    "C-CHEM-P05": {
+      "minutes": 180,
+      "max_minutes": 720
+    },
+    "C-CHEM-P06": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-CHEM-P07": {
+      "minutes": 270,
+      "max_minutes": 720
+    },
+    "C-CHEM-P08": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-CHEM-P09": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-CIV-P01": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-CIV-P02": {
+      "minutes": 270,
+      "max_minutes": 720
+    },
+    "C-CIV-P03": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-CIV-P04": {
+      "minutes": 270,
+      "max_minutes": 720
+    },
+    "C-CIV-P05": {
+      "minutes": 270,
+      "max_minutes": 720
+    },
+    "C-CIV-P06": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-CIV-P07": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-CIV-P08": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-CIV-P09": {
+      "minutes": 180,
+      "max_minutes": 720
+    },
+    "C-ECON-P01": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-ECON-P02": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-ECON-P03": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-ECON-P04": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-ECON-P05": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-ECON-P06": {
+      "minutes": 180,
+      "max_minutes": 720
+    },
+    "C-ECON-P07": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-EE-P01": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-EE-P02": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-EE-P03": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-EE-P04": {
+      "minutes": 180,
+      "max_minutes": 720
+    },
+    "C-EE-P05": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-EE-P06": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-EE-P07": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-EE-P08": {
+      "minutes": 270,
+      "max_minutes": 720
+    },
+    "C-EE-P09": {
+      "minutes": 270,
+      "max_minutes": 720
+    },
+    "C-EE-P10": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-LAW-P01": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-LAW-P02": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-LAW-P03": {
+      "minutes": 270,
+      "max_minutes": 720
+    },
+    "C-LAW-P04": {
+      "minutes": 180,
+      "max_minutes": 720
+    },
+    "C-LAW-P05": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-LAW-P06": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-LAW-P07": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-LAW-P08": {
+      "minutes": 180,
+      "max_minutes": 720
+    },
+    "C-MATH-P01": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-MATH-P02": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-MATH-P03": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-MATH-P04": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-MATH-P05": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-MATH-P06": {
+      "minutes": 180,
+      "max_minutes": 720
+    },
+    "C-MATH-P07": {
+      "minutes": 270,
+      "max_minutes": 720
+    },
+    "C-MATH-P08": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-MATH-P09": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-ME-P01": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-ME-P02": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-ME-P03": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-ME-P04": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-ME-P05": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-ME-P06": {
+      "minutes": 180,
+      "max_minutes": 720
+    },
+    "C-ME-P07": {
+      "minutes": 540,
+      "max_minutes": 720
+    },
+    "C-ME-P08": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-ME-P09": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-PHY-P01": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-PHY-P02": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-PHY-P03": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-PHY-P04": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-PHY-P05": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-PHY-P06": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-PHY-P07": {
+      "minutes": 270,
+      "max_minutes": 720
+    },
+    "C-PHY-P08": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-PHY-P09": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-PSY-P01": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-PSY-P02": {
+      "minutes": 270,
+      "max_minutes": 720
+    },
+    "C-PSY-P03": {
+      "minutes": 450,
+      "max_minutes": 720
+    },
+    "C-PSY-P04": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-PSY-P05": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-PSY-P06": {
+      "minutes": 180,
+      "max_minutes": 720
+    },
+    "C-PSY-P07": {
+      "minutes": 360,
+      "max_minutes": 720
+    },
+    "C-PSY-P08": {
+      "minutes": 360,
+      "max_minutes": 720
+    }
+  },
+  "total_requested_credits": 16385,
+  "total_assigned_credits": 16385,
+  "unassigned_requests": 0,
+  "hard_penalty": 0,
+  "hard_counts": {
+    "H02_DISALLOWED_SLOT": 0,
+    "H03_UNQUALIFIED_PROFESSOR": 0,
+    "H04_PROFESSOR_OVERLAP": 0,
+    "H04_ROOM_OVERLAP": 0,
+    "H04_STUDENT_OVERLAP": 0,
+    "H05_PROFESSOR_UNAVAILABLE": 0,
+    "H05_STUDENT_UNAVAILABLE": 0,
+    "H06_ROOM_TYPE": 0,
+    "H07_SECTION_UNDERFLOW": 0,
+    "H07_SECTION_OVERFLOW": 0,
+    "H08_CREDIT_UNDERFLOW": 0,
+    "H08_CREDIT_OVERFLOW": 0,
+    "H09_TEACHING_OVERLOAD": 0,
+    "H10_PASSED_COURSE": 0
+  },
+  "hard_violations": 0,
+  "rooms_with_no_bookings": 7,
+  "professors_with_no_bookings": 0
+}

@@ -1,0 +1,410 @@
+{
+  "schema_version": "dataset-c-smoke-v1",
+  "engine_hashes": {
+    "initialization": "2d8c55377a68563616ae1fb5072b63cc260ca27255413393e297e7e5f171c7ea",
+    "evolution": "9aeb80a3686a389f059e7d6090bf6042cb636d30411c9392490ab5114a12cf1c",
+    "selection": "b70e53ac0a8348a6bf3e0d451a13835b095ead856d8adb65a065c05b17388e8d",
+    "crossover": "3077a4887d43a4e8d25e3476ba1048b3e75d0efb893cfe1bd0b887a4de8e16f6",
+    "mutation": "263cc46bf244eacea384d4c4cdb8ddfc523eaa5ec94f6c95cb79d5270c8aac19",
+    "repair": "61ce6c93d697a98213ff395bf332e913b05877a94ed125010599405fb4bcd9f6",
+    "repair_relocation": "48041f8c7d765a66737fa4d2e4d1209debe938baa219fccf2739b3a5bea4788d",
+    "fitness": "6159c69723092a552c9260bdbedd95fdce6e6840604e0d919f611bd583f4fb29",
+    "soft_fitness": "76b5ff41156717b00223577701d9a53371a268d0b450485043a3e13ad012011e",
+    "constraints": "98944b5d6cf9c16916a88e997988e8de38e0aeddf1679a111470fcb121b72655",
+    "evaluation_context": "a0b3097312a9e63230126d4db8a57497174f15e4d07c75ce9861558132d1e48f"
+  },
+  "dataset_sha256": "f593af4a3214f1bccdc0f6c89d407fbbbe688e736008d66a84458311a46fd6aa",
+  "load_seconds": 1.0221449000000575,
+  "context_seconds": 0.1058234000010998,
+  "initial_population_fingerprints": [
+    "e230b02b1c1fbeb2d4dc6311773585cf9c22de53578dfa67e87838b7c8737b99",
+    "327b45493dd51f321eb0b92bfaab4b6077c12c8cd8cef2dc39d2ccd1244a41d9",
+    "f0d4817e186b1e65e582a683c8bb8c34ef7294dc3880945e71f1c6cfc8941382",
+    "e42c7df529823c37bac2212a9ac1b5bc0971ab8a9396c9d7a0fcf8d2a2d900e1",
+    "b53a008d92f8492d1a6a45f54f6c6798036bd98bd728028c1f74bf1643f08ace",
+    "4132a69e6436d34d8669cffeb35f30f73ba99701873080ef10d69194ad059e07"
+  ],
+  "initial_structure_issues": 0,
+  "final_structure_issues": 0,
+  "separate_initial_population_evaluations": 6,
+  "separate_initial_population_seconds": 0.4350018999994063,
+  "evolution": {
+    "schema_version": "scheduler-evolution-report-v1",
+    "settings": {
+      "version": "evolution-phase6-v1",
+      "population_size": 6,
+      "tournament_size": 3,
+      "elite_count": 2,
+      "max_generations": 3,
+      "mutation_probability": 0.3,
+      "crossover_probability": 0.7,
+      "repair_enabled": true,
+      "random_seed": 11,
+      "stop_on_first_feasible": false,
+      "stagnation_generations": null,
+      "max_fitness_evaluations": null,
+      "initialization_settings": {
+        "version": "initialization-v1",
+        "strategies": [
+          "compact",
+          "spread",
+          "random"
+        ],
+        "max_attempts_per_individual": 8
+      },
+      "mutation_settings": {
+        "version": "mutation-5b-v1",
+        "mutation_probability": 0.3,
+        "targeted_probability": 0.7,
+        "max_attempts": 8,
+        "max_proposals_per_operator": 8,
+        "operator_weights": [
+          [
+            "MoveMeeting",
+            1.0
+          ],
+          [
+            "SwapMeetings",
+            1.0
+          ],
+          [
+            "ChangeProfessor",
+            1.0
+          ],
+          [
+            "ChangeRoom",
+            1.0
+          ],
+          [
+            "SplitSection",
+            1.0
+          ],
+          [
+            "MergeSections",
+            1.0
+          ],
+          [
+            "ActivateDeactivate",
+            1.0
+          ],
+          [
+            "MoveStudent",
+            1.0
+          ],
+          [
+            "SwapStudents",
+            1.0
+          ],
+          [
+            "AssignUnassign",
+            1.0
+          ]
+        ]
+      },
+      "repair_settings": {
+        "version": "repair-8-v1",
+        "max_local_candidates": 5,
+        "max_candidate_evaluations": 50,
+        "max_candidate_attempts": 100,
+        "max_conflicts": 50,
+        "max_structural_steps": 20,
+        "conflict_aware_relocation": true
+      }
+    },
+    "dataset_sha256": "f593af4a3214f1bccdc0f6c89d407fbbbe688e736008d66a84458311a46fd6aa",
+    "context_id": [
+      "ec0e12c483b9dab4913ffe3720fbc27026f79635c456eeb65ee599db70121d7d",
+      "0f41f83ba9ccc9aa4be4d141eb75a59d3e1b35847cf63d479d2b489a2affc85a"
+    ],
+    "policy_version": "phase3-soft-v1",
+    "stop_reasons": [
+      "max_generations"
+    ],
+    "failure": null,
+    "evaluation_accounting_complete": true,
+    "feasible_found": false,
+    "best_overall": {
+      "fingerprint": "e42c7df529823c37bac2212a9ac1b5bc0971ab8a9396c9d7a0fcf8d2a2d900e1",
+      "hard_penalty": 2632,
+      "soft_score": 0.7370839384446666,
+      "request_coverage": 1.0,
+      "feasible": false,
+      "hard_counts_by_type": {
+        "H02_DISALLOWED_SLOT": 0,
+        "H03_UNQUALIFIED_PROFESSOR": 0,
+        "H04_PROFESSOR_OVERLAP": 27,
+        "H04_ROOM_OVERLAP": 51,
+        "H04_STUDENT_OVERLAP": 1652,
+        "H05_PROFESSOR_UNAVAILABLE": 36,
+        "H05_STUDENT_UNAVAILABLE": 842,
+        "H06_ROOM_TYPE": 0,
+        "H07_SECTION_UNDERFLOW": 0,
+        "H07_SECTION_OVERFLOW": 0,
+        "H08_CREDIT_UNDERFLOW": 0,
+        "H08_CREDIT_OVERFLOW": 0,
+        "H09_TEACHING_OVERLOAD": 24,
+        "H10_PASSED_COURSE": 0
+      },
+      "violation_record_count": 2613
+    },
+    "best_feasible": null,
+    "final_population_best": {
+      "fingerprint": "e42c7df529823c37bac2212a9ac1b5bc0971ab8a9396c9d7a0fcf8d2a2d900e1",
+      "hard_penalty": 2632,
+      "soft_score": 0.7370839384446666,
+      "request_coverage": 1.0,
+      "feasible": false,
+      "hard_counts_by_type": {
+        "H02_DISALLOWED_SLOT": 0,
+        "H03_UNQUALIFIED_PROFESSOR": 0,
+        "H04_PROFESSOR_OVERLAP": 27,
+        "H04_ROOM_OVERLAP": 51,
+        "H04_STUDENT_OVERLAP": 1652,
+        "H05_PROFESSOR_UNAVAILABLE": 36,
+        "H05_STUDENT_UNAVAILABLE": 842,
+        "H06_ROOM_TYPE": 0,
+        "H07_SECTION_UNDERFLOW": 0,
+        "H07_SECTION_OVERFLOW": 0,
+        "H08_CREDIT_UNDERFLOW": 0,
+        "H08_CREDIT_OVERFLOW": 0,
+        "H09_TEACHING_OVERLOAD": 24,
+        "H10_PASSED_COURSE": 0
+      },
+      "violation_record_count": 2613
+    },
+    "final_population_size": 6,
+    "completed_generations": 3,
+    "generations": [
+      {
+        "generation_index": 0,
+        "population_size": 6,
+        "best_hard_penalty": 2632,
+        "mean_hard_penalty": 3590.0,
+        "best_soft_score": 0.7370839384446666,
+        "mean_soft_score": 0.7266627171184289,
+        "feasible_count": 0,
+        "unique_chromosomes": 6,
+        "mean_request_coverage": 1.0,
+        "active_sections": 467.5,
+        "unassigned_requests": 0.0,
+        "best_fingerprint": "e42c7df529823c37bac2212a9ac1b5bc0971ab8a9396c9d7a0fcf8d2a2d900e1",
+        "elite_fingerprints": [],
+        "operators": {
+          "children": 0,
+          "crossover_applied": 0,
+          "parent_cloned": 0,
+          "self_matings": 0,
+          "mutation_applied": 0,
+          "mutation_skipped": 0,
+          "mutation_failed": 0,
+          "mutation_not_applicable": 0,
+          "mutation_targeted": 0,
+          "mutation_fallback": 0,
+          "mutation_operations": [],
+          "repair_improved": 0,
+          "repair_unchanged": 0,
+          "repair_disabled": 0,
+          "better_than_both_parents": 0,
+          "between_parents": 0,
+          "worse_than_both_parents": 0,
+          "identical_to_a_parent": 0
+        },
+        "evaluations": {
+          "initialization": 6,
+          "child_baseline": 0,
+          "post_mutation": 0,
+          "mutation_baseline": 0,
+          "repair_baseline": 0,
+          "repair_candidates": 0
+        },
+        "fitness_evaluation_count": 6,
+        "candidate_repair_evaluation_count": 0,
+        "cumulative_fitness_evaluation_count": 6,
+        "generation_elapsed_seconds": 0.4900166999996145,
+        "cumulative_elapsed_seconds": 0.4900166999996145,
+        "self_mating_rate": 0.0
+      },
+      {
+        "generation_index": 1,
+        "population_size": 6,
+        "best_hard_penalty": 2632,
+        "mean_hard_penalty": 2802.1666666666665,
+        "best_soft_score": 0.7370839384446666,
+        "mean_soft_score": 0.733254059776742,
+        "feasible_count": 0,
+        "unique_chromosomes": 4,
+        "mean_request_coverage": 1.0,
+        "active_sections": 285.5,
+        "unassigned_requests": 0.0,
+        "best_fingerprint": "e42c7df529823c37bac2212a9ac1b5bc0971ab8a9396c9d7a0fcf8d2a2d900e1",
+        "elite_fingerprints": [
+          "e42c7df529823c37bac2212a9ac1b5bc0971ab8a9396c9d7a0fcf8d2a2d900e1",
+          "e230b02b1c1fbeb2d4dc6311773585cf9c22de53578dfa67e87838b7c8737b99"
+        ],
+        "operators": {
+          "children": 4,
+          "crossover_applied": 2,
+          "parent_cloned": 2,
+          "self_matings": 2,
+          "mutation_applied": 1,
+          "mutation_skipped": 3,
+          "mutation_failed": 0,
+          "mutation_not_applicable": 0,
+          "mutation_targeted": 1,
+          "mutation_fallback": 0,
+          "mutation_operations": [
+            [
+              "MoveStudent",
+              1
+            ]
+          ],
+          "repair_improved": 0,
+          "repair_unchanged": 4,
+          "repair_disabled": 0,
+          "better_than_both_parents": 1,
+          "between_parents": 3,
+          "worse_than_both_parents": 0,
+          "identical_to_a_parent": 3
+        },
+        "evaluations": {
+          "initialization": 0,
+          "child_baseline": 4,
+          "post_mutation": 1,
+          "mutation_baseline": 0,
+          "repair_baseline": 0,
+          "repair_candidates": 0
+        },
+        "fitness_evaluation_count": 5,
+        "candidate_repair_evaluation_count": 0,
+        "cumulative_fitness_evaluation_count": 11,
+        "generation_elapsed_seconds": 1.0572594000004756,
+        "cumulative_elapsed_seconds": 1.5472884999999224,
+        "self_mating_rate": 0.5
+      },
+      {
+        "generation_index": 2,
+        "population_size": 6,
+        "best_hard_penalty": 2632,
+        "mean_hard_penalty": 2632.0,
+        "best_soft_score": 0.7370839384446666,
+        "mean_soft_score": 0.7370839384446666,
+        "feasible_count": 0,
+        "unique_chromosomes": 1,
+        "mean_request_coverage": 1.0,
+        "active_sections": 242.0,
+        "unassigned_requests": 0.0,
+        "best_fingerprint": "e42c7df529823c37bac2212a9ac1b5bc0971ab8a9396c9d7a0fcf8d2a2d900e1",
+        "elite_fingerprints": [
+          "e42c7df529823c37bac2212a9ac1b5bc0971ab8a9396c9d7a0fcf8d2a2d900e1",
+          "e42c7df529823c37bac2212a9ac1b5bc0971ab8a9396c9d7a0fcf8d2a2d900e1"
+        ],
+        "operators": {
+          "children": 4,
+          "crossover_applied": 4,
+          "parent_cloned": 0,
+          "self_matings": 2,
+          "mutation_applied": 0,
+          "mutation_skipped": 4,
+          "mutation_failed": 0,
+          "mutation_not_applicable": 0,
+          "mutation_targeted": 0,
+          "mutation_fallback": 0,
+          "mutation_operations": [],
+          "repair_improved": 0,
+          "repair_unchanged": 4,
+          "repair_disabled": 0,
+          "better_than_both_parents": 0,
+          "between_parents": 4,
+          "worse_than_both_parents": 0,
+          "identical_to_a_parent": 4
+        },
+        "evaluations": {
+          "initialization": 0,
+          "child_baseline": 4,
+          "post_mutation": 0,
+          "mutation_baseline": 0,
+          "repair_baseline": 0,
+          "repair_candidates": 0
+        },
+        "fitness_evaluation_count": 4,
+        "candidate_repair_evaluation_count": 0,
+        "cumulative_fitness_evaluation_count": 15,
+        "generation_elapsed_seconds": 1.0733751000007032,
+        "cumulative_elapsed_seconds": 2.620849699998871,
+        "self_mating_rate": 0.5
+      },
+      {
+        "generation_index": 3,
+        "population_size": 6,
+        "best_hard_penalty": 2632,
+        "mean_hard_penalty": 2632.0,
+        "best_soft_score": 0.7370839384446666,
+        "mean_soft_score": 0.7370839384446666,
+        "feasible_count": 0,
+        "unique_chromosomes": 1,
+        "mean_request_coverage": 1.0,
+        "active_sections": 242.0,
+        "unassigned_requests": 0.0,
+        "best_fingerprint": "e42c7df529823c37bac2212a9ac1b5bc0971ab8a9396c9d7a0fcf8d2a2d900e1",
+        "elite_fingerprints": [
+          "e42c7df529823c37bac2212a9ac1b5bc0971ab8a9396c9d7a0fcf8d2a2d900e1",
+          "e42c7df529823c37bac2212a9ac1b5bc0971ab8a9396c9d7a0fcf8d2a2d900e1"
+        ],
+        "operators": {
+          "children": 4,
+          "crossover_applied": 3,
+          "parent_cloned": 1,
+          "self_matings": 0,
+          "mutation_applied": 0,
+          "mutation_skipped": 4,
+          "mutation_failed": 0,
+          "mutation_not_applicable": 0,
+          "mutation_targeted": 0,
+          "mutation_fallback": 0,
+          "mutation_operations": [],
+          "repair_improved": 0,
+          "repair_unchanged": 4,
+          "repair_disabled": 0,
+          "better_than_both_parents": 0,
+          "between_parents": 4,
+          "worse_than_both_parents": 0,
+          "identical_to_a_parent": 4
+        },
+        "evaluations": {
+          "initialization": 0,
+          "child_baseline": 4,
+          "post_mutation": 0,
+          "mutation_baseline": 0,
+          "repair_baseline": 0,
+          "repair_candidates": 0
+        },
+        "fitness_evaluation_count": 4,
+        "candidate_repair_evaluation_count": 0,
+        "cumulative_fitness_evaluation_count": 19,
+        "generation_elapsed_seconds": 1.028414000000339,
+        "cumulative_elapsed_seconds": 3.6495262999997067,
+        "self_mating_rate": 0.0
+      }
+    ],
+    "partial_generation": null,
+    "evaluation_usage": {
+      "initialization": 6,
+      "child_baseline": 12,
+      "post_mutation": 1,
+      "mutation_baseline": 0,
+      "repair_baseline": 0,
+      "repair_candidates": 0,
+      "known_calls": 19,
+      "total": 19,
+      "hard_calls": 19,
+      "soft_calls": 19
+    },
+    "timings": {
+      "context_seconds": 0.0,
+      "initialization_seconds": 0.4900166999996145,
+      "evolution_seconds": 3.1876964999992197
+    },
+    "initialization_limitations": []
+  },
+  "purpose": "compatibility only; no convergence claim; no witness read"
+}

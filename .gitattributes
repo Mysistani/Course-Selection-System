@@ -1,2 +1,4 @@
 # Preserve the byte identity of the actual saved regression snapshot.
 tests/fixtures/phase8_dataset_b_hard4.json -text
+# Keep hashes of Dataset C validation artifacts stable on Windows checkouts.
+data/Dataset_C_University_seed20261104_*.json -text
