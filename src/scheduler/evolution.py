@@ -5,6 +5,7 @@ from dataclasses import dataclass, fields, replace
 from random import Random
 from statistics import fmean
 from time import perf_counter
+from typing import Callable
 
 from .chromosome import Chromosome, validate_structure
 from .constraints import StructuralValidationError
@@ -208,8 +209,20 @@ def _statistics(index, population, elites, operators, usage, total, elapsed, cum
         total.total, elapsed, cumulative)
 
 
+@dataclass(frozen=True)
+class EvolutionProgress:
+    """Detached observational copies at a completed-generation boundary."""
+    statistics: GenerationStatistics
+    population: tuple[InitializedIndividual, ...]
+    best_overall: InitializedIndividual
+    best_feasible: InitializedIndividual | None
+    stagnant_generations: int
+
+
 def run_evolution(context: EvaluationContext, settings: EvolutionSettings = EvolutionSettings(), *,
-                  context_elapsed_seconds: float = 0.0) -> EvolutionResult:
+                  context_elapsed_seconds: float = 0.0,
+                  on_generation: Callable[[EvolutionProgress], None] | None = None,
+                  stop_requested: Callable[[], bool] | None = None) -> EvolutionResult:
     """Run sequential generations with a pinned context and local RNG streams.
 
     Fitness budget covers initialization and every real child/repair evaluation.
@@ -263,6 +276,8 @@ def run_evolution(context: EvaluationContext, settings: EvolutionSettings = Evol
 
     def boundary_reasons():
         reasons = []
+        if stop_requested is not None and stop_requested():
+            reasons.append('manual_stop')
         if settings.stop_on_first_feasible and best_feasible is not None:
             reasons.append('first_feasible')
         if settings.stagnation_generations is not None and stagnant >= settings.stagnation_generations:
@@ -273,6 +288,16 @@ def run_evolution(context: EvaluationContext, settings: EvolutionSettings = Evol
             reasons.append('fitness_budget')
         return reasons
 
+    def publish():
+        if on_generation is not None:
+            try:
+                on_generation(EvolutionProgress(history[-1], tuple(_copy_member(i) for i in population),
+                    _copy_member(best), _copy_member(best_feasible) if best_feasible else None, stagnant))
+            except Exception as exc:
+                message = f'progress observer failed: {type(exc).__name__}: {exc}'
+                raise EvolutionFailure(message, finish(('failure',), failure=message)) from exc
+
+    publish()
     while True:
         reasons = boundary_reasons()
         if reasons:
@@ -383,3 +408,4 @@ def run_evolution(context: EvaluationContext, settings: EvolutionSettings = Evol
         history.append(_statistics(index, population, elite_fingerprints, operator_stats(), usage - before_usage,
                                    usage, perf_counter() - generation_start,
                                    context_elapsed_seconds + initialization_seconds + perf_counter() - evolution_start))
+        publish()
