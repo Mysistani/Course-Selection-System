@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, replace
 from random import Random
+from time import perf_counter
 
 from .chromosome import Chromosome, SectionGene, validate_structure
 from .constraints import StructureIssue, StructuralValidationError
@@ -13,20 +14,24 @@ from .mutation import (_State, _NotApplicable, _InvalidTarget, _apply_draft,
                        _iter_targets, target_matches, violation_factors)
 from .operator_support import (EvaluationCounts, EvaluationSnapshot, commit_draft,
                                evaluate_snapshot, require_inputs, verify_snapshot)
+from .repair_relocation import RelocationIndex, relocation_proposals
 
 
 @dataclass(frozen=True)
 class RepairSettings:
-    version: str = 'repair-5b-v1'
+    version: str = 'repair-8-v1'
     max_local_candidates: int = 5
     max_candidate_evaluations: int = 50
     max_candidate_attempts: int = 100
     max_conflicts: int = 50
     max_structural_steps: int = 20
+    conflict_aware_relocation: bool = True
 
     def __post_init__(self):
         if not isinstance(self.version, str) or not self.version:
             raise ValueError('settings version must be non-empty text')
+        if type(self.conflict_aware_relocation) is not bool:
+            raise TypeError('conflict_aware_relocation must be Boolean')
         for name in ('max_local_candidates', 'max_candidate_evaluations',
                      'max_candidate_attempts', 'max_conflicts', 'max_structural_steps'):
             if type(getattr(self, name)) is not int or getattr(self, name) < 0:
@@ -45,6 +50,14 @@ class RepairReport:
     hard_before: int | None = None
     hard_after: int | None = None
     issues: tuple[StructureIssue, ...] = ()
+    relocation_attempts: int = 0
+    relocation_filtered: int = 0
+    relocation_evaluations: int = 0
+    relocation_accepted: int = 0
+    relocation_index_seconds: float = 0.0
+    relocation_index_builds: int = 0
+    relocation_filter_seconds: float = 0.0
+    room_conflicts_resolved: int = 0
 
 
 @dataclass(frozen=True)
@@ -146,23 +159,60 @@ def repair_conflicts(chromosome: Chromosome, context: EvaluationContext, rng: Ra
     attempts = candidate_calls = accepted = rejected = 0
     seen = {baseline.fingerprint}
     per_conflict = []
-    for violation in baseline.fitness.hard.violations[:settings.max_conflicts]:
+    relocation_attempts = relocation_filtered = relocation_calls = relocation_accepted = 0
+    index_seconds = filter_seconds = 0.0
+    cached_index = None
+    indexed_fingerprint = None
+    index_builds = 0
+    violations = baseline.fitness.hard.violations
+    if settings.conflict_aware_relocation:
+        violations = tuple(sorted(violations,key=lambda v:v.constraint_type != 'H04_ROOM_OVERLAP'))
+    selected_violations = violations[:settings.max_conflicts]
+    for violation_index, violation in enumerate(selected_violations):
         if candidate_calls >= settings.max_candidate_evaluations or attempts >= settings.max_candidate_attempts:
             break
         local = 0
-        state = _State(best, context)
-        factors = violation_factors((violation,), state)
-        for operation, target in _local_proposals(state, rng):
+        targeted = settings.conflict_aware_relocation and violation.constraint_type == 'H04_ROOM_OVERLAP'
+        if targeted and violation not in best_snapshot.fitness.hard.violations:
+            continue  # An earlier accepted relocation already resolved this pair.
+        if targeted:
+            if indexed_fingerprint != best_snapshot.fingerprint:
+                prepare_started = perf_counter()
+                cached_index = RelocationIndex(_State(best,context))
+                indexed_fingerprint = best_snapshot.fingerprint
+                index_seconds += perf_counter()-prepare_started
+                index_builds += 1
+            index = cached_index
+            state = index.state
+            pending_rooms = sum(v.constraint_type == 'H04_ROOM_OVERLAP' and v in best_snapshot.fitness.hard.violations
+                                for v in selected_violations[violation_index:])
+            # Reserve a fair share of raw probes for every remaining room pair.
+            attempt_end = attempts + (settings.max_candidate_attempts-attempts)//max(1,pending_rooms)
+            proposals = (('ConflictAwareMeetingRelocation',t) for t in relocation_proposals(state,violation,2*settings.max_local_candidates))
+        else:
+            state = _State(best,context)
+            factors = violation_factors((violation,),state)
+            proposals = _local_proposals(state,rng)
+        for operation, target in proposals:
             if (local >= settings.max_local_candidates or
                     candidate_calls >= settings.max_candidate_evaluations or
-                    attempts >= settings.max_candidate_attempts):
+                    attempts >= settings.max_candidate_attempts or (targeted and attempts >= attempt_end)):
                 break
             # Even an irrelevant proposal consumes the global attempt budget.
             attempts += 1
-            if not target_matches(target, factors, state):
+            if targeted:
+                relocation_attempts += 1
+                started = perf_counter()
+                admissible = index.admissible(target)
+                filter_seconds += perf_counter()-started
+                if not admissible:
+                    relocation_filtered += 1
+                    rejected += 1
+                    continue
+            elif not target_matches(target, factors, state):
                 continue
             try:
-                sections, enrollments = _apply_draft(state, operation, target, rng)
+                sections, enrollments = index.draft(target) if targeted else _apply_draft(state, operation, target, rng)
                 child = commit_draft(sections, enrollments, context)
             except (_NotApplicable, _InvalidTarget, StructuralValidationError):
                 rejected += 1
@@ -174,10 +224,12 @@ def repair_conflicts(chromosome: Chromosome, context: EvaluationContext, rng: Ra
             seen.add(fingerprint)
             fitness = evaluate_fitness(child, context)
             candidate_calls += 1
+            relocation_calls += int(targeted)
             local += 1
             if fitness.comparison_key < best_snapshot.fitness.comparison_key:
                 best, best_snapshot = child, EvaluationSnapshot(fingerprint, fitness)
                 accepted += 1
+                relocation_accepted += int(targeted)
             else:
                 rejected += 1
         per_conflict.append(local)
@@ -190,4 +242,9 @@ def repair_conflicts(chromosome: Chromosome, context: EvaluationContext, rng: Ra
         evaluations=EvaluationCounts(baseline_calls, candidate_calls),
         candidates_per_conflict=tuple(per_conflict),
         hard_before=baseline.fitness.hard.total_penalty,
-        hard_after=best_snapshot.fitness.hard.total_penalty), best_snapshot)
+        hard_after=best_snapshot.fitness.hard.total_penalty,
+        relocation_attempts=relocation_attempts,relocation_filtered=relocation_filtered,
+        relocation_evaluations=relocation_calls,relocation_accepted=relocation_accepted,
+        relocation_index_seconds=index_seconds,relocation_index_builds=index_builds,relocation_filter_seconds=filter_seconds,
+        room_conflicts_resolved=len({v for v in baseline.fitness.hard.violations if v.constraint_type == 'H04_ROOM_OVERLAP'} -
+                                   {v for v in best_snapshot.fitness.hard.violations if v.constraint_type == 'H04_ROOM_OVERLAP'})), best_snapshot)

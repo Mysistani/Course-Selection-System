@@ -1,0 +1,2 @@
+# Preserve the byte identity of the actual saved regression snapshot.
+tests/fixtures/phase8_dataset_b_hard4.json -text
